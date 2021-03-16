@@ -4,69 +4,21 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="assets/CSS/index.css" />
+    <link rel="stylesheet" href="assets/CSS/nav.css" />
+    <link rel="stylesheet" href="assets/CSS/header.css" />
+    <link rel="stylesheet" href="assets/CSS/footer.css" />
     <title>PluggedIn Home</title>
 </head>
 
 <body>
-    <header>
+    
 
+    <?php include("assets/body_part/header.php"); ?>
+    <?php include("assets/body_part/nav.php"); ?>
 
-        <div class = "header_left">
-            <div class="logo">
-                <a href="https://linkrandom" >
-                    <img src="assets/images/logo.jpg" alt="logo site TA" width="150" height="150" title="Le logo de notre site, youpi" />
-                </a>
-            </div>
-
-            <div class="network">
-
-                <ul>
-                    <li>
-                    <a href="https://instagram.com" >
-                        <img src="https://i.ibb.co/ySwtH4B/instagram.png" alt="logo link instagram" width="40" height="40" title="Notre compte instagram !!" />
-                    </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com" >
-                        <img src="https://i.ibb.co/Wnxq2Nq/twitter.png" alt="logo link twitter" width="40" height="40" title="Notre compte twitter !!" />
-                    </a>
-                </li>
-                </ul>
-
-            </div>
-        </div> 
-
-
-                <div class = "header_right" id = "identification">   
-                    <ul>
-                    <li><a class="login" href="login.html">
-                        <input type="button" value="Login">
-                    </a></li>
-                    <li><a class="register" href="register.html">
-                        <input type="button" value="Register">
-                    </a></li>
-                    </ul>
-                </div>
-            </div> 
-
-
-    </header>
-
-    <nav>
-        <ul class = "link_nav">
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">A Propos</a></li>
-            <li><a href="#">Boutique</a></li>              
-            <li><a href="#">Animal Totem</a></li> 
-        </ul>
-    </nav>
-
-        <div class="banniere_image">
-            <img src="assets/images/bannierePluggedIn.jpg" alt="Banniere Home" />
-        </div>
-
-
-
+    <div class="banniere_image">
+        <img src="assets/images/bannierePluggedIn.jpg" alt="Banniere Home" />
+    </div>
 
 
     <div class = bloc_page>
