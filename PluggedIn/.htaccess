@@ -1,0 +1,15 @@
+Options -Multiviews
+Options All -Indexes
+Options +FollowSymlinks
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.*)$ index.php?action=$1
+
+RewriteRule ^config/(.*)$ views/viewError.php
+RewriteRule ^controllers/(.*)$ views/viewError.php
+RewriteRule ^models/(.*)$ views/viewError.php
+RewriteRule ^views/(.*)$ views/viewError.php
