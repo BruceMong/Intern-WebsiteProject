@@ -1,6 +1,7 @@
 <?php require_once('views/header.php'); ?>
 
-        </header>
+
+<div class = blocLogin>
         <section id="connexion" class="container">
             <h1>Connexion</h1>
             <br />
@@ -26,5 +27,11 @@
                 <button type="submit" class="btn btn-default">Connexion</button>
             </form>
         </section>
+</div>
+
+                <script type="text/javascript">
+                   
+                    document.querySelector(".login").style.display = "none";
+                </script>
 
 <?php require_once('views/footer.php'); ?>

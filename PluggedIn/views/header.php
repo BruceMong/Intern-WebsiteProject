@@ -51,7 +51,7 @@
     <
         <ul>
             <li>
-                <a class="login" href="login.php">
+                <a class="login" href="login">
                     <input type="button" value="Login">
                 </a>
             </li>
