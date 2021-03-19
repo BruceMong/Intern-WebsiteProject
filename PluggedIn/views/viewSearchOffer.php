@@ -28,7 +28,7 @@
                 <p>Nombres de places offertes</p>
                 <p>Base de rémunération</p>
                 <p>Date de l'offre</p>
-                <li><a href="index"><span class="linkOffer"> </span> </a>
+                <li><a href="index"><span class="linkContent"> </span> </a>
 
         </div>
         <div class="offer" style="height: 200;">
@@ -41,7 +41,7 @@
                 <p>Nombres de places offertes</p>
                 <p>Base de rémunération</p>
                 <p>Date de l'offre</p>
-                <li><a href="index"><span class="linkOffer"> </span> </a>
+                <li><a href="index"><span class="linkContent"> </span> </a>
         </div>
         <div class="offer" style="height: 200;">
             <img src="https://yt3.ggpht.com/ytc/AAUvwniJcudFBvjhncQ4O0DaTopCR9eFqPV6hoGGZsVl4A=s900-c-k-c0x00ffffff-no-rj" alt="Error" class="img-offer">
@@ -53,7 +53,7 @@
                 <p>Nombres de places offertes</p>
                 <p>Base de rémunération</p>
                 <p>Date de l'offre</p>
-                <li><a href="index"><span class="linkOffer"> </span> </a>
+                <li><a href="index"><span class="linkContent"> </span> </a>
         </div>
 
 
