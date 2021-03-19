@@ -1,0 +1,286 @@
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/Raleway-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Piazzolla';
+    src: url('fonts/Piazzolla-VariableFont_opsz,wght.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src : url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+}
+
+
+
+@font-face {
+    font-family: 'Open Sans 500';
+    src : url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+}
+
+
+
+
+
+
+
+body
+{
+
+    background: rgb(185, 185, 185);
+    margin : 0px;
+    background-attachment: fixed; /* Le fond restera fixe */
+}
+
+header
+{
+     background: #131921; 
+}
+
+.logo
+{
+ padding-left: 25px;
+ padding-top : 25px;
+
+
+}
+
+
+.network
+{
+ padding-left: 25px;
+ padding-top : 25px;
+}
+
+.network img
+{
+    max-width: 60%;
+    height: auto;
+}
+
+.network ul
+{
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.network li
+{
+  list-style: none;
+}
+.network li a
+{
+  display: inline-block;
+  margin-right: 5px;
+  filter: invert(1);
+  transition: 0.5s;
+}
+.network li a:hover
+{
+  transform:  translateY(-15px);
+}
+
+/* identification (login/register) */
+
+#indentifcation
+{
+    border: 10px solid red; /* marche pas */
+}
+
+#identification ul
+{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    padding-inline-start: 0px;
+    padding-inline-end: 1em;
+} 
+
+.header_right li   /*#indentication a est relou */
+{
+    padding-right: 0.1em;
+}
+
+.header_right a   /*#indentication a est relou */
+{
+    color : white;
+    text-decoration:none;
+    transition: 0.5s;
+} 
+
+.header_right input[type=button]
+{
+    background-color:#2e3b49; ;
+    border:none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24), 0 3px 7px 0 rgba(0,0,0,0.19);
+    transition: 0.5s;
+}
+
+.header_right input[type=button]:hover  /* #indentication a:hover morche po */
+{
+    background-color: #506072;  
+}
+
+
+.register input[type=button]
+{
+    background-color:#4CAF50;
+}
+
+
+.register input[type=button]:hover  /* #indentication a:hover morche po */
+{
+    background-color: #69c46c;  
+}
+
+.header_right input[type=button]:active  /* #indentication a:hover morche po */
+{
+    background-color: #30373f;  
+    transform:  translateY(-5px);
+}
+
+
+.register input[type=button]:active /* #indentication a:hover morche po */
+{
+    background-color: #215322;  
+
+}
+
+
+
+
+/* Navigation */
+
+nav
+{
+     background: #232f3e; 
+     display: flex;
+     justify-content:flex-end;
+
+}
+
+nav ul
+{
+    list-style-type: none;
+    display: flex;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-right: 10em;
+}
+
+nav li
+{
+    margin-right: 30px;
+}
+
+nav a
+{
+    font-family: 'Open Sans';
+    font-size: 1.5em;
+    color: white;
+    padding-bottom: 3px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+nav a:hover
+{
+    padding-left:0.5;
+    padding-right:1.0em;
+    text-decoration: underline;
+}
+
+
+/* Flex Header */
+
+header
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+.header_left
+{
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* Banniere */
+
+.banniere_image 
+{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    
+    
+}
+
+.banniere_image img
+{
+    box-shadow: 0px 2px 5px #1c1a19;
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+}
+
+/*Barre recherche*/
+
+.search-container{
+    width: 500px;
+    display: block;
+    margin: 0 auto;
+    padding : 25px;
+  }
+input#search-bar{
+    margin: 0 auto;
+    width: 100%;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 1rem;
+    border: 1px solid #D0CFCE;
+    outline: none;
+   }
+  
+  .search-icon{
+    position: relative;
+    float: right;
+    width: 75px;
+    height: 75px;
+    top: -62px;
+    right: -45px;
+  }
+   /* Conteneur d'offres */
+
+   .offer-container{
+       outline :2.5px solid rgb(7, 6, 6);
+       width: 95%;
+       margin: 2.5%;
+       height: auto;
+   }
+
+   /* Offre*/
+   .offer{
+    outline :2.5px solid rgb(7, 6, 6);
+    margin : 20px;
+    padding :5px;
+   }
+
