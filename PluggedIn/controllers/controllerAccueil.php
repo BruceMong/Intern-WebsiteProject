@@ -5,6 +5,6 @@
 // JE RÉCUPÈRE LA LISTE DE TOUS LES ARTICLES
 //$articles = $modelArticle->getArticles();
 
-$t = 'Blog de Jean Forteroche';
+$t = 'Accueil PluggedIn';
 
 require_once('views/viewAccueil.php');

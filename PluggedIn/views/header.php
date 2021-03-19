@@ -1,5 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="content/css/style.css" />
+    <link rel="stylesheet" href="content/css/nav.css" />
+    <link rel="stylesheet" href="content/css/header.css" />
+    <link rel="stylesheet" href="content/css/footer.css" />
+    <title><?= $t ?></title>
+</head>
+
+
 <header>
 
+<body>
     <div class="header_left">
         <div class="logo">
             <a href="index.php">

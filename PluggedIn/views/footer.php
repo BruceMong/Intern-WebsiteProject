@@ -41,8 +41,9 @@
         </div>
 
         <div class = "footer_bottom">
-            <p> © Tony & Antonio, 2021 - Tous droits réservés </p>
+            <p> © PluggedIn, 2021 - Tous droits réservés </p>
 
         </div>
 
     </footer>
+</body>

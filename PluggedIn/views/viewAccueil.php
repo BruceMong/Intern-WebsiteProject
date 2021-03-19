@@ -1,16 +1,3 @@
-
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="content/css/index.css" />
-    <link rel="stylesheet" href="content/css/nav.css" />
-    <link rel="stylesheet" href="content/css/header.css" />
-    <link rel="stylesheet" href="content/css/footer.css" />
-    <title>PluggedIn Home</title>
-</head>
-
 <body>
 
 <?php require_once('views/header.php'); ?>
@@ -22,8 +9,10 @@
 
 
     <div class = bloc_page>
+    
         <article>
-            <h1>Information</h1>
+        <h1>Information</h1>
+            <div class = "conception" >
             <h2> Conception </h2>
             <p>Architecture du site web: MVC (Model, View, Controller)</p>
             <img src="content/images/mvc-schema.png" alt="Banniere Home" />
@@ -32,12 +21,30 @@
                 </br>Un gain de temps de maintenance et d’évolution du site
                 </br>Une plus grande souplesse pour organiser le développement du site entre différents développeurs (indépendance des données, de l’affichage (webdesign) et des actions)
             </p>
+            </div>
 
+
+            
+            <div class="icons-intro">
             <h2> Développeur: </h2>
-            <p> Erica, Bruce, Hadrien </p>
+                <ul>
+                    <li>
+                        <img src="content/images/hadrien.jpg">
+                        <h3>Hadrien</h3>
+                    </li>
+                    <li>
+                        <img src="content/images/bruce.jpg" >
+                        <h3>Bruce</h3>
+                    </li>
+                    <li>
+                        <img src="content/images/bruce.jpg">
+                        <h3>Erica</h3>
+                    </li>
+                </ul>
+            </div>
+            </article>
 
-
-        </article>
+        
         
     </div>
 
