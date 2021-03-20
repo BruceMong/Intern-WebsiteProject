@@ -7,4 +7,7 @@
 
 $t = 'Recherche d\'offre';
 
+$modelOffer = new ModelOffer($bdd);
+$offers = $modelOffer->getOffer();
+
 require_once('views/viewSearchOffer.php');

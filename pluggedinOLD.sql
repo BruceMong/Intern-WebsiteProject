@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 19 mars 2021 à 22:54
--- Version du serveur :  10.4.17-MariaDB
--- Version de PHP : 8.0.2
+-- Généré le : mar. 16 mars 2021 à 23:36
+-- Version du serveur :  10.3.20-MariaDB
+-- Version de PHP : 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `pluggedin`
+-- Base de données : `projet_web`
 --
 
 -- --------------------------------------------------------
@@ -44,17 +44,16 @@ CREATE TABLE `entreprise` (
   `secteur_activite` varchar(20) NOT NULL,
   `nombre_stagiaire_cesi` int(11) NOT NULL,
   `confiance_pilote` int(11) NOT NULL,
-  `evaluation_entreprise` int(11) NOT NULL,
-  `image` varchar(255) NOT NULL
+  `evaluation_entreprise` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `entreprise`
 --
 
-INSERT INTO `entreprise` (`id_entreprise`, `nom`, `secteur_activite`, `nombre_stagiaire_cesi`, `confiance_pilote`, `evaluation_entreprise`, `image`) VALUES
-(1, 'Saint-Gobin', 'Materiaux', 3, 4, 4, 'https://forcomm.fr/wp-content/uploads/2020/05/communication-unifiee-schema-500x500.jpg'),
-(2, 'Atos', 'Informatique', 1, 5, 4, 'https://forcomm.fr/wp-content/uploads/2020/05/communication-unifiee-schema-500x500.jpg');
+INSERT INTO `entreprise` (`id_entreprise`, `nom`, `secteur_activite`, `nombre_stagiaire_cesi`, `confiance_pilote`, `evaluation_entreprise`) VALUES
+(1, 'Saint-Gobin', 'Materiaux', 3, 4, 4),
+(2, 'Atos', 'Informatique', 1, 5, 4);
 
 -- --------------------------------------------------------
 
@@ -64,7 +63,7 @@ INSERT INTO `entreprise` (`id_entreprise`, `nom`, `secteur_activite`, `nombre_st
 
 CREATE TABLE `offre` (
   `id_offre` int(11) NOT NULL,
-  `competences` varchar(20) NOT NULL,
+  `Competences` varchar(20) NOT NULL,
   `localite` varchar(20) NOT NULL,
   `entreprise` varchar(20) NOT NULL,
   `type_promo_concerne` varchar(20) NOT NULL,
@@ -78,7 +77,7 @@ CREATE TABLE `offre` (
 -- Déchargement des données de la table `offre`
 --
 
-INSERT INTO `offre` (`id_offre`, `competences`, `localite`, `entreprise`, `type_promo_concerne`, `duree_stage`, `base_remuneration`, `duree_offre`, `nombre_place`) VALUES
+INSERT INTO `offre` (`id_offre`, `Competences`, `localite`, `entreprise`, `type_promo_concerne`, `duree_stage`, `base_remuneration`, `duree_offre`, `nombre_place`) VALUES
 (1, 'Developpement web', 'Marseille', 'Mediamoov', 'A3', 6, 600, 2, 3);
 
 -- --------------------------------------------------------

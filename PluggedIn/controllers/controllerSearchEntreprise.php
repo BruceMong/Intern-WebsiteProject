@@ -5,6 +5,10 @@
 // JE RÉCUPÈRE LA LISTE DE TOUS LES ARTICLES
 //$articles = $modelArticle->getArticles();
 
+
+$modelEntreprise = new ModelEntreprise($bdd);
+$entreprises = $modelEntreprise->getEntreprise();
+
 $t = 'Recherche d\'entreprise';
 
 require_once('views/viewSearchEntreprise.php');

@@ -17,3 +17,8 @@ https://github.com/JOE54
 MESSAGE DE BRUCE : 
 
 ON S'EN BALLEC
+
+    <?php foreach($entreprises as $entreprise): ?>
+            <h3><?= ucfirst($entreprise->nom() ) ?></h3>
+        <br />
+    <?php endforeach; ?>
