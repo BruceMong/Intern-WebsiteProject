@@ -1,11 +1,10 @@
 <?php require_once('views/header.php'); ?>
 
-
 <div class = blocLogin>
         <section id="connexion" class="container">
             <h1>Connexion</h1>
-            <br />
-            <br />
+            <br/>
+            <br/>
             <form action="login" method="post">
 
                 <?php 
@@ -21,8 +20,8 @@
                 <p><label for="login">Identifiant :</label>
                 <input type="text" name="login" id="login" class="form-control" value="<?php if(isset($login)) echo $login; ?>" /></p>
                 <br />
-                <p><label for="pass">Mot de passe :</label>
-                <input type="password" name="pass" id="pass" class="form-control" /></p>
+                <p><label for="mot_de_passe">Mot de passe :</label>
+                <input type="password" name="mot_de_passe" id="pass" class="form-control" /></p>
                 <br />
                 <button type="submit" class="btn btn-default">Connexion</button>
             </form>

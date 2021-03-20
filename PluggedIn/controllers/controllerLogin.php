@@ -1,9 +1,10 @@
 <?php
 session_start();
 // SI L'ADMINISTRATEUR EST AUTHENTIFIÉ
-if(!empty($_SESSION['admin']))
+if(!empty($_SESSION['utilisateur']))
     // JE LE REDIRIGE VERS LA PAGE "ADMIN"
-    header('Location:'.URL.'admin');
+    header('Location:'.URL.'utilisateur');
+    
 
 // JE VÉRIFIE SI LES IDENTIFIANTS
 if(!empty($_POST))
@@ -12,26 +13,26 @@ if(!empty($_POST))
     $errors = array();
     // JE SÉCURISE LES DONNÉES
     $login = strip_tags($login);
-    $pass = strip_tags($pass);
+    $mot_de_passe = strip_tags($mot_de_passe);
 
     if(empty($login))
         array_push($errors, 'Entrez votre identifiant');
 
-    if(empty($pass))
+    if(empty($mot_de_passe))
         array_push($errors, 'Entrez votre mot de passe');
 
     // SI LES CHAMPS SONT REMPLIS
-    if(!empty($login) && !empty($pass))
+    if(!empty($login) && !empty($mot_de_passe))
     { 
-        $modelAdmin = new ModelAdmin($bdd);
+        $modelUtilisateur = new $modelUtilisateur($bdd);
         
         // JE VÉRIFIE SI IL Y A UNE CORRESPONDANCE EN BDD
-        if(!$modelAdmin->exists($login, $pass))
+        if(!$modelAdmin->exists($login, $mot_de_passe))
             array_push($errors, 'Mauvais identifiants');
         else
         {
-            $_SESSION['admin'] = $login;
-            header('Location:'.URL.'admin');
+            $_SESSION['utilisateur'] = $login;
+            header('Location:'.URL.'utilisateur');
         }
     }
 }

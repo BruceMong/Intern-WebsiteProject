@@ -1,6 +1,8 @@
 <?php
 session_start();
 // JE VÉRIFIE QUE L'ADMINISTRATEUR EST BIEN AUTHENTIFIÉ
+if(empty($_SESSION['admin']))
+    header('Location:'.URL.'login');
 ?>
 
 <!DOCTYPE html>
@@ -53,12 +55,25 @@ session_start();
 
     <div class="header_right" id="identification">
         
+    
         <ul>
+
+        <?php if(empty($_SESSION['admin'])): ?>  
             <li>
                 <a class="login" href="login">
                     <input type="button" value="Login">
                 </a>
             </li>
+        <?php endif; ?>
+        <?php if(!empty($_SESSION['admin'])): ?>  
+            <li>
+                <a class="login" href="login">
+                    <input type="button" value="Login">
+                </a>
+            </li>
+        <?php endif; ?>
+
+
         </ul>
     </div>
 
