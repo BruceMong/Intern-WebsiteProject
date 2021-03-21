@@ -1,6 +1,6 @@
 <?php
 session_start();
-// JE VÉRIFIE QUE L'ADMINISTRATEUR EST BIEN AUTHENTIFIÉ
+// JE VÉRIFIE QUE L'ADMINISTRATEUR EST BIEN AUTHENTIFIÉL:
 ?>
 
 <!DOCTYPE html>
@@ -52,16 +52,26 @@ session_start();
 
 
     <div class="header_right" id="identification">
-        
         <ul>
             <li>
-                <a class="login" href="login">
-                    <input type="button" value="Login">
-                </a>
+                <?php if(empty($_SESSION['utilisateur']))
+                {
+                    echo '<a class="login" href="login">';
+                    echo '<input type="button" value="Login">';
+                    echo '</a>';
+                }
+                else
+                {
+                    echo '<a class="nav_compte" href="login">';
+                    echo '<img src="content/images/account-icon.png">';
+                    echo '<p>Voir Compte</p>';
+                    echo '</a>';
+                    
+                }
+                ?> 
             </li>
         </ul>
     </div>
-
-
+    
 
 </header>

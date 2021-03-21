@@ -99,3 +99,20 @@ nav {
     top: 0;
     width: 100%;
 }
+
+.nav_compte {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nav_compte img {
+    filter: invert(1);
+    max-width: min-content;
+    max-height: min-content;
+}
+
+.nav_compte p {
+    color: white;
+    font-family: 'Roboto';
+}
