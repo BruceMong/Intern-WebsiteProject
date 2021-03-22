@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 19 mars 2021 à 22:54
+-- Généré le : lun. 22 mars 2021 à 09:44
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 8.0.2
 
@@ -24,12 +24,45 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `droits`
+-- Structure de la table `droit`
 --
 
-CREATE TABLE `droits` (
+CREATE TABLE `droit` (
   `id_droit` int(11) NOT NULL,
-  `libellé` varchar(20) NOT NULL
+  `authentifier` tinyint(1) NOT NULL,
+  `rechercher_entreprise` tinyint(1) NOT NULL,
+  `creer_entreprise` tinyint(1) NOT NULL,
+  `modifier_entreprise` tinyint(1) NOT NULL,
+  `evaluer_entreprise` tinyint(1) NOT NULL,
+  `supprimer_entreprise` tinyint(1) NOT NULL,
+  `consulter_stats_entreprises` tinyint(1) NOT NULL,
+  `rechercher_offre` tinyint(1) NOT NULL,
+  `creer_offre` tinyint(1) NOT NULL,
+  `modifier_offre` tinyint(1) NOT NULL,
+  `supprimer_offre` tinyint(1) NOT NULL,
+  `consulter_stats_offres` tinyint(1) NOT NULL,
+  `rechercher_compte_pilote` tinyint(1) NOT NULL,
+  `creer_compte_pilote` tinyint(1) NOT NULL,
+  `modifier_compte_pilote` tinyint(1) NOT NULL,
+  `supprimer_compte_pilote` tinyint(1) NOT NULL,
+  `rechercher_compte_delegue` tinyint(1) NOT NULL,
+  `creer_compte_delegue` tinyint(1) NOT NULL,
+  `modifier_compte_delegue` tinyint(1) NOT NULL,
+  `supprimer_compte_delegue` tinyint(1) NOT NULL,
+  `assigner_droits_delegue` tinyint(1) NOT NULL,
+  `rechercher_compte_etudiant` tinyint(1) NOT NULL,
+  `creer_compte_etudiant` tinyint(1) NOT NULL,
+  `modifier_compte_etudiant` tinyint(1) NOT NULL,
+  `supprimer_compte_etudiant` tinyint(1) NOT NULL,
+  `consulter_stats_etudiants` tinyint(1) NOT NULL,
+  `ajouter_offre_wish-list` tinyint(1) NOT NULL,
+  `retirer_offre_wish-list` tinyint(1) NOT NULL,
+  `postuler_offre` tinyint(1) NOT NULL,
+  `info_sys_avance_candi1` tinyint(1) NOT NULL,
+  `info_sys_avance_candi2` tinyint(1) NOT NULL,
+  `info_sys_avance_candi3` tinyint(1) NOT NULL,
+  `info_sys_avance_candi4` tinyint(1) NOT NULL,
+  `info_sys_avance_candi5` tinyint(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -84,19 +117,19 @@ INSERT INTO `offre` (`id_offre`, `competences`, `localite`, `entreprise`, `type_
 -- --------------------------------------------------------
 
 --
--- Structure de la table `profils`
+-- Structure de la table `profil`
 --
 
-CREATE TABLE `profils` (
+CREATE TABLE `profil` (
   `id_profil` int(11) NOT NULL,
   `libelle` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `profils`
+-- Déchargement des données de la table `profil`
 --
 
-INSERT INTO `profils` (`id_profil`, `libelle`) VALUES
+INSERT INTO `profil` (`id_profil`, `libelle`) VALUES
 (1, 'Etudiant'),
 (2, 'Pilote'),
 (3, 'Administrateur'),
@@ -105,19 +138,19 @@ INSERT INTO `profils` (`id_profil`, `libelle`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `promotions`
+-- Structure de la table `promotion`
 --
 
-CREATE TABLE `promotions` (
+CREATE TABLE `promotion` (
   `id_promotion` int(11) NOT NULL,
   `libelle` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `promotions`
+-- Déchargement des données de la table `promotion`
 --
 
-INSERT INTO `promotions` (`id_promotion`, `libelle`) VALUES
+INSERT INTO `promotion` (`id_promotion`, `libelle`) VALUES
 (1, 'A1'),
 (2, 'A2'),
 (3, 'A3'),
@@ -127,10 +160,10 @@ INSERT INTO `promotions` (`id_promotion`, `libelle`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateurs`
+-- Structure de la table `utilisateur`
 --
 
-CREATE TABLE `utilisateurs` (
+CREATE TABLE `utilisateur` (
   `id_users` int(11) NOT NULL,
   `nom` varchar(20) NOT NULL,
   `prenom` varchar(20) NOT NULL,
@@ -140,10 +173,10 @@ CREATE TABLE `utilisateurs` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `utilisateurs`
+-- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateurs` (`id_users`, `nom`, `prenom`, `login`, `mot_de_passe`, `centre`) VALUES
+INSERT INTO `utilisateur` (`id_users`, `nom`, `prenom`, `login`, `mot_de_passe`, `centre`) VALUES
 (5, 'LUCAS', 'Tom', 'Tom.Lucas', 'Tom1006', 'Orleans'),
 (2, 'MONG-THE', 'Bruce', 'Bruce.Mongthe', 'Bruce4005', 'Aix en Provence'),
 (3, 'PINOTEAU', 'Hadrien', 'hadrien.pinoteau', 'Hadri2001', 'Aix en Provence'),
@@ -157,9 +190,9 @@ INSERT INTO `utilisateurs` (`id_users`, `nom`, `prenom`, `login`, `mot_de_passe`
 --
 
 --
--- Index pour la table `droits`
+-- Index pour la table `droit`
 --
-ALTER TABLE `droits`
+ALTER TABLE `droit`
   ADD PRIMARY KEY (`id_droit`);
 
 --
@@ -175,21 +208,21 @@ ALTER TABLE `offre`
   ADD PRIMARY KEY (`id_offre`);
 
 --
--- Index pour la table `profils`
+-- Index pour la table `profil`
 --
-ALTER TABLE `profils`
+ALTER TABLE `profil`
   ADD PRIMARY KEY (`id_profil`);
 
 --
--- Index pour la table `promotions`
+-- Index pour la table `promotion`
 --
-ALTER TABLE `promotions`
+ALTER TABLE `promotion`
   ADD PRIMARY KEY (`id_promotion`);
 
 --
--- Index pour la table `utilisateurs`
+-- Index pour la table `utilisateur`
 --
-ALTER TABLE `utilisateurs`
+ALTER TABLE `utilisateur`
   ADD PRIMARY KEY (`id_users`);
 
 --
@@ -197,9 +230,9 @@ ALTER TABLE `utilisateurs`
 --
 
 --
--- AUTO_INCREMENT pour la table `droits`
+-- AUTO_INCREMENT pour la table `droit`
 --
-ALTER TABLE `droits`
+ALTER TABLE `droit`
   MODIFY `id_droit` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -215,21 +248,21 @@ ALTER TABLE `offre`
   MODIFY `id_offre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `profils`
+-- AUTO_INCREMENT pour la table `profil`
 --
-ALTER TABLE `profils`
+ALTER TABLE `profil`
   MODIFY `id_profil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT pour la table `promotions`
+-- AUTO_INCREMENT pour la table `promotion`
 --
-ALTER TABLE `promotions`
+ALTER TABLE `promotion`
   MODIFY `id_promotion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT pour la table `utilisateurs`
+-- AUTO_INCREMENT pour la table `utilisateur`
 --
-ALTER TABLE `utilisateurs`
+ALTER TABLE `utilisateur`
   MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
