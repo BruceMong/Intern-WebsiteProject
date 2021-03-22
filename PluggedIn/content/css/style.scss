@@ -409,3 +409,13 @@ input#search-bar {
        make sure you have an empty gif */
     background-image: url('empty.gif');
 }
+
+.detail_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail_presentation {
+    display: flex;
+    flex-direction: row;
+}

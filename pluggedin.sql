@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 22 mars 2021 à 09:44
+-- Généré le : lun. 22 mars 2021 à 10:24
 -- Version du serveur :  10.4.17-MariaDB
--- Version de PHP : 8.0.2
+-- Version de PHP : 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -86,8 +86,8 @@ CREATE TABLE `entreprise` (
 --
 
 INSERT INTO `entreprise` (`id_entreprise`, `nom`, `secteur_activite`, `nombre_stagiaire_cesi`, `confiance_pilote`, `evaluation_entreprise`, `image`) VALUES
-(1, 'Saint-Gobin', 'Materiaux', 3, 4, 4, 'https://forcomm.fr/wp-content/uploads/2020/05/communication-unifiee-schema-500x500.jpg'),
-(2, 'Atos', 'Informatique', 1, 5, 4, 'https://forcomm.fr/wp-content/uploads/2020/05/communication-unifiee-schema-500x500.jpg');
+(1, 'Saint-Gobin', 'Materiaux', 3, 4, 4, ''),
+(2, 'Atos', 'Informatique', 1, 5, 4, '');
 
 -- --------------------------------------------------------
 
