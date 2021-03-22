@@ -8,6 +8,7 @@ class Utilisateur
     private $_centre;
     private $_mot_de_passe;
     private $_id_promotion;
+    private $_id_profil;
 
     // CONSTRUCTEUR
     public function __construct(array $data)
@@ -57,6 +58,11 @@ class Utilisateur
     public function id_promotion()
     {
         return $this->_id_promotion;
+    }
+
+    public function id_profil()
+    {
+        return $this->_id_profil;
     }
 
     // SETTERS
