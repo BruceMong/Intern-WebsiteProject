@@ -10,9 +10,6 @@ class ModelUtilisateur
     }
 
 
-
-
-
     // FONCTION QUI VÉRIFIE UNE CORRESPONDANCE AVEC SES PARAMÈTRES DANS LA BDD
     public function exists($login, $mot_de_passe)
     {
@@ -24,10 +21,10 @@ class ModelUtilisateur
         $req->closeCursor();
     }
 
-    // FONCTION QUI RÉCUPÈRE LES INFOS SUR L'ADMIN
+    // FONCTION QUI RÉCUPÈRE LES INFOS SUR L'UTILISATEUR
     public function getUtilisateur($login)
     {
-        $req = $this->_bdd->prepare('SELECT id_users, login, mot_de_passe, nom, prenom, centre FROM utilisateur WHERE login= ?');
+        $req = $this->_bdd->prepare('SELECT id_users, login, mot_de_passe, nom, prenom, centre, id_promotion FROM utilisateur WHERE login= ?');
         $req->execute(array($login));
         if ($req->rowCount() == 1) {
             $data = $req->fetch(PDO::FETCH_ASSOC);
@@ -50,29 +47,27 @@ class ModelUtilisateur
         $this->_bdd = $bdd;
     }
 
-
-
-    // FONCTION QUI AJOUTE UN ARTICLE EN BDD
-    public function addArticle($art)
+    // FONCTION QUI AJOUTE UN UTILISATEUR EN BDD
+    public function addArticle($utilisateur)
     {
-        $req = $this->_bdd->prepare('INSERT INTO articles (title, content, date) VALUES(?, ?, NOW())');
-        $req->execute(array($art->title(), $art->content()));
+        $req = $this->_bdd->prepare('INSERT INTO utilisateur (login, mot_de_passe, nom, prenom, centre, id_promotion) VALUES(?, ?, ?, ?, ?, ?)');
+        $req->execute(array(array($utilisateur->login(), $utilisateur->mot_de_passe(), $utilisateur->nom(), $utilisateur->prenom(), $utilisateur->centre(), $utilisateur->id_promotion())));
         $req->closeCursor();
     }
 
-    // FONCTION QUI MET À JOUR L'ARTICLE
-    public function updateArticle(Article $article)
+    // FONCTION QUI MET À JOUR L'UTILISATEUR
+    public function updateUtilisateur(Utilisateur $utilisateur)
     {
-        $req = $this->_bdd->prepare('UPDATE articles SET title = ?, content = ? WHERE id = ?');
-        $req->execute(array($article->title(), $article->content(), $article->id()));
+        $req = $this->_bdd->prepare('UPDATE utilisateur SET login, mot_de_passe = ?, nom = ?, prenom= ?, centre = ?, id_promotion = ? WHERE id_users = ?');
+        $req->execute(array($utilisateur->login(), $utilisateur->mot_de_passe(), $utilisateur->nom(), $utilisateur->prenom(), $utilisateur->centre(), $utilisateur->id_promotion(), $utilisateur->id_users()));
         $req->closeCursor();
     }
 
-    // FONCTION QUI SUPPRIME UN ARTICLE
-    public function deleteArticle($art)
+    // FONCTION QUI SUPPRIME UN UTILISATEUR
+    public function deleteUtilisateur($id)
     {
-        $req = $this->_bdd->prepare('DELETE FROM articles WHERE id = ?');
-        $req->execute(array($art));
+        $req = $this->_bdd->prepare('DELETE FROM utilisateur WHERE id = ?');
+        $req->execute(array($id));
         $req->closeCursor();
     }
 }
