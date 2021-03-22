@@ -458,3 +458,16 @@ input {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
 }
+
+.bouton_crud {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3em;
+    border: #131921;
+}
+
+.detail_aside,
+.detail_modif {
+    align-self: center;
+}
