@@ -1,4 +1,9 @@
 <?php
+     function validateDate($date, $format = 'Y-m-d'){
+        $d = DateTime::createFromFormat($format, $date);
+        return $d && $d->format($format) === $date;
+    }
+    
 class Offer
 {
     private $_id_offre;
@@ -10,6 +15,7 @@ class Offer
     private $_base_remuneration;
     private $_duree_offre;
     private $_nombre_place;
+    private $_date;
 
     // CONSTRUCTEUR
     public function __construct(array $data)
@@ -71,6 +77,10 @@ class Offer
         return $this->_nombre_place;    
     }
 
+    public function date()
+    {
+        return $this->_date;    
+    }
 
     // SETTERS
     public function setId_offre($id_offre)
@@ -134,4 +144,14 @@ class Offer
         if($nombre_place > 0)
             $this->_nombre_place = $nombre_place;
     }
+
+
+
+    public function setDate($date)
+    {
+        if(validateDate($date, 'Y-m-d'))
+            $this->_date = $date;
+    }
+
+
 }

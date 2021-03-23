@@ -1,12 +1,5 @@
 <nav>
-<div class="wrap ">
-            <div class="search">
-                <input type="text" class="searchTerm" placeholder="recherche">
-                <button type="submit" class="searchButton">
-                    <i class="fa fa-search"> <img src="assets/images/search-icon.png" /></i>
-                </button>
-            </div>
-        </div>
+
 
           <!--
 <form class="search-container">
@@ -17,7 +10,7 @@
     <div class="link">
             <ul class = "link_nav">
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="#">A Propos</a></li>
+                <li><a href="aPropos">A Propos</a></li>
                 <li><a href="searchEntreprise">Entreprise</a></li>              
                 <li><a href="searchOffer">Offre</a></li> 
             </ul>

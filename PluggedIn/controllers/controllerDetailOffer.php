@@ -7,7 +7,9 @@
 
 $t = 'Détail de l\'offre';
 
+$modelEntreprise = new ModelEntreprise($bdd);
 $modelOffer = new ModelOffer($bdd);
-$offers = $modelOffer->getOffer();
+$offer = $modelOffer->getOffer($_POST['id']);
+$entreprise = $modelEntreprise->getEntrepriseByName( $offer->entreprise());
 
 require_once('views/viewDetailOffer.php');

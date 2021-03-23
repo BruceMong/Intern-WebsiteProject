@@ -5,9 +5,6 @@
 // JE RÉCUPÈRE LA LISTE DE TOUS LES ARTICLES
 //$articles = $modelArticle->getArticles();
 
-$t = 'Recherche d\'offre';
+$t = 'A Propos';
 
-$modelOffer = new ModelOffer($bdd);
-$offers = $modelOffer->getOffers();
-
-require_once('views/viewSearchOffer.php');
+require_once('views/viewAPropos.php');

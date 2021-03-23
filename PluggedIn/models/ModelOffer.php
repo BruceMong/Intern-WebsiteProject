@@ -9,11 +9,11 @@ class ModelOffer
     }
     
     // FONCTION QUI RÉCUPÈRE TOUS LES ARTICLES ET QUI CRÉE UN OBJET (Article) POUR CHAQUE ARTICLE
-    public function getOffer()
+    public function getOffers()
     {  
         $offres = [];
-        
-        $req = $this->_bdd->query('SELECT id_offre, competences, localite, entreprise, type_promo_concerne, duree_stage, base_remuneration, duree_offre, nombre_place FROM offre ORDER BY id_offre DESC');
+        //DATE_FORMAT(date, \'%d/%m/%Y à %Hh%imin%ss\')
+        $req = $this->_bdd->query('SELECT id_offre, competences, localite, entreprise, type_promo_concerne, duree_stage, base_remuneration, duree_offre, nombre_place, date FROM offre ORDER BY id_offre DESC');
         $req->execute();
         while($data = $req->fetch(PDO::FETCH_ASSOC))
         {
@@ -24,18 +24,18 @@ class ModelOffer
     }
     
     // FONCTION QUI RÉCUPÈRE L'ARTICLE PAR RAPPORT À SON ID
-    public function getArticle($id)
+    public function getOffer($id)
     {
-        $req = $this->_bdd->prepare('SELECT id, title, content, DATE_FORMAT(date, \'%d/%m/%Y à %Hh%imin%ss\') AS articleDate FROM articles WHERE id = ?');
+        $req = $this->_bdd->prepare('SELECT id_offre, competences, localite, entreprise, type_promo_concerne, duree_stage, base_remuneration, duree_offre, nombre_place, date FROM offre WHERE id_offre = ?');
         $req->execute(array($id));
         
         if($req->rowCount() == 1)
         {
             $data = $req->fetch(PDO::FETCH_ASSOC);
-            return new Article($data);   
+            return new Offer($data);   
         }
         else
-            throw new Exception("Aucun épisode ne correspond à l'identifiant '$id'");
+            throw new Exception("Aucune Offre ne correspond à l'identifiant '$id'");
 
         $req->closeCursor();
     }

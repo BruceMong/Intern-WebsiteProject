@@ -63,10 +63,16 @@ session_start();
                 else
                 {
                     echo '<a class="nav_compte" href="login">';
+                    echo '<img src="content/images/wish-icon.png">';
+                    echo '<p>Wish-List</p>';
+                    echo '</a>';
+                    echo '</li>';
+
+                    echo '<li>';
+                    echo '<a class="nav_compte" href="login">';
                     echo '<img src="content/images/account-icon.png">';
                     echo '<p>Voir Compte</p>';
                     echo '</a>';
-                    
                 }
                 ?> 
             </li>

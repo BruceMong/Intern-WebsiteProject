@@ -1,7 +1,7 @@
 nav {
     background: #232f3e;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .link {

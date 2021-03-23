@@ -54,6 +54,8 @@ header {
 /* identification (login/register) */
 
 #indentifcation {
+    display: flex;
+    flex-direction: row;
     border: 10px solid red;
     /* marche pas */
 }
@@ -419,6 +421,10 @@ input#search-bar {
     gap: 20px;
 }
 
+.detail_container div {
+    border-radius: 5px;
+}
+
 .detail_presentation {
     grid-area: pres;
     background-color: white;
@@ -445,7 +451,7 @@ input#search-bar {
     padding: 3%;
 }
 
-input {
+.bouton_crud input {
     position: relative;
     display: inline-block;
     margin: 1em;
@@ -464,10 +470,16 @@ input {
     flex-direction: column;
     justify-content: center;
     margin-top: 3em;
-    border: #131921;
+    -webkit-box-shadow: 0px 0px 0px #1c1a19;
+    box-shadow: 0px;
+    border-radius: 0%;
 }
 
 .detail_aside,
 .detail_modif {
     align-self: center;
+}
+
+.button_to_detail {
+    width: max-content;
 }

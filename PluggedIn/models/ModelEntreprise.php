@@ -9,7 +9,7 @@ class ModelEntreprise
     }
     
     // FONCTION QUI RÉCUPÈRE TOUS LES ARTICLES ET QUI CRÉE UN OBJET (Article) POUR CHAQUE ARTICLE
-    public function getEntreprise()
+    public function getEntreprises()
     {  
         $entreprises = [];
         
@@ -24,50 +24,37 @@ class ModelEntreprise
     }
     
     // FONCTION QUI RÉCUPÈRE L'ARTICLE PAR RAPPORT À SON ID
-    public function getArticle($id)
+    public function getEntreprise($id)
     {
-        $req = $this->_bdd->prepare('SELECT id, title, content, DATE_FORMAT(date, \'%d/%m/%Y à %Hh%imin%ss\') AS articleDate FROM articles WHERE id = ?');
+        $req = $this->_bdd->prepare('SELECT id_entreprise, nom, secteur_activite, nombre_stagiaire_cesi, confiance_pilote, evaluation_entreprise, image FROM entreprise  WHERE id_entreprise = ?');
         $req->execute(array($id));
         
         if($req->rowCount() == 1)
         {
             $data = $req->fetch(PDO::FETCH_ASSOC);
-            return new Article($data);   
+            return new Entreprise($data);   
         }
         else
-            throw new Exception("Aucun épisode ne correspond à l'identifiant '$id'");
+            throw new Exception("Aucun Entreprise ne correspond à l'identifiant '$id'");
+        $req->closeCursor();
+    }
 
-        $req->closeCursor();
-    }
-    
-    // FONCTION QUI RÉCUPÈRE L'ARTICLE D'APRÈS
-    public function getNextArticle($id)
+    public function getEntrepriseByName($name)
     {
-        $req = $this->_bdd->prepare('SELECT id, title FROM articles WHERE id > ? LIMIT 1');
-        $req->execute(array($id));
+        $req = $this->_bdd->prepare('SELECT id_entreprise, nom, secteur_activite, nombre_stagiaire_cesi, confiance_pilote, evaluation_entreprise, image FROM entreprise  WHERE nom = ?');
+        $req->execute(array($name));
         
         if($req->rowCount() == 1)
         {
             $data = $req->fetch(PDO::FETCH_ASSOC);
-            return new Article($data);   
+            return new Entreprise($data);   
         }
+        else
+            throw new Exception("Aucun Entreprise ne correspond à l'identifiant '$name'");
         $req->closeCursor();
     }
     
-    // FONCTION QUI RÉCUPÈRE L'ARTICLE D'AVANT
-    public function getPreviousArticle($id)
-    {
-        $req = $this->_bdd->prepare('SELECT id, title FROM articles WHERE id < ? ORDER BY id DESC LIMIT 1');
-        $req->execute(array($id));
-        
-        if($req->rowCount() == 1)
-        {
-            $data = $req->fetch(PDO::FETCH_ASSOC);
-            return new Article($data);   
-        }
-        $req->closeCursor();
-    }
-    
+ 
     // FONCTION QUI AJOUTE UN ARTICLE EN BDD
     public function addArticle($art)
     {

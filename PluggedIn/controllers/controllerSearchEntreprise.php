@@ -7,7 +7,7 @@
 
 
 $modelEntreprise = new ModelEntreprise($bdd);
-$entreprises = $modelEntreprise->getEntreprise();
+$entreprises = $modelEntreprise->getEntreprises();
 
 $t = 'Recherche d\'entreprise';
 
