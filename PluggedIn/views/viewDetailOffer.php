@@ -8,10 +8,10 @@
 
         <div class="detail_presentation">
             <img src="<?= $entreprise->image() ?>" alt="image entreprise" width="100px" height="100px">
-            <h2>Nom de l'entreprise: <?= $entreprise->nom() ?></h2>
-            <p>Secteur d'activité : <?= $entreprise->secteur_activite() ?></p>
-            <p>Localité: <?= $offer->localite() ?></p>
-            <p>Nombres d'étudiants CESI déjà acceptés en stage: <?= $entreprise->nombre_stagiaire_cesi() ?></p>
+            <h2>Nom de l'entreprise: </h2> <input type="text" class="info_modif" value="<?= $entreprise->nom() ?>">
+            <p>Secteur d'activité : </p> <input type="text" class="info_modif" value="<?= $entreprise->secteur_activite() ?>">
+            <p>Localité: </p> <input type="text" class="info_modif" value="<?= $offer->localite() ?>">
+            <p>Nombres d'étudiants CESI déjà acceptés en stage: </p> <input type="text" class="info_modif" value="<?= $entreprise->nombre_stagiaire_cesi() ?>">
         </div>
         <div class="bouton_crud">
             <div class="detail_aside">
@@ -36,16 +36,16 @@
 
         <div class="detail_stats">
             <h2>Informations sur l'offre</h2> <br>
-            <p>Durée du stage : <?= $offer->duree_stage() ?></p>
-            <p>Nombres de places offertes : <?= $offer->nombre_place() ?> </p>
-            <p>Base de rémunération : <?= $offer->base_remuneration() ?></p>
-            <p>Date de l'offre : <?php $offer->date() ?> </p>
-            <p>Typesde promotions concernées : <?= $offer->type_promo_concerne() ?></p>
+            <p>Durée du stage : </p> <input type="text" class="info_modif" value="<?= $offer->duree_stage() ?>">
+            <p>Nombres de places offertes : </p> <input type="text" class="info_modif" value="<?= $offer->nombre_place() ?>">
+            <p>Base de rémunération : </p> <input type="text" class="info_modif" value="<?= $offer->base_remuneration() ?>">
+            <p>Date de l'offre :  </p> <input type="text" class="info_modif" value="<?php $offer->date() ?>">
+            <p>Typesde promotions concernées : </p> <input class="info_modif" type="text" value="<?= $offer->type_promo_concerne() ?>">
 
         </div>
         <div class="detail_competence">
             <h2>Compétences requises : </h2>
-            <?= $offer->competences() ?>
+            <input type="text" class="info_modif" value="<?= $offer->competences() ?>">
         </div>
 
     </div>
