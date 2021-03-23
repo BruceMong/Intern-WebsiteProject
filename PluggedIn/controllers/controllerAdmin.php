@@ -1,20 +1,19 @@
 <?php
 session_start();
 // JE VÉRIFIE QUE L'ADMINISTRATEUR EST BIEN AUTHENTIFIÉ
-if(empty($_SESSION['admin']))
-    header('Location:'.URL.'login');
+if (empty($_SESSION['admin']))
+    header('Location:' . URL . 'login');
 
- $modelArticle = new ModelArticle($bdd);
- $modelComment = new ModelComment($bdd);
+$modelArticle = new ModelArticle($bdd);
+$modelComment = new ModelComment($bdd);
 
 // JE VÉRIFIE SI UN ÉPISODE EST SUPPRIMÉ
-if(!empty($_POST['delete']))
-{
-    extract($_POST);    
-    
+if (!empty($_POST['delete'])) {
+    extract($_POST);
+
     $modelArticle->deleteArticle($art);
 
-    $success = 'Votre article à bien été supprimé !';     
+    $success = 'Votre article à bien été supprimé !';
 }
 
 // JE RÉCUPÈRE LA LISTE DE TOUS LES ARTICLES

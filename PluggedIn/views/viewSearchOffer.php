@@ -23,27 +23,27 @@
 
         <?php foreach ($offers as $offer) : ?>
             <form action="detailOffer" method="post">
-            <button type="submit" class="button_to_detail" name="id" value="1" > 
-            <div class="offer" style="height: 200;">
-
-            
-                <img src="https://yt3.ggpht.com/ytc/AAUvwniJcudFBvjhncQ4O0DaTopCR9eFqPV6hoGGZsVl4A=s900-c-k-c0x00ffffff-no-rj" alt="Error" class="img-offer">
-                <p>Nom de l'entreprise<br><?= $offer->entreprise() ?></p>
-                <p>Localité: <br><?= $offer->localite() ?></p>
-                <p>Compétences requises <br><?= $offer->competences() ?></p>
-                <p>Type de promotions concernées <br><?= $offer->type_promo_concerne() ?></p>
-                <p>Durée du stage <br><?= $offer->duree_stage() ?></p>
-                <p>Nombres de places offertes <br><?= $offer->nombre_place() ?></p>
-                <p>Base de rémunération<br><?= $offer->base_remuneration() ?></p>
-                <p>Date de l'offre <br> ?</p>
+                <button type="submit" class="button_to_detail" name="id" value="1">
+                    <div class="offer" style="height: 200;">
 
 
-                
+                        <img src="https://yt3.ggpht.com/ytc/AAUvwniJcudFBvjhncQ4O0DaTopCR9eFqPV6hoGGZsVl4A=s900-c-k-c0x00ffffff-no-rj" alt="Error" class="img-offer">
+                        <p>Nom de l'entreprise<br><?= $offer->entreprise() ?></p>
+                        <p>Localité: <br><?= $offer->localite() ?></p>
+                        <p>Compétences requises <br><?= $offer->competences() ?></p>
+                        <p>Type de promotions concernées <br><?= $offer->type_promo_concerne() ?></p>
+                        <p>Durée du stage <br><?= $offer->duree_stage() ?></p>
+                        <p>Nombres de places offertes <br><?= $offer->nombre_place() ?></p>
+                        <p>Base de rémunération<br><?= $offer->base_remuneration() ?></p>
+                        <p>Date de l'offre <br> ?</p>
 
-               
-            </div>
-            </button>
-        </form>
+
+
+
+
+                    </div>
+                </button>
+            </form>
         <?php endforeach; ?>
 
     </div>

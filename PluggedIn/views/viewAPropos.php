@@ -1,14 +1,13 @@
-
 <?php require_once('views/header.php'); ?>
 <?php require_once('views/nav.php'); ?>
 
 
 
-    <div class = bloc_page>
-    
-        <article>
+<div class=bloc_page>
+
+    <article>
         <h1>Information</h1>
-            <div class = "conception" >
+        <div class="conception">
             <h2> Conception </h2>
             <p>Architecture du site web: MVC (Model, View, Controller)</p>
             <img src="content/images/mvc-schema.png" alt="Banniere Home" />
@@ -17,29 +16,29 @@
                 </br>Un gain de temps de maintenance et d’évolution du site
                 </br>Une plus grande souplesse pour organiser le développement du site entre différents développeurs (indépendance des données, de l’affichage (webdesign) et des actions)
             </p>
-            </div>
+        </div>
 
 
-            
-            <div class="icons-intro">
+
+        <div class="icons-intro">
             <h2> Développeur: </h2>
-                <ul>
-                    <li>
-                        <img src="content/images/hadrien.jpg">
-                        <h3>Hadrien</h3>
-                    </li>
-                    <li>
-                        <img src="content/images/bruce.jpg" >
-                        <h3>Bruce</h3>
-                    </li>
-                    <li>
-                        <img src="content/images/bruce.jpg">
-                        <h3>Erica</h3>
-                    </li>
-                </ul>
-            </div>
-            </article>
-    </div>
+            <ul>
+                <li>
+                    <img src="content/images/hadrien.jpg">
+                    <h3>Hadrien</h3>
+                </li>
+                <li>
+                    <img src="content/images/bruce.jpg">
+                    <h3>Bruce</h3>
+                </li>
+                <li>
+                    <img src="content/images/bruce.jpg">
+                    <h3>Erica</h3>
+                </li>
+            </ul>
+        </div>
+    </article>
+</div>
 
 
 <?php require_once('views/footer.php'); ?>

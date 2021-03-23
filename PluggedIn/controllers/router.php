@@ -1,19 +1,16 @@
 <?php
-try
-{
+try {
     //******************
     //
     // CHOIX DE L'ACTION
     //
     //******************
-    if(isset($_GET['action']))
-    {
-        if(file_exists('controllers/controller' . ucfirst($_GET['action']) . '.php'))
+    if (isset($_GET['action'])) {
+        if (file_exists('controllers/controller' . ucfirst($_GET['action']) . '.php'))
             require_once('controllers/controller' . ucfirst($_GET['action']) . '.php');
         else
             throw new Exception('Page introuvable');
-    }
-    else
+    } else
         require_once('controllers/controllerAccueil.php');
 }
 //********************
@@ -21,8 +18,7 @@ try
 // GÉSTION DES ERREURS
 //
 //********************
-catch(Exception $e)
-{
+catch (Exception $e) {
     $errorMsg = $e->getMessage();
     require_once('views/viewError.php');
 }
