@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 22 mars 2021 à 10:24
--- Version du serveur :  10.4.17-MariaDB
+-- Généré le : lun. 22 mars 2021 à 17:39
+-- Version du serveur :  10.4.18-MariaDB
 -- Version de PHP : 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `pluggedin`
+-- Base de données : `pluggedin_2`
 --
 
 -- --------------------------------------------------------
@@ -55,8 +55,8 @@ CREATE TABLE `droit` (
   `modifier_compte_etudiant` tinyint(1) NOT NULL,
   `supprimer_compte_etudiant` tinyint(1) NOT NULL,
   `consulter_stats_etudiants` tinyint(1) NOT NULL,
-  `ajouter_offre_wish-list` tinyint(1) NOT NULL,
-  `retirer_offre_wish-list` tinyint(1) NOT NULL,
+  `ajouter_offre_wish_list` tinyint(1) NOT NULL,
+  `retirer_offre_wish_list` tinyint(1) NOT NULL,
   `postuler_offre` tinyint(1) NOT NULL,
   `info_sys_avance_candi1` tinyint(1) NOT NULL,
   `info_sys_avance_candi2` tinyint(1) NOT NULL,
@@ -169,21 +169,35 @@ CREATE TABLE `utilisateur` (
   `prenom` varchar(20) NOT NULL,
   `login` varchar(20) NOT NULL,
   `mot_de_passe` varchar(20) NOT NULL,
-  `centre` varchar(20) NOT NULL
+  `centre` varchar(20) NOT NULL,
+  `id_promotion` int(11) NOT NULL,
+  `id_profil` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`id_users`, `nom`, `prenom`, `login`, `mot_de_passe`, `centre`) VALUES
-(5, 'LUCAS', 'Tom', 'Tom.Lucas', 'Tom1006', 'Orleans'),
-(2, 'MONG-THE', 'Bruce', 'Bruce.Mongthe', 'Bruce4005', 'Aix en Provence'),
-(3, 'PINOTEAU', 'Hadrien', 'hadrien.pinoteau', 'Hadri2001', 'Aix en Provence'),
-(6, 'OLLIVIER', 'Alex', 'Alex.Ollivier', 'Alex1005', 'Aix en Provence'),
-(7, 'NAPOLETANO', 'Ronin', 'Ronin.Napoletano', 'Ronin2000', 'Aix en Provence'),
-(8, 'NDONG', 'Erica', 'Erica.Ndong', 'Erica2121', 'Aix en Provence'),
-(9, 'OLLIVIER', 'Alexis', 'Alexis.Ollivier', 'Alexis1213', 'Nice');
+INSERT INTO `utilisateur` (`id_users`, `nom`, `prenom`, `login`, `mot_de_passe`, `centre`, `id_promotion`, `id_profil`) VALUES
+(5, 'LUCAS', 'Tom', 'Tom.Lucas', 'Tom1006', 'Orleans', 0, 0),
+(2, 'MONG-THE', 'Bruce', 'Bruce.Mongthe', 'Bruce4005', 'Aix en Provence', 2, 1),
+(3, 'PINOTEAU', 'Hadrien', 'hadrien.pinoteau', 'Hadri2001', 'Aix en Provence', 2, 1),
+(6, 'OLLIVIER', 'Alex', 'Alex.Ollivier', 'Alex1005', 'Aix en Provence', 0, 0),
+(7, 'NAPOLETANO', 'Ronin', 'Ronin.Napoletano', 'Ronin2000', 'Aix en Provence', 0, 0),
+(8, 'NDONG', 'Erica', 'Erica.Ndong', 'Erica2121', 'Aix en Provence', 0, 0),
+(9, 'OLLIVIER', 'Alexis', 'Alexis.Ollivier', 'Alexis1213', 'Nice', 0, 0),
+(10, 'KHEBBEB', 'Khaled', 'Khebbeb.Khaled', 'Khaled1999', 'Aix ', 2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `wishlist`
+--
+
+CREATE TABLE `wishlist` (
+  `id_offre` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Index pour les tables déchargées
@@ -226,6 +240,12 @@ ALTER TABLE `utilisateur`
   ADD PRIMARY KEY (`id_users`);
 
 --
+-- Index pour la table `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD PRIMARY KEY (`id_offre`,`id_user`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -263,7 +283,7 @@ ALTER TABLE `promotion`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
