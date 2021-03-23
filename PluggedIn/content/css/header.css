@@ -1,0 +1,144 @@
+header {
+    background: #131921;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header_left {
+    display: flex;
+    flex-direction: row;
+}
+
+#logoimg {
+    max-width: 80%;
+    max-height: auto;
+}
+
+.logo {
+    padding-left: 25px;
+    display: inline-block;
+    width: fit-content;
+    overflow: hidden;
+}
+
+.network {
+    padding-left: 0px;
+    padding-top: 2em;
+}
+
+.network img {
+    max-width: 60%;
+    height: auto;
+}
+
+.network ul {
+    margin: 0;
+    bottom: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.network li {
+    list-style: none;
+}
+
+.network li a {
+    display: inline-block;
+    margin-right: 5px;
+    filter: invert(1);
+    transition: 0.5s;
+}
+
+.network li a:hover {
+    transform: translateY(-15px);
+}
+
+
+/* identification (login/register) */
+
+#indentifcation {
+    border: 10px solid red;
+    /* marche pas */
+}
+
+#identification ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    padding-inline-start: 0px;
+    padding-inline-end: 1em;
+}
+
+.header_right {
+    display: flex;
+}
+
+.header_right li
+/*#indentication a est relou */
+
+{
+    padding-right: 0.1em;
+}
+
+.header_right a
+/*#indentication a est relou */
+
+{
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.header_right input[type=button] {
+    background-color: #2e3b49;
+    ;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 3px 7px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.5s;
+}
+
+.header_right input[type=button]:hover
+/* #indentication a:hover morche po */
+
+{
+    background-color: #506072;
+}
+
+.register input[type=button] {
+    background-color: #4CAF50;
+}
+
+.register input[type=button]:hover
+/* #indentication a:hover morche po */
+
+{
+    background-color: #69c46c;
+}
+
+.header_right input[type=button]:active
+/* #indentication a:hover morche po */
+
+{
+    background-color: #30373f;
+    transform: translateY(-5px);
+}
+
+.register input[type=button]:active
+/* #indentication a:hover morche po */
+
+{
+    background-color: #215322;
+}
+
+
+/* Barre de recherche */
