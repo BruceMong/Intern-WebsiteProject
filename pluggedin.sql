@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 23 mars 2021 à 09:30
+-- Généré le : mar. 23 mars 2021 à 22:46
 -- Version du serveur :  10.4.17-MariaDB
--- Version de PHP : 8.0.2
+-- Version de PHP : 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -78,17 +78,18 @@ CREATE TABLE `entreprise` (
   `nombre_stagiaire_cesi` int(11) NOT NULL,
   `confiance_pilote` int(11) NOT NULL,
   `evaluation_entreprise` int(11) NOT NULL,
-  `image` varchar(255) NOT NULL
+  `image` varchar(255) NOT NULL,
+  `localite` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `entreprise`
 --
 
-INSERT INTO `entreprise` (`id_entreprise`, `nom`, `secteur_activite`, `nombre_stagiaire_cesi`, `confiance_pilote`, `evaluation_entreprise`, `image`) VALUES
-(1, 'Saint-Gobin', 'Materiaux', 3, 4, 4, 'https://forcomm.fr/wp-content/uploads/2020/05/communication-unifiee-schema-500x500.jpg'),
-(2, 'Atos', 'Informatique', 1, 5, 4, 'https://forcomm.fr/wp-content/uploads/2020/05/communication-unifiee-schema-500x500.jpg'),
-(3, 'Mediamoov', 'Informatique', 4, 2, 4, 'https://ipfs.koreus.com/ipfs/QmP7sL9Z8i7X1JQqbTevZPfpnXJntKdGrPXceNBDzDhrNv');
+INSERT INTO `entreprise` (`id_entreprise`, `nom`, `secteur_activite`, `nombre_stagiaire_cesi`, `confiance_pilote`, `evaluation_entreprise`, `image`, `localite`) VALUES
+(1, 'Saint-Gobin', 'Materiaux', 3, 4, 4, 'https://forcomm.fr/wp-content/uploads/2020/05/communication-unifiee-schema-500x500.jpg', 'Marseille'),
+(2, 'Atos', 'Informatique', 1, 5, 4, 'https://forcomm.fr/wp-content/uploads/2020/05/communication-unifiee-schema-500x500.jpg', 'Paris'),
+(3, 'Mediamoov', 'Informatique', 4, 2, 4, 'https://ipfs.koreus.com/ipfs/QmP7sL9Z8i7X1JQqbTevZPfpnXJntKdGrPXceNBDzDhrNv', 'Strasbourg');
 
 -- --------------------------------------------------------
 
@@ -99,7 +100,6 @@ INSERT INTO `entreprise` (`id_entreprise`, `nom`, `secteur_activite`, `nombre_st
 CREATE TABLE `offre` (
   `id_offre` int(11) NOT NULL,
   `competences` varchar(20) NOT NULL,
-  `localite` varchar(20) NOT NULL,
   `entreprise` varchar(20) NOT NULL,
   `type_promo_concerne` varchar(20) NOT NULL,
   `duree_stage` int(11) NOT NULL,
@@ -113,8 +113,8 @@ CREATE TABLE `offre` (
 -- Déchargement des données de la table `offre`
 --
 
-INSERT INTO `offre` (`id_offre`, `competences`, `localite`, `entreprise`, `type_promo_concerne`, `duree_stage`, `base_remuneration`, `duree_offre`, `nombre_place`, `date`) VALUES
-(1, 'Developpement web', 'Marseille', 'Mediamoov', 'A3', 6, 600, 2, 3, '2021-10-13');
+INSERT INTO `offre` (`id_offre`, `competences`, `entreprise`, `type_promo_concerne`, `duree_stage`, `base_remuneration`, `duree_offre`, `nombre_place`, `date`) VALUES
+(1, 'Developpement web', 'Mediamoov', 'A3', 6, 600, 2, 3, '2021-10-13');
 
 -- --------------------------------------------------------
 
