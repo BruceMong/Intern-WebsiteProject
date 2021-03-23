@@ -22,6 +22,20 @@ class ModelEntreprise
         $req->closeCursor();
     }
 
+    public function getEntreprisesOrderBy($element)
+    {
+        $entreprises = [];
+
+        $req = $this->_bdd->prepare('SELECT id_entreprise, nom, secteur_activite, nombre_stagiaire_cesi, confiance_pilote, evaluation_entreprise, image FROM entreprise  ORDER BY ? DESC');
+        $req->execute(array($element));
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
+            $entreprises[] = new Entreprise($data);
+        }
+        return $entreprises;
+        $req->closeCursor();
+    }
+
     // FONCTION QUI RÉCUPÈRE L'ARTICLE PAR RAPPORT À SON ID
     public function getEntreprise($id)
     {
@@ -51,18 +65,22 @@ class ModelEntreprise
 
 
     // FONCTION QUI AJOUTE UN ARTICLE EN BDD
-    public function addArticle($art)
+    public function addEntreprise($ent)
     {
-        $req = $this->_bdd->prepare('INSERT INTO articles (title, content, date) VALUES(?, ?, NOW())');
-        $req->execute(array($art->title(), $art->content()));
+
+        ('SELECT id_entreprise, nom, secteur_activite, nombre_stagiaire_cesi, confiance_pilote, evaluation_entreprise, image FROM entreprise  WHERE nom = ?');
+
+
+        $req = $this->_bdd->prepare('INSERT INTO entreprise (nom, secteur_activite, nombre_stagiaire_cesi, confiance_pilote, evaluation_entreprise, image) VALUES(?, ?, ?, ?, ?');
+        $req->execute(array($ent->nom(), $ent->secteur_activite(), $ent->nombre_stagiaire_cesi(), $ent->confiance_pilote(), $ent->evaluation_entreprise(), $ent->image()));
         $req->closeCursor();
     }
 
     // FONCTION QUI MET À JOUR L'ARTICLE
-    public function updateArticle(Article $article)
+    public function updateEntreprise(Entreprise $entreprise)
     {
-        $req = $this->_bdd->prepare('UPDATE articles SET title = ?, content = ? WHERE id = ?');
-        $req->execute(array($article->title(), $article->content(), $article->id()));
+        $req = $this->_bdd->prepare('UPDATE entreprise SET nom = ?, secteur_activite = ?, nombre_stagiaire_cesi = ?, confiance_pilote = ?, evaluation_entreprise = ?, image = ? WHERE id_entreprise = ?');
+        $req->execute(array($entreprise->nom(), $entreprise->secteur_activite(), $entreprise->nombre_stagiaire_cesi(), $entreprise->confiance_pilote(), $entreprise->evaluation_entreprise(), $entreprise->image(), $entreprise->id_entreprise()));
         $req->closeCursor();
     }
 

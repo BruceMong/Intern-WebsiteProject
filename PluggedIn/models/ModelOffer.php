@@ -37,52 +37,26 @@ class ModelOffer
         $req->closeCursor();
     }
 
-    // FONCTION QUI RÉCUPÈRE L'ARTICLE D'APRÈS
-    public function getNextArticle($id)
+    // FONCTION QUI AJOUTE UNE OFFRE EN BDD
+    public function addArticle($off)
     {
-        $req = $this->_bdd->prepare('SELECT id, title FROM articles WHERE id > ? LIMIT 1');
-        $req->execute(array($id));
-
-        if ($req->rowCount() == 1) {
-            $data = $req->fetch(PDO::FETCH_ASSOC);
-            return new Article($data);
-        }
+        $req = $this->_bdd->prepare('INSERT INTO offre (competences, localite, entreprise, type_promo_concerne, duree_stage, base_remuneration, duree_offre, nombre_place, date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?');
+        $req->execute(array($off->competences(), $off->localite(), $off->entreprise(), $off->type_promo_concerne(), $off->duree_stage(), $off->base_renumeration(), $off->duree_offre(), $off->nombre_place(), $off->date()));
         $req->closeCursor();
     }
 
-    // FONCTION QUI RÉCUPÈRE L'ARTICLE D'AVANT
-    public function getPreviousArticle($id)
+    // FONCTION QUI MET À JOUR L'OFFRE
+    public function updateArticle(Offer $off)
     {
-        $req = $this->_bdd->prepare('SELECT id, title FROM articles WHERE id < ? ORDER BY id DESC LIMIT 1');
-        $req->execute(array($id));
-
-        if ($req->rowCount() == 1) {
-            $data = $req->fetch(PDO::FETCH_ASSOC);
-            return new Article($data);
-        }
+        $req = $this->_bdd->prepare('UPDATE offre SET competences = ?, localite = ?, entreprise= ?, type_promo_concerne = ?, duree_stage = ? , base_remuneration = ?, duree_offre = ?, nombre_place = ?, date = ? WHERE id_offre = ?');
+        $req->execute(array($off->competences(), $off->localite(), $off->entreprise(), $off->type_promo_concerne(), $off->duree_stage(), $off->base_remuneration(), $off->duree_offre(), $off->nombre_place(), $off->date(), $off->id_offre()));
         $req->closeCursor();
     }
 
-    // FONCTION QUI AJOUTE UN ARTICLE EN BDD
-    public function addArticle($art)
-    {
-        $req = $this->_bdd->prepare('INSERT INTO articles (title, content, date) VALUES(?, ?, NOW())');
-        $req->execute(array($art->title(), $art->content()));
-        $req->closeCursor();
-    }
-
-    // FONCTION QUI MET À JOUR L'ARTICLE
-    public function updateArticle(Article $article)
-    {
-        $req = $this->_bdd->prepare('UPDATE articles SET title = ?, content = ? WHERE id = ?');
-        $req->execute(array($article->title(), $article->content(), $article->id()));
-        $req->closeCursor();
-    }
-
-    // FONCTION QUI SUPPRIME UN ARTICLE
+    // FONCTION QUI SUPPRIME UNE OFFRE
     public function deleteArticle($art)
     {
-        $req = $this->_bdd->prepare('DELETE FROM articles WHERE id = ?');
+        $req = $this->_bdd->prepare('DELETE FROM offre WHERE id_offre = ?');
         $req->execute(array($art));
         $req->closeCursor();
     }
