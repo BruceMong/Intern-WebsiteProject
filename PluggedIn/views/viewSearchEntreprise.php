@@ -24,11 +24,11 @@
 
         <?php foreach ($entreprises as $entreprise) : ?>
             <div class="offer" style="height: 200;">
-                <img src="https://yt3.ggpht.com/ytc/AAUvwniJcudFBvjhncQ4O0DaTopCR9eFqPV6hoGGZsVl4A=s900-c-k-c0x00ffffff-no-rj" alt="Error" class="img-offer">
                 <p>Nom:<br><?= $entreprise->nom() ?></p>
                 <p>Secteur d'activite: <br><?= $entreprise->secteur_activite() ?></p>
                 <p>Nombre stagiaire Cesi: <br><?= $entreprise->nombre_stagiaire_cesi() ?></p>
                 <p>Confiance Pilote: <br><?= $entreprise->confiance_pilote() ?></p>
+                <p>Localité: <br><?= $entreprise->localite() ?></p>
                 <p>Evaluation Entreprise: <br><?= $entreprise->evaluation_entreprise() ?></p>
                 <img src="<?= $entreprise->image() ?>" width="100px" height="100px">
                 <a href="index"><span class="linkContent"> </span> </a>

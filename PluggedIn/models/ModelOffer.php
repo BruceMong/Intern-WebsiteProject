@@ -13,7 +13,7 @@ class ModelOffer
     {
         $offres = [];
         //DATE_FORMAT(date, \'%d/%m/%Y à %Hh%imin%ss\')
-        $req = $this->_bdd->query('SELECT id_offre, competences, localite, entreprise, type_promo_concerne, duree_stage, base_remuneration, duree_offre, nombre_place, date FROM offre ORDER BY id_offre DESC');
+        $req = $this->_bdd->query('SELECT id_offre, competences,  entreprise, type_promo_concerne, duree_stage, base_remuneration, duree_offre, nombre_place, date FROM offre ORDER BY id_offre DESC');
         $req->execute();
         while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
             $offres[] = new Offer($data);
@@ -25,7 +25,7 @@ class ModelOffer
     // FONCTION QUI RÉCUPÈRE L'ARTICLE PAR RAPPORT À SON ID
     public function getOffer($id)
     {
-        $req = $this->_bdd->prepare('SELECT id_offre, competences, localite, entreprise, type_promo_concerne, duree_stage, base_remuneration, duree_offre, nombre_place, date FROM offre WHERE id_offre = ?');
+        $req = $this->_bdd->prepare('SELECT id_offre, competences, entreprise, type_promo_concerne, duree_stage, base_remuneration, duree_offre, nombre_place, date FROM offre WHERE id_offre = ?');
         $req->execute(array($id));
 
         if ($req->rowCount() == 1) {
@@ -40,16 +40,16 @@ class ModelOffer
     // FONCTION QUI AJOUTE UNE OFFRE EN BDD
     public function addArticle($off)
     {
-        $req = $this->_bdd->prepare('INSERT INTO offre (competences, localite, entreprise, type_promo_concerne, duree_stage, base_remuneration, duree_offre, nombre_place, date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?');
-        $req->execute(array($off->competences(), $off->localite(), $off->entreprise(), $off->type_promo_concerne(), $off->duree_stage(), $off->base_renumeration(), $off->duree_offre(), $off->nombre_place(), $off->date()));
+        $req = $this->_bdd->prepare('INSERT INTO offre (competences,  entreprise, type_promo_concerne, duree_stage, base_remuneration, duree_offre, nombre_place, date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?');
+        $req->execute(array($off->competences(), $off->entreprise(), $off->type_promo_concerne(), $off->duree_stage(), $off->base_renumeration(), $off->duree_offre(), $off->nombre_place(), $off->date()));
         $req->closeCursor();
     }
 
     // FONCTION QUI MET À JOUR L'OFFRE
     public function updateArticle(Offer $off)
     {
-        $req = $this->_bdd->prepare('UPDATE offre SET competences = ?, localite = ?, entreprise= ?, type_promo_concerne = ?, duree_stage = ? , base_remuneration = ?, duree_offre = ?, nombre_place = ?, date = ? WHERE id_offre = ?');
-        $req->execute(array($off->competences(), $off->localite(), $off->entreprise(), $off->type_promo_concerne(), $off->duree_stage(), $off->base_remuneration(), $off->duree_offre(), $off->nombre_place(), $off->date(), $off->id_offre()));
+        $req = $this->_bdd->prepare('UPDATE offre SET competences = ?, entreprise= ?, type_promo_concerne = ?, duree_stage = ? , base_remuneration = ?, duree_offre = ?, nombre_place = ?, date = ? WHERE id_offre = ?');
+        $req->execute(array($off->competences(), $off->entreprise(), $off->type_promo_concerne(), $off->duree_stage(), $off->base_remuneration(), $off->duree_offre(), $off->nombre_place(), $off->date(), $off->id_offre()));
         $req->closeCursor();
     }
 

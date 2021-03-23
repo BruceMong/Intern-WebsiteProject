@@ -10,7 +10,6 @@
             <img src="<?= $entreprise->image() ?>" alt="image entreprise" width="100px" height="100px">
             <h2>Nom de l'entreprise: </h2> <input type="text" class="info_modif" value="<?= $entreprise->nom() ?>">
             <p>Secteur d'activité : </p> <input type="text" class="info_modif" value="<?= $entreprise->secteur_activite() ?>">
-            <p>Localité: </p> <input type="text" class="info_modif" value="<?= $offer->localite() ?>">
             <p>Nombres d'étudiants CESI déjà acceptés en stage: </p> <input type="text" class="info_modif" value="<?= $entreprise->nombre_stagiaire_cesi() ?>">
         </div>
         <div class="bouton_crud">
@@ -39,7 +38,7 @@
             <p>Durée du stage : </p> <input type="text" class="info_modif" value="<?= $offer->duree_stage() ?>">
             <p>Nombres de places offertes : </p> <input type="text" class="info_modif" value="<?= $offer->nombre_place() ?>">
             <p>Base de rémunération : </p> <input type="text" class="info_modif" value="<?= $offer->base_remuneration() ?>">
-            <p>Date de l'offre :  </p> <input type="text" class="info_modif" value="<?php $offer->date() ?>">
+            <p>Date de l'offre : </p> <input type="text" class="info_modif" value="<?php $offer->date() ?>">
             <p>Typesde promotions concernées : </p> <input class="info_modif" type="text" value="<?= $offer->type_promo_concerne() ?>">
 
         </div>

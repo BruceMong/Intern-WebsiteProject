@@ -9,7 +9,6 @@ class Offer
 {
     private $_id_offre;
     private $_competences;
-    private $_localite;
     private $_entreprise;
     private $_type_promo_concerne;
     private $_duree_stage;
@@ -44,10 +43,7 @@ class Offer
     {
         return $this->_competences;
     }
-    public function localite()
-    {
-        return $this->_localite;
-    }
+
 
     public function entreprise()
     {
@@ -95,11 +91,7 @@ class Offer
         if (is_string($competences))
             $this->_competences = $competences;
     }
-    public function setLocalite($localite)
-    {
-        if (is_string($localite))
-            $this->_localite = $localite;
-    }
+
 
     public function setEntreprise($entreprise)
     {

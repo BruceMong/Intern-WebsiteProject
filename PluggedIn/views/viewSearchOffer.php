@@ -29,7 +29,6 @@
 
                         <img src="https://yt3.ggpht.com/ytc/AAUvwniJcudFBvjhncQ4O0DaTopCR9eFqPV6hoGGZsVl4A=s900-c-k-c0x00ffffff-no-rj" alt="Error" class="img-offer">
                         <p>Nom de l'entreprise<br><?= $offer->entreprise() ?></p>
-                        <p>Localité: <br><?= $offer->localite() ?></p>
                         <p>Compétences requises <br><?= $offer->competences() ?></p>
                         <p>Type de promotions concernées <br><?= $offer->type_promo_concerne() ?></p>
                         <p>Durée du stage <br><?= $offer->duree_stage() ?></p>

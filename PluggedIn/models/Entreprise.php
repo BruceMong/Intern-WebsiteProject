@@ -8,6 +8,7 @@ class Entreprise
     private $_confiance_pilote;
     private $_evaluation_entreprise;
     private $_image;
+    private $_localite;
 
     // CONSTRUCTEUR
     public function __construct(array $data)
@@ -44,7 +45,10 @@ class Entreprise
     {
         return $this->_nombre_stagiaire_cesi;
     }
-
+    public function localite()
+    {
+        return $this->_localite;
+    }
     public function confiance_pilote()
     {
         return $this->_confiance_pilote;
@@ -104,5 +108,11 @@ class Entreprise
     {
         if (is_string($image))
             $this->_image = $image;
+    }
+
+    public function setLocalite($localite)
+    {
+        if (is_string($localite))
+            $this->_localite = $localite;
     }
 }
