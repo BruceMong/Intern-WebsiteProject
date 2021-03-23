@@ -21,7 +21,7 @@
         <?php //Pagination https://raw.githubusercontent.com/simonjsuh/pagination-in-php/master/index.php
 
         $results_per_page = 10; //Nombre de résultats par page
-        $number_results = mysqli_num_rows($offer); //déterminer le nombre d'offres
+        $number_results = $offer->fetchColumn(); //mysqli_num_rows($offer); //déterminer le nombre d'offres
         $number_pages = ceil($number_results / $number_pages); //Déterminer le nombres de pages qu'il va y avoir(arrondi sup)
         if (!isset($_GET['page'])) { //Déterminer la page actuelle
             $page = 1;
@@ -36,9 +36,7 @@
             echo '<form action="detailOffer" method="post">
             <button type="submit" class="button_to_detail" name="id" value="1">
                 <div class="offer" style="height: 200;">
-
-
-                    <img src="https://yt3.ggpht.com/ytc/AAUvwniJcudFBvjhncQ4O0DaTopCR9eFqPV6hoGGZsVl4A=s900-c-k-c0x00ffffff-no-rj" alt="Error" class="img-offer">' .
+                <img src="https://yt3.ggpht.com/ytc/AAUvwniJcudFBvjhncQ4O0DaTopCR9eFqPV6hoGGZsVl4A=s900-c-k-c0x00ffffff-no-rj" alt="Error" class="img-offer">' .
                 "<p>Nom de l'entreprise<br><?= $offer->entreprise() ?></p>
                     <p>Localité: <br><?= $offer->localite() ?></p>
                     <p>Compétences requises <br><?= $offer->competences() ?></p>
@@ -47,11 +45,6 @@
                     <p>Nombres de places offertes <br><?= $offer->nombre_place() ?></p>
                     <p>Base de rémunération<br><?= $offer->base_remuneration() ?></p>
                     <p>Date de l'offre <br> ?</p>
-
-
-
-
-
                 </div>
             </button>
         </form>";
