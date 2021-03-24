@@ -3,17 +3,6 @@
 
 <a href="disconnect" class="btn btn-danger disconnect"><span class="glyphicon glyphicon-remove-sign"></span> Déconnexion</a>
 
-<<<<<<< HEAD
-=======
-    <a href="disconnect" class="btn btn-danger disconnect"><span class="glyphicon glyphicon-remove-sign"></span> Déconnexion</a>
-<<<<<<< HEAD
-    <?php //if (checkAdmin()) 
-    ?>
-=======
-    
->>>>>>> ea782442ca48cbdadf0578b78d1fcc95000e8d41
->>>>>>> e8d8cad0654820213aaaece3da86c077950234a0
-
 <div class="profil-container">
 
     <div class="detail_profil">
