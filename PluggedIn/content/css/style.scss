@@ -546,12 +546,38 @@ input#search-bar {
 }
 
 //Profil
+.profil-container h1 {
+    text-align: center;
+}
+
+.image_profil {
+    background-color: #2e3b49;
+    border-radius: 5px;
+    height: 130px;
+}
+
 .image_profil img {
     float: left;
     height: auto;
     width: auto;
-    max-width: 300px;
-    max-height: 300px;
+    margin: 15px;
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50px;
+}
+
+.image_profil h2 {
+    text-align: center;
+    padding: 52.5px;
+}
+
+.detail_profil {
+    padding: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.detail_profil p {
+    margin: 20px;
 }
 
 .profil-container {
@@ -565,7 +591,12 @@ input#search-bar {
     background-color: #56687e;
 }
 
+.permission_profil {
+    margin: 30px;
+}
+
 .permission_profil table {
+    float: right;
     font-family: Arial, sans-serif;
     background-color: white;
     border-radius: 5px;

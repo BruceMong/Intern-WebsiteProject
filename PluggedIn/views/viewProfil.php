@@ -9,9 +9,8 @@
         <h1><span>Profil</span></h1>
         <div class="image_profil">
         <img src="https://avatars.githubusercontent.com/u/58480180?s=460&u=26466fe2b0d08716e7ccba2e757b50a1e10165bc&v=4" alt="error">
-        </div>
-        <h2>Nom : </h2>
-        <h2>Prénom : </h2>
+        <h2>Nom : Prénom :</h2>
+        </div> 
         <p>Login : </p>
         <p>Promo : </p>
         <p>Centre : </p>
