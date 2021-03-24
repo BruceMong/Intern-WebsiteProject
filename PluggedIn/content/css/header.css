@@ -85,6 +85,13 @@ header {
     padding-right: 0.1em;
 }
 
+.nav_compte img {
+    height: 50px;
+    width: 50px;
+    max-width: 50px;
+    max-height: 50px;
+}
+
 .header_right a
 /*#indentication a est relou */
 
@@ -92,6 +99,7 @@ header {
     color: white;
     text-decoration: none;
     transition: 0.5s;
+    padding: 10px;
 }
 
 .header_right input[type=button] {
