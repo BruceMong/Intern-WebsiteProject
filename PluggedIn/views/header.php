@@ -66,7 +66,7 @@ session_start();
                         echo '</li>';
 
                         echo '<li>';
-                        echo '<a class="nav_compte" href="login">';
+                        echo '<a class="nav_compte" href="profil">';
                         echo '<img src="content/images/account-icon.png">';
                         echo '<p>Voir Compte</p>';
                         echo '</a>';
