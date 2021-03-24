@@ -10,13 +10,12 @@
             <img src="" alt="image entreprise" width="100px" height="100px">
             <h2>Nom de l'entreprise: </h2>
             <select name="choix entreprise" id="select_entreprise">
-                <option value="">--Please choose an option--</option>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="hamster">Hamster</option>
-                <option value="parrot">Parrot</option>
-                <option value="spider">Spider</option>
-                <option value="goldfish">Goldfish</option>
+                <?php/*
+                $sql = mysqli_query($connection, "SELECT username FROM users");
+                while ($row = $sql->fetch_assoc()) {
+                    echo "<option value=\"owner1\">" . $row['username'] . "</option>";
+                }*/
+                ?>
             </select>
         </div>
         <div class="bouton_crud">
