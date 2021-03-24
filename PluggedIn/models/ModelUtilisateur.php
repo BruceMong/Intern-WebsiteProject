@@ -21,6 +21,15 @@ class ModelUtilisateur
         $req->closeCursor();
     }
 
+    public function countUtilisateur()
+    {
+        $req = $this->_bdd->prepare('SELECT * FROM utilisateur ORDER BY id_users DESC;');
+        $req->execute();
+        $result = $req->fetch();
+        return (int)$result;
+        $req->closeCursor();
+    }
+
     // FONCTION QUI RÉCUPÈRE LES INFOS SUR L'UTILISATEUR
     public function getUtilisateur($login)
     {
