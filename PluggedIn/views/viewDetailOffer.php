@@ -25,8 +25,14 @@
             <div class="detail_modif">
 
                 <form action="" method="post">
-                    <input type="button" value="Modifier">
+                    <input type="button" onclick="Functionmodify()" value="Modifier">
                 </form>
+                <script>
+                    function Functionmodify(){
+                        document.querySelectorAll(".info_modif").disabled = true;
+                    }
+                </script>
+
                 <form action="" method="post">
                     <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
                     <div class="popup" id="popup">
