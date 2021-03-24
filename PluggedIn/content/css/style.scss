@@ -546,6 +546,14 @@ input#search-bar {
 }
 
 //Profil
+.image_profil {
+    float: left;
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
+
 .profil-container {
     display: grid;
     position: relative;
@@ -561,6 +569,7 @@ input#search-bar {
     font-family: Arial, sans-serif;
     background-color: white;
     border-radius: 5px;
+    width: fit-content;
 }
 
 .permission_profil th,
