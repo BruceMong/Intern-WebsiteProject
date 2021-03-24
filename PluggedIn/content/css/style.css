@@ -639,6 +639,14 @@ input#search-bar {
   z-index: -1;
 }
 
+.image_profil img {
+  float: left;
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 300px;
+}
+
 .profil-container {
   display: -ms-grid;
   display: grid;
@@ -656,6 +664,9 @@ input#search-bar {
   font-family: Arial, sans-serif;
   background-color: white;
   border-radius: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .permission_profil th,
