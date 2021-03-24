@@ -19,6 +19,7 @@
 
     <div class="offer-container">
 
+        <p>Nombre <?= $nb_offers ?></p>
 
         <?php foreach ($offers as $offer) : ?>
             <form action="detailOffer" method="post">

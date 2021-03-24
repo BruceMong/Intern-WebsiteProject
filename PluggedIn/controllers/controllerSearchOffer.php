@@ -10,4 +10,11 @@ $t = 'Recherche d\'offre';
 $modelOffer = new ModelOffer($bdd);
 $offers = $modelOffer->getOffers();
 
+
+$nbArticle = $modelOffer->CountOffers();
+$parArticle = 10;
+$pages = ceil($nbArticle / $parPage);
+
+$premier = ($currentPage * $parPage) - $parPage;
+
 require_once('views/viewSearchOffer.php');
