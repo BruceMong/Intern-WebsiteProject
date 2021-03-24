@@ -7,7 +7,15 @@
 
 $t = 'Profil';
 
-//$modelOffer = new ModelOffer($bdd);
-//$offers = $modelOffer->getOffers();
+
+$modelUtilisateur = new ModelUtilisateur($bdd);
+$utilisateur = $modelUtilisateur->getUtilisateur(2);
+
+$modelProfil = new ModelProfil($bdd);
+$profil = $modelProfil->getProfil($utilisateur->id_profil());
+
+
+//$modelPromotion = new ModelPromotion($bdd);
+//$promotion = $modelPromotion->getPromotion(1);
 
 require_once('views/viewProfil.php');

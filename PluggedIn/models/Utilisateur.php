@@ -111,11 +111,11 @@ class Utilisateur
             $this->_id_promotion = $id_promotion;
     }
 
-    public function setId_profil($id_promotion)
+    public function setId_profil($id_profil)
     {
-        $id_promotion = (int) $id_promotion;
+        $id_profil = (int) $id_profil;
 
-        if ($id_promotion > 0)
-            $this->_id_promotion = $id_promotion;
+        if ($id_profil > 0)
+            $this->_id_profil = $id_profil;
     }
 }
