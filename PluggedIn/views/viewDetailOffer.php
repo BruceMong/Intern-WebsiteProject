@@ -28,7 +28,28 @@
                     <input type="button" value="Modifier">
                 </form>
                 <form action="" method="post">
-                    <input type="button" value="Supprimer">
+                    <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
+                    <div class="popup" id="popup">
+                        <h3>Vous êtes sûr de modifier?</h3>
+                        <center>
+                            <a href="#" onclick="hide('popup')">Annuler</a>
+                            <a href="#" onclick="hide('popup')">Confirmer</a>
+                        </center>
+                    </div>
+
+                    <script>
+                        $ = function(id) {
+                            return document.getElementById(id);
+                        }
+
+                        var show = function(id) {
+                            $(id).style.display = 'block';
+                        }
+                        var hide = function(id) {
+                            $(id).style.display = 'none';
+                        }
+                    </script>
+
                 </form>
             </div>
         </div>

@@ -418,6 +418,8 @@ input#search-bar {
     grid-template-areas: "pres pres aside" "pres pres modif" "stats stats stats" "comp comp comp";
     padding: 50px;
     background-color: #56687e;
+    border-radius: 10px;
+    width: 100%;
     gap: 20px;
 }
 
@@ -431,7 +433,7 @@ input#search-bar {
     padding: 5%;
 }
 
-.detail_aside {
+.bouton_crud {
     grid-area: aside;
 }
 
@@ -482,4 +484,85 @@ input#search-bar {
 
 .button_to_detail {
     width: max-content;
+}
+
+//popup boutton supp
+.popup {
+    display: none;
+    position: fixed;
+    padding: 10px;
+    width: 280px;
+    left: 50%;
+    margin-left: -150px;
+    height: 180px;
+    top: 50%;
+    margin-top: -100px;
+    background: #FFF;
+    border: 4px solid red;
+    z-index: 20;
+}
+
+.popup h3 {
+    text-align: center;
+}
+
+.popup a {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.popup a:hover {
+    color: rgb(253, 8, 8);
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.popup center {
+    margin: 10%;
+    padding: 10%;
+}
+
+#popup:after {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -2;
+}
+
+#popup:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #FFF;
+    z-index: -1;
+}
+
+//Profil
+.profil-container {
+    display: grid;
+    position: relative;
+    grid-template-columns: 50% 50%;
+    outline: 2.5px solid black;
+    margin: 20px;
+    padding: 0px;
+    background-color: aqua;
+}
+
+.permission_profil table {
+    font-family: Arial, sans-serif;
+}
+
+.permission_profil th,
+td {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
 }
