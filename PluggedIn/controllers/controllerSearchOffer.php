@@ -19,7 +19,7 @@ if (isset($_POST['page']) && !empty($_POST['page'])) {
 }
 
 
-$nbArticle = $modelOffer->CountOffers();
+$nbArticle = (int)$modelOffer->CountOffers();
 $parPage = 10;
 $pages = ceil($nbArticle / $parPage);
 

@@ -10,16 +10,18 @@
             <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
         </form>
 
-        <a class="login" href="createOffer">
-            <input type="button" value="Creer une Offre">
+        <a class="login" href="createUtilisateur">
+            <input type="button" value="Creer un utilisateur">
         </a>
 
     </header>
 
+    <p>debug  : <?php echo var_dump($nbArticle); echo $nbArticle;  ; echo var_dump($pages); echo $pages; echo $parPage; echo var_dump($parPage); ?> </p> 
+
 
     <div class="offer-container">
 
-
+   
         <?php foreach ($utilisateurs as $utilisateur) : ?>
             <form action="detailUtilisateur" method="post">
                 <button type="submit" class="button_to_detail" name="id" value="1">
@@ -28,9 +30,12 @@
                         <p>Nom : <?= $utilisateur->nom() ?> </p>
                         <p>Prénom : <?= $utilisateur->prenom() ?></p>
                         <p>Login : <?= $utilisateur->login() ?> </p>
-                        <p>Promo : <?=  $promotion->getPromotion($utilisateur->id_users())->libelle()    ?>  </p>
+                        <p>Promo : <?php $promoUtil = $modelPromotion->getPromotion($utilisateur->id_promotion()); echo $promoUtil->libelle();   ?>  </p>
                         <p>Centre : <?= $utilisateur->centre() ?> </p> 
-                        <p>Role :   <?= $profil->libelle() ?> </p>
+
+                        <p>Role :   <?php $profilUtil = $modelProfil->getProfil($utilisateur->id_profil()); echo $profilUtil->libelle()  ?> </p>
+
+                        
 
                     </div>
                 </button>
@@ -46,8 +51,9 @@
             </li>
             <?php for ($page = 1; $page <= $pages; $page++) : ?>
                 <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
+                <p>page : <?= $pages ?> </p>
                 <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
-                    <button type="submit" class="page-link" name="page" value="<?= $page ?>"> <?= $page ?> </button>
+                <button type="submit" class="page-link" name="page" value="<?= $page ?>"> <?= $page ?> </button>
                 </li>
             <?php endfor ?>
             <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
