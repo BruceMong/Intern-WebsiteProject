@@ -10,7 +10,7 @@
             <img src="" alt="image entreprise" width="100px" height="100px">
             <h2>Nom de l'entreprise: </h2>
             <select name="choix entreprise" id="select_entreprise">
-                <?php/*
+                <?php /*
                 $sql = mysqli_query($connection, "SELECT username FROM users");
                 while ($row = $sql->fetch_assoc()) {
                     echo "<option value=\"owner1\">" . $row['username'] . "</option>";

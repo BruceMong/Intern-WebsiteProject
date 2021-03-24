@@ -17,6 +17,22 @@ class ModelOffer
         $req->closeCursor();
     }
 
+    public function getOffersPagination($premier, $parPage)
+    {
+        $offres = [];
+
+        $req = $this->_bdd->prepare('SELECT * FROM offre ORDER BY id_offre DESC LIMIT :premier, :parpage');
+        $req->execute(array($premier, $parPage));
+
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
+            $offres[] = new Offer($data);
+        }
+        return $offres;
+        $req->closeCursor();
+    }
+
+
     // FONCTION QUI RÉCUPÈRE TOUS LES ARTICLES ET QUI CRÉE UN OBJET (Article) POUR CHAQUE ARTICLE
     public function getOffers()
     {

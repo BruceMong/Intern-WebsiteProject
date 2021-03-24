@@ -11,8 +11,16 @@ $modelOffer = new ModelOffer($bdd);
 $offers = $modelOffer->getOffers();
 
 
+// On détermine sur quelle page on se trouve
+if (isset($_POST['page']) && !empty($_POST['page'])) {
+    $currentPage = (int) strip_tags($_POST['page']);
+} else {
+    $currentPage = 1;
+}
+
+
 $nbArticle = $modelOffer->CountOffers();
-$parArticle = 10;
+$parPage = 10;
 $pages = ceil($nbArticle / $parPage);
 
 $premier = ($currentPage * $parPage) - $parPage;
