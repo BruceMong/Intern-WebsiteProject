@@ -6,7 +6,7 @@
 
 
 
-    <div class="detail_presentation">
+        <div class="detail_presentation">
             <img src="<?= $entreprise->image() ?>" alt="image entreprise" width="100px" height="100px">
             <h2>Nom de l'entreprise: </h2> <input type="text" class="info_modif" value="<?= $entreprise->nom() ?>">
             <p>Secteur d'activité : </p> <input type="text" class="info_modif" value="<?= $entreprise->secteur_activite() ?>">
@@ -32,13 +32,8 @@
                     <div class="popup" id="popup">
                         <h3>Vous êtes sûr de modifier?</h3>
                         <center>
-<<<<<<< HEAD
                             <a href="#" onclick="hide('popup')">Annuler</a>
                             <a href="#" onclick="hide('popup')">Confirmer</a>
-=======
-                        <a href="#" onclick="hide('popup')">Annuler</a>
-                        <a href="#" onclick="hide('popup')">Confirmer</a>
->>>>>>> ea782442ca48cbdadf0578b78d1fcc95000e8d41
                         </center>
                     </div>
 
