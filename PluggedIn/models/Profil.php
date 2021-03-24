@@ -46,6 +46,6 @@ class Profil
     public function setLibelle($libelle)
     {
         if (is_string($libelle))
-            $this->_libeller = $libelle;
+            $this->_libelle = $libelle;
     }
 }

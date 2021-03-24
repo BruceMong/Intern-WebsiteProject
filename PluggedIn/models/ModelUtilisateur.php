@@ -24,7 +24,7 @@ class ModelUtilisateur
     // FONCTION QUI RÉCUPÈRE LES INFOS SUR L'UTILISATEUR
     public function getUtilisateur($login)
     {
-        $req = $this->_bdd->prepare('SELECT id_users, login, mot_de_passe, nom, prenom, centre, id_promotion FROM utilisateur WHERE login= ?');
+        $req = $this->_bdd->prepare('SELECT * FROM utilisateur WHERE login= ?');
         $req->execute(array($login));
         if ($req->rowCount() == 1) {
             $data = $req->fetch(PDO::FETCH_ASSOC);
