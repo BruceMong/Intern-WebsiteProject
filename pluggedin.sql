@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 23 mars 2021 à 22:46
+-- Généré le : mer. 24 mars 2021 à 16:32
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 7.3.27
 
@@ -171,21 +171,23 @@ CREATE TABLE `utilisateur` (
   `prenom` varchar(20) NOT NULL,
   `login` varchar(20) NOT NULL,
   `mot_de_passe` varchar(20) NOT NULL,
-  `centre` varchar(20) NOT NULL
+  `centre` varchar(20) NOT NULL,
+  `id_promotion` int(11) NOT NULL,
+  `id_profil` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`id_users`, `nom`, `prenom`, `login`, `mot_de_passe`, `centre`) VALUES
-(5, 'LUCAS', 'Tom', 'Tom.Lucas', 'Tom1006', 'Orleans'),
-(2, 'MONG-THE', 'Bruce', 'Bruce.Mongthe', 'Bruce4005', 'Aix en Provence'),
-(3, 'PINOTEAU', 'Hadrien', 'hadrien.pinoteau', 'Hadri2001', 'Aix en Provence'),
-(6, 'OLLIVIER', 'Alex', 'Alex.Ollivier', 'Alex1005', 'Aix en Provence'),
-(7, 'NAPOLETANO', 'Ronin', 'Ronin.Napoletano', 'Ronin2000', 'Aix en Provence'),
-(8, 'NDONG', 'Erica', 'Erica.Ndong', 'Erica2121', 'Aix en Provence'),
-(9, 'OLLIVIER', 'Alexis', 'Alexis.Ollivier', 'Alexis1213', 'Nice');
+INSERT INTO `utilisateur` (`id_users`, `nom`, `prenom`, `login`, `mot_de_passe`, `centre`, `id_promotion`, `id_profil`) VALUES
+(5, 'LUCAS', 'Tom', 'Tom.Lucas', 'Tom1006', 'Orleans', 1, 1),
+(2, 'MONG-THE', 'Bruce', 'Bruce.Mongthe', 'Bruce4005', 'Aix en Provence', 1, 1),
+(3, 'PINOTEAU', 'Hadrien', 'hadrien.pinoteau', 'Hadri2001', 'Aix en Provence', 1, 1),
+(6, 'OLLIVIER', 'Alex', 'Alex.Ollivier', 'Alex1005', 'Aix en Provence', 1, 1),
+(7, 'NAPOLETANO', 'Ronin', 'Ronin.Napoletano', 'Ronin2000', 'Aix en Provence', 1, 1),
+(8, 'NDONG', 'Erica', 'Erica.Ndong', 'Erica2121', 'Aix en Provence', 1, 1),
+(9, 'OLLIVIER', 'Alexis', 'Alexis.Ollivier', 'Alexis1213', 'Nice', 1, 1);
 
 --
 -- Index pour les tables déchargées

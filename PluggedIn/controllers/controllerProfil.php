@@ -11,8 +11,8 @@ $t = 'Profil';
 $modelUtilisateur = new ModelUtilisateur($bdd);
 $utilisateur = $modelUtilisateur->getUtilisateur(2);
 
-$modelProfil = new ModelProfil($bdd);
-$profil = $modelProfil->getProfil($utilisateur->id_profil());
+//$modelProfil = new ModelProfil($bdd);
+//$profil = $modelProfil->getProfil($utilisateur->id_profil());
 
 
 //$modelPromotion = new ModelPromotion($bdd);
