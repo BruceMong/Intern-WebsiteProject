@@ -550,14 +550,17 @@ input#search-bar {
     display: grid;
     position: relative;
     grid-template-columns: 50% 50%;
-    outline: 2.5px solid black;
+    border-radius: 5px;
+    width: 100%;
     margin: 20px;
     padding: 0px;
-    background-color: aqua;
+    background-color: #56687e;
 }
 
 .permission_profil table {
     font-family: Arial, sans-serif;
+    background-color: white;
+    border-radius: 5px;
 }
 
 .permission_profil th,
