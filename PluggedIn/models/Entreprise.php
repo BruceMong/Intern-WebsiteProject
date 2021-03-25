@@ -9,6 +9,7 @@ class Entreprise
     private $_evaluation_entreprise;
     private $_image;
     private $_localite;
+    private $_mail;
 
     // CONSTRUCTEUR
     public function __construct(array $data)
@@ -61,6 +62,11 @@ class Entreprise
     {
         return $this->_image;
     }
+    public function mail()
+    {
+        return $this->_mail;
+    }
+
 
 
     // SETTERS
@@ -114,5 +120,10 @@ class Entreprise
     {
         if (is_string($localite))
             $this->_localite = $localite;
+    }
+    public function setMail($mail)
+    {
+        if (is_string($mail))
+            $this->_mail = $mail;
     }
 }

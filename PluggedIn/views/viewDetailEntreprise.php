@@ -11,6 +11,7 @@
             <h2>Nom de l'entreprise: </h2> <input type="text" class="info_modif" value="<?= $entreprise->nom() ?>">
             <p>Secteur d'activité : </p> <input type="text" class="info_modif" value="<?= $entreprise->secteur_activite() ?>">
             <p>Nombres d'étudiants CESI déjà acceptés en stage: </p> <input type="text" class="info_modif" value="<?= $entreprise->nombre_stagiaire_cesi() ?>">
+            <p>Contact Entreprise: </p> <input type="text" class="info_modif" value="<?= $entreprise->mail() ?>">
         </div>
         <div class="bouton_crud">
             <div class="detail_aside">
@@ -57,16 +58,17 @@
         <div class="detail_stats">
             <h2>Informations sur l'offre</h2> <br>
             <p>Durée du stage : </p> <input type="text" class="info_modif" value="<?= $offer->duree_stage() ?>">
-            <p>Nombres de places offertes :  </p><input type="text" class="info_modif" value="<?= $offer->nombre_place() ?>">
+            <p>Nombres de places offertes : </p><input type="text" class="info_modif" value="<?= $offer->nombre_place() ?>">
             <p>Base de rémunération : </p><input type="text" class="info_modif" value="<?= $offer->base_remuneration() ?>">
             <p>Date de l'offre : </p><input type="text" class="info_modif" value="<?php $offer->date() ?>">
             <p>Typesde promotions concernées : </p><input type="text" class="info_modif" value="<?= $offer->type_promo_concerne() ?>">
+
 
         </div>
         <div class="detail_competence">
             <h2>Compétences requises : </h2>
             <input type="text" class="info_modif" value="<?= $offer->competences() ?>">
-            
+
         </div>
 
     </div>

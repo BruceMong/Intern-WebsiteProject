@@ -14,6 +14,8 @@
             <p><?= $entreprise->secteur_activite() ?></p>
             <p>Nombres d'étudiants CESI déjà acceptés en stage: </p>
             <p><?= $entreprise->nombre_stagiaire_cesi() ?></p>
+            <p>Contact Entreprise: </p>
+            <p><?= $entreprise->mail() ?></p>
         </div>
         <div class="bouton_crud">
             <div class="detail_aside">
