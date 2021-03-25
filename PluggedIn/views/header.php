@@ -64,7 +64,7 @@ session_start();
                         echo '<input type="button" value="Login">';
                         echo '</a>';
                     } else {
-                        echo '<a class="nav_compte" href="login">';
+                        echo '<a class="nav_compte" href="wish_list">';
                         echo '<img src="content/images/wish-icon.png">';
                         echo '<p>Wish-List</p>';
                         echo '</a>';
