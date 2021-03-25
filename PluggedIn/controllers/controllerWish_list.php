@@ -18,7 +18,7 @@ $premier = ($currentPage * $parPage) - $parPage;
 
 
 //$utilisateurs = $modelUtilisateur->getUtilisateurs();
-$wish_list = $modelWish_list->getWish_listPagination($premier, $parPage, "Bruce.Mongthe");
+$wish_list = $modelWish_list->getWish_listPagination($premier, $parPage, 'Bruce.Mongthe');
 
 $modelOffer = new ModelOffer($bdd);
 

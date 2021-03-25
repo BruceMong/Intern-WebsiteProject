@@ -10,19 +10,27 @@
             <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
         </form>
 
-        <a class="searchOffer" href="createOffer">
+        <a class="login" href="SearchOffer">
             <input type="button" value="Voir plus d'offre">
         </a>
 
+
+
     </header>
 
+    <p> <?= var_dump($wish_list); ?>
+    <p> <?= var_dump($wish_list[0]); ?>
 
     <div class="article-container">
-        <?php foreach ($offers as $offer) : ?>
+        <?php foreach ($wish_list as $wish) : ?>
             <form action="detailOffer" method="post">
                 <button type="submit" class="button_to_detail" name="id" value="<?= $offer->id_offre() ?>">
                     <div class="offer" style="height: 200;">
                         <img src="https://yt3.ggpht.com/ytc/AAUvwniJcudFBvjhncQ4O0DaTopCR9eFqPV6hoGGZsVl4A=s900-c-k-c0x00ffffff-no-rj" alt="Error" class="img-offer">
+
+                        <?php $offer = $modelOffer->getOffer($wish->id_offre()) ?>
+
+
                         <p>Nom de l'entreprise<br><?= $offer->entreprise() ?></p>
                         <p>Compétences requises <br><?= $offer->competences() ?></p>
                         <p>Type de promotions concernées <br><?= $offer->type_promo_concerne() ?></p>

@@ -19,11 +19,12 @@ class ModelWish_list
         return (int) $result['nb_articles'];
         $req->closeCursor();
     }
+
     public function getWish_listPagination($premier, $parPage, $login)
     {
         $wish_list = [];
 
-        $req = $this->_bdd->prepare('SELECT * FROM wish_list WHERE :login ORDER BY id_users DESC LIMIT :premier, :parpage;');
+        $req = $this->_bdd->prepare('SELECT * FROM wish_list WHERE login = :login LIMIT :premier, :parpage;');
 
 
         $req->bindValue(':login', $login, PDO::PARAM_STR);

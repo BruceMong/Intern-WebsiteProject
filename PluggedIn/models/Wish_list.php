@@ -35,12 +35,10 @@ class Wish_list
 
 
     // SETTERS
-    public function setLogin($Login)
+    public function setLogin($login)
     {
-        $Login = (int) $Login;
-
-        if ($Login > 0)
-            $this->_Login = $Login;
+        if (is_string($login))
+            $this->_login = $login;
     }
 
     public function setId_offre($id_offre)
