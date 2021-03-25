@@ -577,9 +577,29 @@ input#search-bar {
     z-index: -1;
 }
 
-//popupmodiv 
-.popupmodif input {
-    width: 10%;
+//popupmodif 
+.popupmodif p {
+    height: 5%;
+    font-size: 1em;
+}
+
+.detail_modif_competence {
+    width: 97.5%;
+}
+
+.popupmodif a {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.popupmodif a:hover {
+    color: rgb(253, 8, 8);
+    font-weight: bolder;
+}
+
+.popupmodif center {
+    bottom: auto;
 }
 
 //Création Offre

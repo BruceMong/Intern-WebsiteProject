@@ -668,8 +668,28 @@ input#search-bar {
   z-index: -1;
 }
 
-.popupmodif input {
-  width: 10%;
+.popupmodif p {
+  height: 5%;
+  font-size: 1em;
+}
+
+.detail_modif_competence {
+  width: 97.5%;
+}
+
+.popupmodif a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.popupmodif a:hover {
+  color: #fd0808;
+  font-weight: bolder;
+}
+
+.popupmodif center {
+  bottom: auto;
 }
 
 .profil-container h1 {
@@ -794,9 +814,5 @@ td {
 .button_to_detail {
   width: 96.5%;
   margin: 1.75%;
-}
-
-.blocAPropos h1 {
-  padding-top: 2em;
 }
 /*# sourceMappingURL=style.css.map */
