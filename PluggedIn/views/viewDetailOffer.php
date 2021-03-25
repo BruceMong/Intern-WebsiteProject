@@ -43,11 +43,11 @@
                         <p>Typesde promotions concernées : <input type="text" value="<?= $offer->type_promo_concerne() ?>"></p>
                         <br>
                         <h4>Compétences requises : </h4>
-                        <p><input type="text" class="detail_modif_competence" value="<?= $offer->competences() ?>"></p>
-                        <center>
+                        <div class="detail_modif_competence"><input type="text" value="<?= $offer->competences() ?>">
                             <a href="#" onclick="hide('popupmodif')">Annuler</a>
                             <a href="#" onclick="hide('popupmodif')">Confirmer</a>
-                        </center>
+                </div>
+
                     </div>
                 </form>
 
