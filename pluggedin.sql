@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 25 mars 2021 à 14:25
+-- Généré le : jeu. 25 mars 2021 à 16:45
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 7.3.27
 
@@ -196,6 +196,24 @@ INSERT INTO `utilisateur` (`id_users`, `nom`, `prenom`, `login`, `mot_de_passe`,
 (7, 'NAPOLETANO', 'Ronin', 'Ronin.Napoletano', 'Ronin2000', 'Aix en Provence', 1, 1),
 (8, 'NDONG', 'Erica', 'Erica.Ndong', 'Erica2121', 'Aix en Provence', 1, 1),
 (9, 'OLLIVIER', 'Alexis', 'Alexis.Ollivier', 'Alexis1213', 'Nice', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `wish_list`
+--
+
+CREATE TABLE `wish_list` (
+  `login` varchar(255) NOT NULL,
+  `id_offre` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `wish_list`
+--
+
+INSERT INTO `wish_list` (`login`, `id_offre`) VALUES
+('Bruce.Mongthe', 1);
 
 --
 -- Index pour les tables déchargées
