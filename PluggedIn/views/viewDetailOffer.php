@@ -86,7 +86,7 @@
             <p>Nombres de places offertes : </p><?= $offer->nombre_place() ?>
             <p>Base de rémunération : </p><?= $offer->base_remuneration() ?>
             <p>Date de l'offre : </p><?php $offer->date() ?>
-            <p>Typesde promotions concernées : </p>"<?= $offer->type_promo_concerne() ?>
+            <p>Types de promotions concernées : </p><?= $offer->type_promo_concerne() ?>
 
         </div>
         <div class="detail_competence">
