@@ -22,9 +22,7 @@
     </div>
 
 
-    
-    Do you need wheelchair access?
-    <input type="checkbox" name="formWheelchair" value="Yes" />
+
 
     <div class="permission_profil">
     <form action="checkbox-form.php" method="post">
@@ -35,37 +33,40 @@
             </thead>
             <tbody>
                 <td>
+                    Accès
+                </td>
+                           <label>
+                         <input type="checkbox" name="authentifier" value=1 />
+                            Authentification
+                        </label>
+                <td>
                     Gestion entreprises
                 </td>
                 <td>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox">
+                            <input type="checkbox" name="rechercher_entreprise" value=1 />
                             Rechercher
                         </label>
                         <label>
-                            <input type="checkbox">
+                            <input type="checkbox" name="consulter_stats_entreprises" value=1>
                             Voir stats
                         </label>
                         <label>
-                            <input type="checkbox">
+                            <input type="checkbox" name="creer_entreprise" value=1>
                             Créer
                         </label>
                         <label>
-                            <input type="checkbox">
+                            <input type="checkbox" name="modifier_entreprise" value=1>
                             Modifier
                         </label>
                         <label>
-                            <input type="checkbox">
+                            <input type="checkbox" name="evaluer_entreprise" value=1>
                             Evaluer
                         </label>
                         <br>
                         <label>
-                            <input type="checkbox">
-                            Modifier
-                        </label>
-                        <label>
-                            <input type="checkbox">
+                            <input type="checkbox" name="supprimer_entreprise" value=1>
                             Supprimer
                         </label>
                     </div>
@@ -77,24 +78,24 @@
                 </td>
                 <td>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="rechercher_offre" value=1>
                         Rechercher
                     </label>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="consulter_stats_offres" value=1>
                         Voir stats
                     </label>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="creer_offre" value=1>
                         Créer
                     </label>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="modifier_offre" value=1>
                         Modifier
                     </label>
                     <br>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="supprimer_offre" value=1>
                         Supprimer
                     </label>
                 </td>
@@ -105,19 +106,19 @@
                 </td>
                 <td>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="rechercher_compte_pilote" value=1>
                         Rechercher
                     </label>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="creer_compte_pilote" value=1>
                         Créer
                     </label>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="modifier_compte_pilote" value=1>
                         Modifier
                     </label>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="supprimer_compte_pilote" value=1>
                         Supprimer
                     </label>
                 </td>
@@ -128,19 +129,19 @@
                 </td>
                 <td>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="rechercher_compte_delegue" value=1>
                         Rechercher
                     </label>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="creer_compte_delegue" value=1>
                         Créer
                     </label>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="modifier_compte_delegue" value=1>
                         Modifier
                     </label>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="supprimer_compte_delegue" value=1>
                         Supprimer
                     </label>
                 </td>
@@ -151,21 +152,25 @@
                 </td>
                 <td>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="rechercher_compte_etudiant" value=1>
                         Rechercher
                     </label>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="creer_compte_etudiant" value=1>
                         Créer
                     </label>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="modifier_compte_etudiant" value=1>
                         Modifier
                     </label>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="supprimer_compte_etudiant" value=1>
                         Supprimer
                     </label>
+                    <label>
+                            <input type="checkbox" name="consulter_stats_etudiants" value=1>
+                            Voir stats
+                        </label>
                 </td>
             </tbody>
             <tbody>
@@ -174,42 +179,42 @@
                 </td>
                 <td>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="ajouter_offre_wish_list" value=1>
                         Ajouter à wish-list
                     </label>
                     <br>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="retirer_offre_wish_list" value=1>
                         Supprimer à wish-list
                     </label>
                     <br>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="postuler_offre" value=1>
                         Postuler à une offre
                     </label>
                     <br>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="info_sys_avance_candi1" value=1>
                         Informer le système de l'avancement 1
                     </label>
                     <br>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="info_sys_avance_candi2" value=1>
                         Informer le système de l'avancement 2
                     </label>
                     <br>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="info_sys_avance_candi3" value=1>
                         Informer le système de l'avancement 3
                     </label>
                     <br>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="info_sys_avance_candi4" value=1>
                         Informer le système de l'avancement 4
                     </label>
                     <br>
                     <label>
-                        <input type="checkbox">
+                        <input type="checkbox" name="info_sys_avance_candi5" value=1>
                         Informer le système de l'avancement 5
                     </label>
                 </td>

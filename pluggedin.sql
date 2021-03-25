@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 24 mars 2021 à 16:32
+-- Généré le : jeu. 25 mars 2021 à 10:46
 -- Version du serveur :  10.4.17-MariaDB
--- Version de PHP : 7.3.27
+-- Version de PHP : 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -55,8 +55,8 @@ CREATE TABLE `droit` (
   `modifier_compte_etudiant` tinyint(1) NOT NULL,
   `supprimer_compte_etudiant` tinyint(1) NOT NULL,
   `consulter_stats_etudiants` tinyint(1) NOT NULL,
-  `ajouter_offre_wish-list` tinyint(1) NOT NULL,
-  `retirer_offre_wish-list` tinyint(1) NOT NULL,
+  `ajouter_offre_wish_list` tinyint(1) NOT NULL,
+  `retirer_offre_wish_list` tinyint(1) NOT NULL,
   `postuler_offre` tinyint(1) NOT NULL,
   `info_sys_avance_candi1` tinyint(1) NOT NULL,
   `info_sys_avance_candi2` tinyint(1) NOT NULL,
@@ -64,6 +64,13 @@ CREATE TABLE `droit` (
   `info_sys_avance_candi4` tinyint(1) NOT NULL,
   `info_sys_avance_candi5` tinyint(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `droit`
+--
+
+INSERT INTO `droit` (`id_droit`, `authentifier`, `rechercher_entreprise`, `creer_entreprise`, `modifier_entreprise`, `evaluer_entreprise`, `supprimer_entreprise`, `consulter_stats_entreprises`, `rechercher_offre`, `creer_offre`, `modifier_offre`, `supprimer_offre`, `consulter_stats_offres`, `rechercher_compte_pilote`, `creer_compte_pilote`, `modifier_compte_pilote`, `supprimer_compte_pilote`, `rechercher_compte_delegue`, `creer_compte_delegue`, `modifier_compte_delegue`, `supprimer_compte_delegue`, `assigner_droits_delegue`, `rechercher_compte_etudiant`, `creer_compte_etudiant`, `modifier_compte_etudiant`, `supprimer_compte_etudiant`, `consulter_stats_etudiants`, `ajouter_offre_wish_list`, `retirer_offre_wish_list`, `postuler_offre`, `info_sys_avance_candi1`, `info_sys_avance_candi2`, `info_sys_avance_candi3`, `info_sys_avance_candi4`, `info_sys_avance_candi5`) VALUES
+(2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -237,7 +244,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `droit`
 --
 ALTER TABLE `droit`
-  MODIFY `id_droit` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_droit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `entreprise`
