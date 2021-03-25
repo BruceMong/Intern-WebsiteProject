@@ -19,7 +19,7 @@
     <div class="article-container">   
         <?php foreach ($utilisateurs as $utilisateur) : ?>
             <form action="detailUtilisateur" method="post">
-                <button type="submit" class="button_to_detail" name="id" value="1">
+                <button type="submit" class="button_to_detail" name="id" value="<?= $utilisateur->login()?>">
                     <div class="article_box" style="height: 200;">
                         <p>Nom : <?= $utilisateur->nom() ?> </p>
                         <p>Prénom : <?= $utilisateur->prenom() ?></p>

@@ -11,13 +11,29 @@ class ModelEntreprise
 
     public function countEntreprises()
     {
-        $req = $this->_bdd->prepare('SELECT * FROM entreprise ORDER BY id_entreprise DESC;');
+        $req = $this->_bdd->prepare('SELECT COUNT(*)AS nb_articles FROM entreprise;');
         $req->execute();
+
         $result = $req->fetch();
-        return (int)$result;
+        return (int) $result['nb_articles'];
         $req->closeCursor();
     }
 
+    public function getEntreprisesPagination($premier, $parPage)
+    {
+        $entreprises = [];
+
+        $req = $this->_bdd->prepare('SELECT * FROM entreprise ORDER BY id_entreprise DESC LIMIT :premier, :parpage');
+        $req->bindValue(':premier', $premier, PDO::PARAM_INT);
+        $req->bindValue(':parpage', $parPage, PDO::PARAM_INT);
+        $req->execute();
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
+            $entreprises[] = new Entreprise($data);
+        }
+        return $entreprises;
+        $req->closeCursor();
+    }
 
     // FONCTION QUI RÉCUPÈRE TOUS LES ARTICLES ET QUI CRÉE UN OBJET (Article) POUR CHAQUE ARTICLE
     public function getEntreprises()

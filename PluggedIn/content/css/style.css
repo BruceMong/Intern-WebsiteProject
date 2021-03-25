@@ -796,7 +796,12 @@ td {
   margin: 1.75%;
 }
 
+.icons-intro h3 {
+  padding-top: 0.5em;
+  padding-left: 2em;
+}
+
 .blocAPropos h1 {
-  padding-top: 2em;
+  margin-top: 2em;
 }
 /*# sourceMappingURL=style.css.map */

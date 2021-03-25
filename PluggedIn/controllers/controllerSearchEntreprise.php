@@ -1,14 +1,21 @@
 <?php
-// CRÉATION DE L'OBJET MANAGER
-// $modelArticle = new ModelArticle($bdd);
+$t = 'Recherche d\'entreprise';
 
-// JE RÉCUPÈRE LA LISTE DE TOUS LES ARTICLES
-//$articles = $modelArticle->getArticles();
+if (isset($_POST['page']) && !empty($_POST['page'])) {
+    $currentPage = (int) strip_tags($_POST['page']);
+} else {
+    $currentPage = 1;
+}
 
 
 $modelEntreprise = new ModelEntreprise($bdd);
-$entreprises = $modelEntreprise->getEntreprises();
+$nbArticle = $modelEntreprise->countEntreprises();
+$parPage = 5;
+$pages = ceil($nbArticle / $parPage);
 
-$t = 'Recherche d\'entreprise';
+$premier = ($currentPage * $parPage) - $parPage;
+
+$entreprises = $modelEntreprise->getEntreprisesPagination($premier, $parPage);
+
 
 require_once('views/viewSearchEntreprise.php');

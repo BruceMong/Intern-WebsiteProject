@@ -10,10 +10,11 @@ class ModelOffer
 
     public function countOffers()
     {
-        $req = $this->_bdd->prepare('SELECT * FROM offre ORDER BY id_offre DESC;');
+        $req = $this->_bdd->prepare('SELECT COUNT(*)AS nb_articles FROM offre;');
         $req->execute();
+
         $result = $req->fetch();
-        return (int)$result;
+        return (int) $result['nb_articles'];
         $req->closeCursor();
     }
 
@@ -22,8 +23,9 @@ class ModelOffer
         $offres = [];
 
         $req = $this->_bdd->prepare('SELECT * FROM offre ORDER BY id_offre DESC LIMIT :premier, :parpage');
-        $req->execute(array($premier, $parPage));
-
+        $req->bindValue(':premier', $premier, PDO::PARAM_INT);
+        $req->bindValue(':parpage', $parPage, PDO::PARAM_INT);
+        $req->execute();
 
         while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
             $offres[] = new Offer($data);

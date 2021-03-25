@@ -204,7 +204,7 @@
                     <h3>Bruce</h3>
                 </li>
                 <li>
-                    <img src="content/images/bruce.jpg">
+                    <img src="content/images/erica.png">
                     <h3>Erica</h3>
                 </li>
             </ul>
