@@ -23,6 +23,10 @@ nav {
     margin-right: 30px;
 }
 
+.nav_admin {
+    color: red;
+}
+
 .link a {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.5em;

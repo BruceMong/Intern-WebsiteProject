@@ -85,6 +85,15 @@ header {
     padding-right: 0.1em;
 }
 
+.header_right a {
+    display: flex;
+    justify-content: center;
+}
+
+.header_right p {
+    text-align: justify;
+}
+
 .nav_compte img {
     height: 50px;
     width: 50px;

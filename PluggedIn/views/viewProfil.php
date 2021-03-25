@@ -20,7 +20,14 @@
         <p>Role :   <?= var_dump($droit) ?> </p>
 
     </div>
+
+
+    
+    Do you need wheelchair access?
+    <input type="checkbox" name="formWheelchair" value="Yes" />
+
     <div class="permission_profil">
+    <form action="checkbox-form.php" method="post">
         <table>
             <thead>
                 <th>Permission</th>
@@ -208,6 +215,7 @@
                 </td>
             </tbody>
         </table>
+        </form>
     </div>
 </div>
 

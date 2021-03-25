@@ -482,10 +482,6 @@ input#search-bar {
     align-self: center;
 }
 
-.button_to_detail {
-    width: max-content;
-}
-
 //popup boutton supp
 .popup {
     display: none;
@@ -610,3 +606,32 @@ td {
     text-align: left;
     padding: 8px;
 }
+
+.form_pagination {
+    display: flex;
+}
+
+.nav_pagination {
+    justify-content: center;
+}
+
+.article-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    outline: none;
+    outline: 2.5px solid rgb(219, 210, 210);
+    background-color: #232f3e;
+    width: 95%;
+    margin: 2.5%;
+    height: auto;
+    margin-top: 0px;
+}
+
+.article_box {
+    padding-left: 15em;
+    padding-right: 15em;
+    margin: 2em;
+}
+
+//.button_to_detail {}

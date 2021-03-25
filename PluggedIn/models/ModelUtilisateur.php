@@ -23,10 +23,12 @@ class ModelUtilisateur
 
     public function countUtilisateur()
     {
-        $req = $this->_bdd->prepare('SELECT * FROM utilisateur ORDER BY id_users DESC;');
+        
+        $req = $this->_bdd->prepare('SELECT COUNT(*) AS nb_articles FROM utilisateur;');
         $req->execute();
+
         $result = $req->fetch();
-        return (int)$result;
+        return (int) $result['nb_articles'];
         $req->closeCursor();
     }
     public function getUtilisateurPagination($premier, $parPage)

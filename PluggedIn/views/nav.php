@@ -13,25 +13,9 @@
       <li><a href="aPropos">A Propos</a></li>
       <li><a href="searchEntreprise">Entreprise</a></li>
       <li><a href="searchOffer">Offre</a></li>
+      <?php if (empty($_SESSION['utilisateur'])) {
+        echo '<li><a class="nav_admin" href="searchUtilisateur">Utilisateur</a></li>';
+      } ?>
     </ul>
   </div>
 </nav>
-
-<script>
-  window.onscroll = function() {
-    myFunction()
-  };
-
-  var navbar = document.getElementById("nav");
-  var stickyNav = navbar.offsetTop;
-
-
-
-  function myFunction() {
-    if (window.pageYOffset >= stickyNav) {
-      navbar.classList.add("stickyNav")
-    } else {
-      navbar.classList.remove("stickyNav");
-    }
-  }
-</script>
