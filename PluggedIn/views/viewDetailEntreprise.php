@@ -7,70 +7,74 @@
 
 
         <div class="detail_presentation">
-            <img src="<?= $entreprise->image() ?>" alt="image entreprise" width="100px" height="100px">
-            <h2>Nom de l'entreprise: </h2> <input type="text" class="info_modif" value="<?= $entreprise->nom() ?>">
-            <p>Secteur d'activité : </p> <input type="text" class="info_modif" value="<?= $entreprise->secteur_activite() ?>">
-            <p>Nombres d'étudiants CESI déjà acceptés en stage: </p> <input type="text" class="info_modif" value="<?= $entreprise->nombre_stagiaire_cesi() ?>">
-            <p>Contact Entreprise: </p> <input type="text" class="info_modif" value="<?= $entreprise->mail() ?>">
+            <img src="" alt="">
+            <h2>Nom entreprise : </h2>
+            <br>
+            <p>Secteur d'activité : </p>
+            <p>Localité : </p>
+            <p>Nombre stagiaires CESI : </p>
+            <p>Confiance pilote : </p>
+            <p>Evaluation entreprise : </p>
+            <p>Coontact entreprise ; </p>
+
+
         </div>
         <div class="bouton_crud">
-            <div class="detail_aside">
-                <form action="" method="post">
-                    <input type="button" value="Ajouter à la wish-list">
-                </form>
-                <form action="" method="post">
-                    <input type="button" value="Postuler à l'offre    ">
-                    < </form>
-            </div>
+
 
             <div class="detail_modif">
 
                 <form action="" method="post">
-                    <input type="button" value="Modifier">
-                </form>
-                <form action="" method="post">
-                    <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
-                    <div class="popup" id="popup">
-                        <h3>Vous êtes sûr de modifier?</h3>
-                        <center>
-                            <a href="#" onclick="hide('popup')">Annuler</a>
-                            <a href="#" onclick="hide('popup')">Confirmer</a>
+                    <center>
+                        <input type="button" class="buttonmodif" href="#" onclick="show('popupmodif')" value="Modifier">
+                    </center>
+                    <div class="popupmodif" id="popupmodif">
+                        <h3>Nom entreprise : </h3>
+                        <br>
+                        <p>Secteur d'activité : </p>
+                        <p>Localité : </p>
+                        <p>Nombre stagiaires CESI : </p>
+                        <p>Confiance pilote : </p>
+                        <p>Evaluation entreprise : </p>
+                        <p>Coontact entreprise ; </p>
+
+                        <input type="text" value="">
+                        <center style="margin-top: 1px;">
+                            <a href="#" onclick="hide('popupmodif')">Annuler</a>
+                            <a href="#" onclick="hide('popupmodif')">Confirmer</a>
                         </center>
                     </div>
 
-                    <script>
-                        $ = function(id) {
-                            return document.getElementById(id);
-                        }
-
-                        var show = function(id) {
-                            $(id).style.display = 'block';
-                        }
-                        var hide = function(id) {
-                            $(id).style.display = 'none';
-                        }
-                    </script>
-
-                </form>
             </div>
+            </form>
+
+            <form action="" method="post">
+                <center>
+                    <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
+                </center>
+                <div class="popup" id="popup">
+                    <h3>Vous êtes sûr de supprimer?</h3>
+                    <center>
+                        <a href="#" onclick="hide('popup')">Annuler</a>
+                        <a href="#" onclick="hide('popup')">Confirmer</a>
+                    </center>
+                </div>
+
+                <script>
+                    $ = function(id) {
+                        return document.getElementById(id);
+                    }
+
+                    var show = function(id) {
+                        $(id).style.display = 'block';
+                    }
+                    var hide = function(id) {
+                        $(id).style.display = 'none';
+                    }
+                </script>
+            </form>
         </div>
-
-        <div class="detail_stats">
-            <h2>Informations sur l'offre</h2> <br>
-            <p>Durée du stage : </p> <input type="text" class="info_modif" value="<?= $offer->duree_stage() ?>">
-            <p>Nombres de places offertes : </p><input type="text" class="info_modif" value="<?= $offer->nombre_place() ?>">
-            <p>Base de rémunération : </p><input type="text" class="info_modif" value="<?= $offer->base_remuneration() ?>">
-            <p>Date de l'offre : </p><input type="text" class="info_modif" value="<?php $offer->date() ?>">
-            <p>Typesde promotions concernées : </p><input type="text" class="info_modif" value="<?= $offer->type_promo_concerne() ?>">
-
-
-        </div>
-        <div class="detail_competence">
-            <h2>Compétences requises : </h2>
-            <input type="text" class="info_modif" value="<?= $offer->competences() ?>">
-
-        </div>
-
     </div>
+
 </div>
 <?php require_once('views/footer.php'); ?>
