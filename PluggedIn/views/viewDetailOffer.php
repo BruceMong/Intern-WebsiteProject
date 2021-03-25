@@ -8,9 +8,14 @@
 
         <div class="detail_presentation">
             <img src="<?= $entreprise->image() ?>" alt="image entreprise" width="100px" height="100px">
-            <h2>Nom de l'entreprise: </h2> <h3><?= $entreprise->nom() ?></h3>
-            <p>Secteur d'activité : </p>  <p><?= $entreprise->secteur_activite() ?></p>
-            <p>Nombres d'étudiants CESI déjà acceptés en stage: </p> <p><?= $entreprise->nombre_stagiaire_cesi() ?></p>
+            <h2>Nom de l'entreprise: </h2>
+            <h3><?= $entreprise->nom() ?></h3>
+            <p>Secteur d'activité : </p>
+            <p><?= $entreprise->secteur_activite() ?></p>
+            <p>Nombres d'étudiants CESI déjà acceptés en stage: </p>
+            <p><?= $entreprise->nombre_stagiaire_cesi() ?></p>
+            <p>Contact Entreprise: </p>
+            <p><?= $entreprise->mail() ?></p>
         </div>
         <div class="bouton_crud">
             <div class="detail_aside">
@@ -19,7 +24,7 @@
                 </form>
                 <form action="" method="post">
                     <input type="button" value="Postuler à l'offre    ">
-                    </form>
+                </form>
             </div>
 
             <div class="detail_modif">
@@ -31,7 +36,7 @@
                         <h3>Nom de l'entreprise : <?= $entreprise->nom() ?></h3>
                         <br>
                         <h4>Informations sur l'offre</h4> <br>
-                        <p>Durée du stage : <input type="text" value="<?= $offer->duree_stage() ?>"></p> 
+                        <p>Durée du stage : <input type="text" value="<?= $offer->duree_stage() ?>"></p>
                         <p>Nombres de places offertes : <input type="text" value="<?= $offer->nombre_place() ?>"></p>
                         <p>Base de rémunération : <input type="text" value="<?= $offer->base_remuneration() ?>"></p>
                         <p>Date de l'offre : <input type="text" value="<?php $offer->date() ?>"></p>

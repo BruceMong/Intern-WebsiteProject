@@ -40,7 +40,7 @@ class ModelEntreprise
     {
         $entreprises = [];
 
-        $req = $this->_bdd->query('SELECT id_entreprise, nom, localite, secteur_activite, nombre_stagiaire_cesi, confiance_pilote, evaluation_entreprise, image FROM entreprise  ORDER BY id_entreprise DESC');
+        $req = $this->_bdd->query('SELECT *  ORDER BY id_entreprise DESC');
         $req->execute();
         while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
             $entreprises[] = new Entreprise($data);
@@ -53,7 +53,7 @@ class ModelEntreprise
     {
         $entreprises = [];
 
-        $req = $this->_bdd->prepare('SELECT id_entreprise, nom, localite, secteur_activite, nombre_stagiaire_cesi, confiance_pilote, evaluation_entreprise, image FROM entreprise  ORDER BY ? DESC');
+        $req = $this->_bdd->prepare('SELECT * FROM entreprise  ORDER BY ? DESC');
         $req->execute(array($element));
 
         while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
@@ -66,7 +66,7 @@ class ModelEntreprise
     // FONCTION QUI RÉCUPÈRE L'ARTICLE PAR RAPPORT À SON ID
     public function getEntreprise($id)
     {
-        $req = $this->_bdd->prepare('SELECT id_entreprise, nom, localite,  secteur_activite, nombre_stagiaire_cesi, confiance_pilote, evaluation_entreprise, image FROM entreprise  WHERE id_entreprise = ?');
+        $req = $this->_bdd->prepare('SELECT * FROM entreprise  WHERE id_entreprise = ?');
         $req->execute(array($id));
 
         if ($req->rowCount() == 1) {
@@ -79,7 +79,7 @@ class ModelEntreprise
 
     public function getEntrepriseByName($name)
     {
-        $req = $this->_bdd->prepare('SELECT id_entreprise, nom, localite, secteur_activite, nombre_stagiaire_cesi, confiance_pilote, evaluation_entreprise, image FROM entreprise  WHERE nom = ?');
+        $req = $this->_bdd->prepare('SELECT * FROM entreprise  WHERE nom = ?');
         $req->execute(array($name));
 
         if ($req->rowCount() == 1) {
@@ -96,16 +96,16 @@ class ModelEntreprise
     {
 
 
-        $req = $this->_bdd->prepare('INSERT INTO entreprise (nom, localite, secteur_activite, nombre_stagiaire_cesi, confiance_pilote, evaluation_entreprise, image) VALUES(?, ?, ?, ?, ?');
-        $req->execute(array($ent->nom(), $ent->localite(), $ent->secteur_activite(), $ent->nombre_stagiaire_cesi(), $ent->confiance_pilote(), $ent->evaluation_entreprise(), $ent->image()));
+        $req = $this->_bdd->prepare('INSERT INTO entreprise (nom, localite, secteur_activite, nombre_stagiaire_cesi, confiance_pilote, evaluation_entreprise, image, localite, mail) VALUES(?, ?, ?, ?, ?, ?, ?');
+        $req->execute(array($ent->nom(), $ent->localite(), $ent->secteur_activite(), $ent->nombre_stagiaire_cesi(), $ent->confiance_pilote(), $ent->evaluation_entreprise(), $ent->image(), $ent->localite(), $ent->mail()));
         $req->closeCursor();
     }
 
     // FONCTION QUI MET À JOUR L'ARTICLE
     public function updateEntreprise(Entreprise $entreprise)
     {
-        $req = $this->_bdd->prepare('UPDATE entreprise SET nom = ?, localite = ?, secteur_activite = ?, nombre_stagiaire_cesi = ?, confiance_pilote = ?, evaluation_entreprise = ?, image = ? WHERE id_entreprise = ?');
-        $req->execute(array($entreprise->nom(), $entreprise->localite(), $entreprise->secteur_activite(), $entreprise->nombre_stagiaire_cesi(), $entreprise->confiance_pilote(), $entreprise->evaluation_entreprise(), $entreprise->image(), $entreprise->id_entreprise()));
+        $req = $this->_bdd->prepare('UPDATE entreprise SET nom = ?, localite = ?, secteur_activite = ?, nombre_stagiaire_cesi = ?, confiance_pilote = ?, evaluation_entreprise = ?, image = ?, localite = ?, mail = ? WHERE id_entreprise = ?');
+        $req->execute(array($entreprise->nom(), $entreprise->localite(), $entreprise->secteur_activite(), $entreprise->nombre_stagiaire_cesi(), $entreprise->confiance_pilote(), $entreprise->evaluation_entreprise(), $entreprise->image(), $entreprise->localite(), $entreprise->mail(), $entreprise->id_entreprise()));
         $req->closeCursor();
     }
 
