@@ -25,13 +25,22 @@
             <div class="detail_modif">
 
                 <form action="" method="post">
-                    <input type="button" onclick="Functionmodify()" value="Modifier">
+                    <input type="button" class="buttonmodif" href="#" onclick="show('popupmodif')" value="Modifier">
+                    <div class="popupmodif" id="popupmodif">
+                        <img src="<?= $entreprise->image() ?>" alt="image entreprise" width="50px" height="50px">
+                        <h3>Nom de l'entreprise : <?= $entreprise->nom() ?></h3>
+                        <h4>Informations sur l'offre</h4> <br>
+                        <p>Durée du stage : </p> <input type="text" class="info_modif" value="<?= $offer->duree_stage() ?>">
+                        <p>Nombres de places offertes : </p><input type="text" class="info_modif" value="<?= $offer->nombre_place() ?>">
+                        <p>Base de rémunération : </p><input type="text" class="info_modif" value="<?= $offer->base_remuneration() ?>">
+                        <p>Date de l'offre : </p><input type="text" class="info_modif" value="<?php $offer->date() ?>">
+                        <p>Typesde promotions concernées : </p><input type="text" class="info_modif" value="<?= $offer->type_promo_concerne() ?>">
+                        <h4>Compétences requises : </h4>
+                        <input type="text" class="info_modif" value="<?= $offer->competences() ?>">
+
+                        <a href="#" onclick="hide('popupmodif')">Annuler</a>
+                    </div>
                 </form>
-                <script>
-                    function Functionmodify(){
-                        document.querySelectorAll(".info_modif").disabled = true;
-                    }
-                </script>
 
                 <form action="" method="post">
                     <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
@@ -63,7 +72,7 @@
         <div class="detail_stats">
             <h2>Informations sur l'offre</h2> <br>
             <p>Durée du stage : </p> <input type="text" class="info_modif" value="<?= $offer->duree_stage() ?>">
-            <p>Nombres de places offertes :  </p><input type="text" class="info_modif" value="<?= $offer->nombre_place() ?>">
+            <p>Nombres de places offertes : </p><input type="text" class="info_modif" value="<?= $offer->nombre_place() ?>">
             <p>Base de rémunération : </p><input type="text" class="info_modif" value="<?= $offer->base_remuneration() ?>">
             <p>Date de l'offre : </p><input type="text" class="info_modif" value="<?php $offer->date() ?>">
             <p>Typesde promotions concernées : </p><input type="text" class="info_modif" value="<?= $offer->type_promo_concerne() ?>">
@@ -72,7 +81,7 @@
         <div class="detail_competence">
             <h2>Compétences requises : </h2>
             <input type="text" class="info_modif" value="<?= $offer->competences() ?>">
-            
+
         </div>
 
     </div>

@@ -603,7 +603,6 @@ input#search-bar {
 .popup a:hover {
   color: #fd0808;
   font-weight: bolder;
-  font-size: larger;
 }
 
 .popup center {
@@ -631,6 +630,50 @@ input#search-bar {
   right: 0;
   background: #FFF;
   z-index: -1;
+}
+
+.popupmodif {
+  display: none;
+  position: fixed;
+  padding: 10px;
+  width: 50%;
+  left: 32.5%;
+  margin-left: -150px;
+  height: 75%;
+  top: 12.5%;
+  background: #FFF;
+  border: 4px solid red;
+  z-index: 20;
+}
+
+#popupmodif:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -2;
+}
+
+#popupmodif:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #FFF;
+  z-index: -1;
+}
+
+.popupmodif input {
+  width: 10%;
+}
+
+.popupmodif p {
+  font-size: 1em;
 }
 
 .profil-container h1 {
