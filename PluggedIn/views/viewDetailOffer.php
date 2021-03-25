@@ -29,16 +29,20 @@
                     <div class="popupmodif" id="popupmodif">
                         <img src="<?= $entreprise->image() ?>" alt="image entreprise" width="50px" height="50px">
                         <h3>Nom de l'entreprise : <?= $entreprise->nom() ?></h3>
+                        <br>
                         <h4>Informations sur l'offre</h4> <br>
-                        <p>Durée du stage : </p> <input type="text" class="info_modif" value="<?= $offer->duree_stage() ?>">
-                        <p>Nombres de places offertes : </p><input type="text" class="info_modif" value="<?= $offer->nombre_place() ?>">
-                        <p>Base de rémunération : </p><input type="text" class="info_modif" value="<?= $offer->base_remuneration() ?>">
-                        <p>Date de l'offre : </p><input type="text" class="info_modif" value="<?php $offer->date() ?>">
-                        <p>Typesde promotions concernées : </p><input type="text" class="info_modif" value="<?= $offer->type_promo_concerne() ?>">
+                        <p>Durée du stage : <input type="text" value="<?= $offer->duree_stage() ?>"></p> 
+                        <p>Nombres de places offertes : <input type="text" value="<?= $offer->nombre_place() ?>"></p>
+                        <p>Base de rémunération : <input type="text" value="<?= $offer->base_remuneration() ?>"></p>
+                        <p>Date de l'offre : <input type="text" value="<?php $offer->date() ?>"></p>
+                        <p>Typesde promotions concernées : <input type="text" value="<?= $offer->type_promo_concerne() ?>"></p>
+                        <br>
                         <h4>Compétences requises : </h4>
-                        <input type="text" class="info_modif" value="<?= $offer->competences() ?>">
-
-                        <a href="#" onclick="hide('popupmodif')">Annuler</a>
+                        <p><input type="text" class="detail_modif_competence" value="<?= $offer->competences() ?>"></p>
+                        <center>
+                            <a href="#" onclick="hide('popupmodif')">Annuler</a>
+                            <a href="#" onclick="hide('popupmodif')">Confirmer</a>
+                        </center>
                     </div>
                 </form>
 

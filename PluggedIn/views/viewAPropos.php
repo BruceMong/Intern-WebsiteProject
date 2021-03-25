@@ -25,7 +25,7 @@
             </p>
         </div>
         <div class="specification">
-            <h2>Spécifications Techniques</h2>
+            <h2>Spécifications Techniques</h2><br>
             <h3>Organisation</h3>
             <p>Utilisation de GIT : utilisation de Git, avec branches et commit, en respectant les conventions d’usage</p>
 
