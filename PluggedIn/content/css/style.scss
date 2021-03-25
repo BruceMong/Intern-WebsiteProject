@@ -582,10 +582,6 @@ input#search-bar {
     width: 10%;
 }
 
-.popupmodif p {
-    font-size: 1em;
-}
-
 //Création Offre
 //Profil
 .profil-container h1 {
@@ -660,6 +656,7 @@ td {
     justify-content: center;
 }
 
+//search utilisteur
 .article-container {
     display: flex;
     justify-content: center;
@@ -674,12 +671,22 @@ td {
 }
 
 .article_box {
-    padding-left: 15em;
-    padding-right: 15em;
-    margin: 2em;
+    display: grid;
+    position: relative;
+    grid-template-columns: 32.5% 32.5% 32.5%;
+    outline: 2.5px solid rgb(7, 6, 6);
+    margin: 20px;
+    padding: 0px;
+    background-color: lightgray;
+    height: 150px;
+    width: 98%;
 }
 
-//.button_to_detail {}
-.blocAPropos h1 {
-    padding-top: 2em;
+.article_box p {
+    padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.button_to_detail {
+    width: 100%;
 }
