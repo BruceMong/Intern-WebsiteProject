@@ -40,13 +40,15 @@
                         <p>Nombres de places offertes : <input type="text" value="<?= $offer->nombre_place() ?>"></p>
                         <p>Base de rémunération : <input type="text" value="<?= $offer->base_remuneration() ?>"></p>
                         <p>Date de l'offre : <input type="text" value="<?php $offer->date() ?>"></p>
-                        <p>Typesde promotions concernées : <input type="text" value="<?= $offer->type_promo_concerne() ?>"></p>
+                        <p>Types de promotions concernées : <input type="text" value="<?= $offer->type_promo_concerne() ?>"></p>
                         <br>
                         <h4>Compétences requises : </h4>
                         <div class="detail_modif_competence"><input type="text" value="<?= $offer->competences() ?>">
+                        <center>
                             <a href="#" onclick="hide('popupmodif')">Annuler</a>
                             <a href="#" onclick="hide('popupmodif')">Confirmer</a>
-                </div>
+                        </center>
+                        </div>
 
                     </div>
                 </form>
