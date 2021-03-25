@@ -717,7 +717,7 @@ input#search-bar {
   -ms-grid-columns: 50% 50%;
       grid-template-columns: 50% 50%;
   border-radius: 5px;
-  width: 100%;
+  width: 98%;
   margin: 20px;
   padding: 0px;
   background-color: #56687e;

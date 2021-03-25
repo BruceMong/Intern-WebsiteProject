@@ -17,8 +17,6 @@
         <p>Centre : <?= $utilisateur->centre() ?> </p>
         <p>Role : <?= $profil->libelle() ?> </p>
 
-        <p>Role : <?= var_dump($droit) ?> </p>
-
     </div>
 
 
