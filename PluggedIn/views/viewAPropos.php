@@ -5,7 +5,7 @@
 
 <div class=bloc_page>
 
-    <article>
+    <article class = blocAPropos>
         <h1>Informations utiles</h1>
         <div class="conception">
             <h2> Conception </h2>
