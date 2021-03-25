@@ -28,11 +28,11 @@ class Wish_list
         return $this->_login;
     }
 
+
     public function id_offre()
     {
         return $this->_id_offre;
     }
-
 
     // SETTERS
     public function setLogin($login)
@@ -40,6 +40,7 @@ class Wish_list
         if (is_string($login))
             $this->_login = $login;
     }
+
 
     public function setId_offre($id_offre)
     {
