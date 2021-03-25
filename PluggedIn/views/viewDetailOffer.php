@@ -20,17 +20,23 @@
         <div class="bouton_crud">
             <div class="detail_aside">
                 <form action="" method="post">
-                    <input type="button" value="Ajouter à la wish-list">
+                    <center>
+                        <input type="button" value="Ajouter à la wish-list">
+                    </center>
                 </form>
                 <form action="" method="post">
-                    <input type="button" value="Postuler à l'offre    ">
+                    <center>
+                        <input type="button" value="Postuler à l'offre    ">
+                    </center>
                 </form>
             </div>
 
             <div class="detail_modif">
 
                 <form action="" method="post">
-                    <input type="button" class="buttonmodif" href="#" onclick="show('popupmodif')" value="Modifier">
+                    <center>
+                        <input type="button" class="buttonmodif" href="#" onclick="show('popupmodif')" value="Modifier">
+                    </center>
                     <div class="popupmodif" id="popupmodif">
                         <img src="<?= $entreprise->image() ?>" alt="image entreprise" width="50px" height="50px">
                         <h3>Nom de l'entreprise : <?= $entreprise->nom() ?></h3>
@@ -44,19 +50,21 @@
                         <br>
                         <h4>Compétences requises : </h4>
                         <div class="detail_modif_competence"><input type="text" value="<?= $offer->competences() ?>">
-                        <center>
-                            <a href="#" onclick="hide('popupmodif')">Annuler</a>
-                            <a href="#" onclick="hide('popupmodif')">Confirmer</a>
-                        </center>
+                            <center>
+                                <a href="#" onclick="hide('popupmodif')">Annuler</a>
+                                <a href="#" onclick="hide('popupmodif')">Confirmer</a>
+                            </center>
                         </div>
 
                     </div>
                 </form>
 
                 <form action="" method="post">
-                    <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
+                    <center>
+                        <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
+                    </center>
                     <div class="popup" id="popup">
-                        <h3>Vous êtes sûr de modifier?</h3>
+                        <h3>Vous êtes sûr de supprimer?</h3>
                         <center>
                             <a href="#" onclick="hide('popup')">Annuler</a>
                             <a href="#" onclick="hide('popup')">Confirmer</a>
