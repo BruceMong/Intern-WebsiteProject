@@ -672,10 +672,6 @@ input#search-bar {
   width: 10%;
 }
 
-.popupmodif p {
-  font-size: 1em;
-}
-
 .profil-container h1 {
   text-align: center;
 }
@@ -777,8 +773,25 @@ td {
 }
 
 .article_box {
-  padding-left: 15em;
-  padding-right: 15em;
-  margin: 2em;
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  -ms-grid-columns: 32.5% 32.5% 32.5%;
+      grid-template-columns: 32.5% 32.5% 32.5%;
+  outline: 2.5px solid #070606;
+  margin: 20px;
+  padding: 0px;
+  background-color: lightgray;
+  height: 150px;
+  width: 98%;
+}
+
+.article_box p {
+  padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.button_to_detail {
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
