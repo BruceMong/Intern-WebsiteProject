@@ -34,7 +34,7 @@ class ModelProfil
             $data = $req->fetch(PDO::FETCH_ASSOC);
             return new Profil($data);
         } else
-            throw new Exception("Aucun Entreprise ne correspond à l'identifiant '$id'");
+            throw new Exception("Aucun profil ne correspond à l'identifiant '$id'");
         $req->closeCursor();
     }
 
