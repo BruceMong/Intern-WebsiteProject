@@ -398,10 +398,11 @@ input#search-bar {
   position: relative;
   -ms-grid-columns: 32.5% 32.5% 32.5%;
       grid-template-columns: 32.5% 32.5% 32.5%;
-  outline: 2.5px solid #070606;
+  border-radius: 5px;
   margin: 20px;
   padding: 0px;
   background-color: lightgray;
+  width: 98%;
 }
 
 .img-offer {
@@ -485,7 +486,7 @@ input#search-bar {
 .detail_container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "pres pres aside" "pres pres modif" "stats stats stats" "comp comp comp";
+      grid-template-areas: "pres pres aside" "stats stats stats" "comp comp comp";
   padding: 50px;
   background-color: #56687e;
   border-radius: 10px;
@@ -499,7 +500,6 @@ input#search-bar {
 
 .detail_presentation {
   -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: pres;
@@ -514,13 +514,11 @@ input#search-bar {
 }
 
 .detail_modif {
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
   grid-area: modif;
 }
 
 .detail_stats {
-  -ms-grid-row: 3;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: stats;
@@ -529,7 +527,7 @@ input#search-bar {
 }
 
 .detail_competence {
-  -ms-grid-row: 4;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: comp;
@@ -804,7 +802,7 @@ td {
   position: relative;
   -ms-grid-columns: 32.5% 32.5% 32.5%;
       grid-template-columns: 32.5% 32.5% 32.5%;
-  outline: 2.5px solid #070606;
+  border-radius: 5px;
   margin: 20px;
   padding: 0px;
   background-color: lightgray;
