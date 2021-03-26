@@ -6,7 +6,7 @@ if (empty($_SESSION['utilisateur']))
 $t = 'Recherche d\'offre';
 
 
-if($_SESSION['droits'][0]->rechercher_entreprise() != 1)
+if($_SESSION['droits'][0]->rechercher_offre() != 1)
 {
     header('Location:' . URL . 'error');
 }

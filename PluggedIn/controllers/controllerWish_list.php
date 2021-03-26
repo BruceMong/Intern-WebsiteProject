@@ -5,6 +5,7 @@ if (empty($_SESSION['utilisateur']))
 
 $t = 'Wish_List';
 
+
 // On détermine sur quelle page on se trouve
 if (isset($_POST['page']) && !empty($_POST['page'])) {
     $currentPage = (int) strip_tags($_POST['page']);
