@@ -6,5 +6,7 @@ if (empty($_SESSION['utilisateur']))
 $t = 'Détail de l\'utilisateur';
 
 
+$modelUtilisateur = new ModelUtilisateur($bdd);
+$utilisateur = $modelUtilisateur->getUtilisateur($_POST['id']);
 
 require_once('views/viewDetailUtilisateur.php');
