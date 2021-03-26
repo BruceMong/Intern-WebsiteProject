@@ -34,7 +34,7 @@
                         <p>Nombre stagiaires CESI : </p>
                         <p>Confiance pilote : </p>
                         <p>Evaluation entreprise : </p>
-                        <p>Coontact entreprise ; </p>
+                        <p>Contact entreprise : </p>
 
                         <input type="text" value="">
                         <center style="margin-top: 1px;">

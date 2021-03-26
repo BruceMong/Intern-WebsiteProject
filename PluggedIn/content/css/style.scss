@@ -342,10 +342,12 @@ input#search-bar {
     display: grid;
     position: relative;
     grid-template-columns: 32.5% 32.5% 32.5%;
-    outline: 2.5px solid rgb(7, 6, 6);
+    //outline: 2.5px solid rgb(7, 6, 6);
+    border-radius: 5px;
     margin: 20px;
     padding: 0px;
     background-color: lightgray;
+    width: 98%;
 }
 
 .img-offer {
@@ -415,7 +417,7 @@ input#search-bar {
 //detail offre
 .detail_container {
     display: grid;
-    grid-template-areas: "pres pres aside" "pres pres modif" "stats stats stats" "comp comp comp";
+    grid-template-areas: "pres pres aside" "stats stats stats" "comp comp comp";
     padding: 50px;
     background-color: #56687e;
     border-radius: 10px;
@@ -700,7 +702,8 @@ td {
     display: grid;
     position: relative;
     grid-template-columns: 32.5% 32.5% 32.5%;
-    outline: 2.5px solid rgb(7, 6, 6);
+    //outline: 2.5px solid rgb(7, 6, 6);
+    border-radius: 5px;
     margin: 20px;
     padding: 0px;
     background-color: lightgray;
