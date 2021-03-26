@@ -46,7 +46,7 @@
 
     <nav class="nav_pagination">
         <ul class="pagination">
-            <form action="searchUtilisateur" method="post" class="form_pagination">
+            <form action="wish_list" method="post" class="form_pagination">
                 <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
                 <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
                     <button type="submit" class="page-link" name="page" value="<?= $currentPage - 1 ?>"> Précédente </button>

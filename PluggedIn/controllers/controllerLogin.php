@@ -3,7 +3,7 @@ session_start();
 // SI L'ADMINISTRATEUR EST AUTHENTIFIÉ
 if (!empty($_SESSION['utilisateur']))
     // JE LE REDIRIGE VERS LA PAGE "ADMIN"
-    header('Location:' . URL . 'utilisateur');
+    header('Location:' . URL . 'accueil');
 
 
 // JE VÉRIFIE SI LES IDENTIFIANTS
@@ -22,14 +22,14 @@ if (!empty($_POST)) {
 
     // SI LES CHAMPS SONT REMPLIS
     if (!empty($login) && !empty($mot_de_passe)) {
-        $modelUtilisateur = new $modelUtilisateur($bdd);
+        $modelUtilisateur = new ModelUtilisateur($bdd);
 
         // JE VÉRIFIE SI IL Y A UNE CORRESPONDANCE EN BDD
-        if (!$modelAdmin->exists($login, $mot_de_passe))
+        if (!$modelUtilisateur->exists($login, $mot_de_passe))
             array_push($errors, 'Mauvais identifiants');
         else {
             $_SESSION['utilisateur'] = $login;
-            header('Location:' . URL . 'utilisateur');
+            header('Location:' . URL . 'accueil');
         }
     }
 }

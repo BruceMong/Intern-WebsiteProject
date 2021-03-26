@@ -14,7 +14,8 @@ class ModelUtilisateur
     public function exists($login, $mot_de_passe)
     {
         $req = $this->_bdd->prepare('SELECT id_users FROM utilisateur WHERE login= ? AND mot_de_passe = ?');
-        $req->execute(array($login, sha1($mot_de_passe)));
+       // $req->execute(array($login, sha1($mot_de_passe)));
+       $req->execute(array($login, $mot_de_passe));
         if ($req->rowCount() == 1) {
             return true;
         }

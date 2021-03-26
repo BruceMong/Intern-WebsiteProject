@@ -1,9 +1,7 @@
 <?php
-// CRÉATION DE L'OBJET MANAGER
-// $modelArticle = new ModelArticle($bdd);
-
-// JE RÉCUPÈRE LA LISTE DE TOUS LES ARTICLES
-//$articles = $modelArticle->getArticles();
+session_start();
+if (empty($_SESSION['utilisateur']))
+    header('Location:' . URL . 'login');
 
 $t = 'Détail de l\'entreprise';
 

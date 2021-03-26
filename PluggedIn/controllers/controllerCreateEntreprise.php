@@ -1,9 +1,8 @@
 <?php
-// CRÉATION DE L'OBJET MANAGER
-// $modelArticle = new ModelArticle($bdd);
+session_start();
+if (empty($_SESSION['utilisateur']))
+    header('Location:' . URL . 'login');
 
-// JE RÉCUPÈRE LA LISTE DE TOUS LES ARTICLES
-//$articles = $modelArticle->getArticles();
 
 $t = 'Création Entreprise';
 

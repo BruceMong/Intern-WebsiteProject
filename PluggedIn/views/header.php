@@ -1,7 +1,3 @@
-<?php
-session_start();
-// JE VÉRIFIE QUE L'ADMINISTRATEUR EST BIEN AUTHENTIFIÉL:
-?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -59,7 +55,7 @@ session_start();
         <div class="header_right" id="identification">
             <ul>
                 <li>
-                    <?php if (!empty($_SESSION['utilisateur'])) {
+                    <?php if (empty($_SESSION['utilisateur'])) {
                         echo '<a class="login" href="login">';
                         echo '<input type="button" value="Login">';
                         echo '</a>';

@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (empty($_SESSION['utilisateur']))
+    header('Location:' . URL . 'login');
+
 $t = 'Recherche d\'entreprise';
 
 if (isset($_POST['page']) && !empty($_POST['page'])) {

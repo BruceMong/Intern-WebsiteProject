@@ -27,7 +27,7 @@
                         <p>Confiance Pilote: <br><?= $entreprise->confiance_pilote() ?></p>
                         <p>Localité: <br><?= $entreprise->localite() ?></p>
                         <p>Evaluation Entreprise: <br><?= $entreprise->evaluation_entreprise() ?></p>
-                        <p> Contact Entreprise: <br><?= $entreprise->mail() ?></p>
+                        <p>Contact Entreprise: <br><?= $entreprise->mail() ?></p>
                         <img src="<?= $entreprise->image() ?>" width="100px" height="100px">
                     </div>
                 </button>
@@ -38,7 +38,7 @@
 
     <nav class="nav_pagination">
         <ul class="pagination">
-            <form action="searchUtilisateur" method="post" class="form_pagination">
+            <form action="searchEntreprise" method="post" class="form_pagination">
                 <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
                 <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
                     <button type="submit" class="page-link" name="page" value="<?= $currentPage - 1 ?>"> Précédente </button>
