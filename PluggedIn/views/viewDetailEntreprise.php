@@ -4,8 +4,6 @@
 <div class=bloc_page>
     <div class="detail_container">
 
-
-
         <div class="detail_presentation">
             <img src="" alt="">
             <h2>Nom entreprise : </h2>
