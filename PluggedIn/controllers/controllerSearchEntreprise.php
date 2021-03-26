@@ -5,6 +5,15 @@ if (empty($_SESSION['utilisateur']))
 
 $t = 'Recherche d\'entreprise';
 
+
+
+if($_SESSION['droits'][0]->rechercher_entreprise() != 1)
+{
+    header('Location:' . URL . 'error');
+}
+
+
+
 if (isset($_POST['page']) && !empty($_POST['page'])) {
     $currentPage = (int) strip_tags($_POST['page']);
 } else {

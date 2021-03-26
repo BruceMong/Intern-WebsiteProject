@@ -5,7 +5,10 @@ if (empty($_SESSION['utilisateur']))
 
 $t = 'Détail de l\'utilisateur';
 
-
+if($_SESSION['droits'][0]->consulter_stats_etudiants() != 1)
+{
+    header('Location:' . URL . 'error');
+}
 $modelUtilisateur = new ModelUtilisateur($bdd);
 $utilisateur = $modelUtilisateur->getUtilisateur($_POST['id']);
 

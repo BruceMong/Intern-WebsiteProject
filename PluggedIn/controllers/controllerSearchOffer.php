@@ -6,6 +6,12 @@ if (empty($_SESSION['utilisateur']))
 $t = 'Recherche d\'offre';
 
 
+if($_SESSION['droits'][0]->rechercher_entreprise() != 1)
+{
+    header('Location:' . URL . 'error');
+}
+
+
 // On détermine sur quelle page on se trouve
 if (isset($_POST['page']) && !empty($_POST['page'])) {
     $currentPage = (int) strip_tags($_POST['page']);
