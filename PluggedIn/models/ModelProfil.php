@@ -8,14 +8,7 @@ class ModelProfil
         $this->setBdd($bdd);
     }
 
-    public function countOffers()
-    {
-        $req = $this->_bdd->prepare('SELECT * FROM offre ORDER BY id_offre DESC;');
-        $req->execute();
-        $result = $req->fetch();
-        return (int)$result;
-        $req->closeCursor();
-    }
+    
 
     // FONCTION QUI RÉCUPÈRE TOUS LES ARTICLES ET QUI CRÉE UN OBJET (Article) POUR CHAQUE ARTICLE
     public function getProfils()

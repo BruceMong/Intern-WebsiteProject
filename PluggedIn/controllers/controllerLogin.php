@@ -28,8 +28,16 @@ if (!empty($_POST)) {
         if (!$modelUtilisateur->exists($login, $mot_de_passe))
             array_push($errors, 'Mauvais identifiants');
         else {
+            $modelDroit = new ModelDroit($bdd);
             $_SESSION['utilisateur'] = $login;
+            $_SESSION['droits'] = $modelDroit->getDroits($login);
+
+
+
             header('Location:' . URL . 'accueil');
+
+
+
         }
     }
 }

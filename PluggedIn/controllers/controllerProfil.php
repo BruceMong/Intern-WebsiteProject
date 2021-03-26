@@ -4,7 +4,7 @@ if (empty($_SESSION['utilisateur']))
     header('Location:' . URL . 'login');
 
 $modelUtilisateur = new ModelUtilisateur($bdd);
-$utilisateur = $modelUtilisateur->getUtilisateur("Bruce.Mongthe");
+$utilisateur = $modelUtilisateur->getUtilisateur($_SESSION['utilisateur']);
 
 $modelProfil = new ModelProfil($bdd);
 $profil = $modelProfil->getProfil($utilisateur->id_profil());
@@ -13,7 +13,7 @@ $modelPromotion = new ModelPromotion($bdd);
 $promotion = $modelPromotion->getPromotion($utilisateur->id_promotion());
 
 $modelDroit = new ModelDroit($bdd);
-$droit = $modelDroit->getDroit($utilisateur->id_users());
+$droit = $modelDroit->getDroit($_SESSION['utilisateur']);
 
 $t = 'Profil ' . $utilisateur->prenom();
 

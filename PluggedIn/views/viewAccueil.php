@@ -7,6 +7,8 @@
 
 
 <div class=bloc_page>
+
+    <?= var_dump($_SESSION['droits']); ?>
 </div>
 
 

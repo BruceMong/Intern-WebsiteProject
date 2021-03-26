@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 25 mars 2021 à 16:45
+-- Généré le : ven. 26 mars 2021 à 17:26
 -- Version du serveur :  10.4.17-MariaDB
--- Version de PHP : 7.3.27
+-- Version de PHP : 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `droit` (
-  `id_droit` int(11) NOT NULL,
+  `login` varchar(255) NOT NULL,
   `authentifier` tinyint(1) NOT NULL,
   `rechercher_entreprise` tinyint(1) NOT NULL,
   `creer_entreprise` tinyint(1) NOT NULL,
@@ -69,8 +69,8 @@ CREATE TABLE `droit` (
 -- Déchargement des données de la table `droit`
 --
 
-INSERT INTO `droit` (`id_droit`, `authentifier`, `rechercher_entreprise`, `creer_entreprise`, `modifier_entreprise`, `evaluer_entreprise`, `supprimer_entreprise`, `consulter_stats_entreprises`, `rechercher_offre`, `creer_offre`, `modifier_offre`, `supprimer_offre`, `consulter_stats_offres`, `rechercher_compte_pilote`, `creer_compte_pilote`, `modifier_compte_pilote`, `supprimer_compte_pilote`, `rechercher_compte_delegue`, `creer_compte_delegue`, `modifier_compte_delegue`, `supprimer_compte_delegue`, `assigner_droits_delegue`, `rechercher_compte_etudiant`, `creer_compte_etudiant`, `modifier_compte_etudiant`, `supprimer_compte_etudiant`, `consulter_stats_etudiants`, `ajouter_offre_wish_list`, `retirer_offre_wish_list`, `postuler_offre`, `info_sys_avance_candi1`, `info_sys_avance_candi2`, `info_sys_avance_candi3`, `info_sys_avance_candi4`, `info_sys_avance_candi5`) VALUES
-(2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+INSERT INTO `droit` (`login`, `authentifier`, `rechercher_entreprise`, `creer_entreprise`, `modifier_entreprise`, `evaluer_entreprise`, `supprimer_entreprise`, `consulter_stats_entreprises`, `rechercher_offre`, `creer_offre`, `modifier_offre`, `supprimer_offre`, `consulter_stats_offres`, `rechercher_compte_pilote`, `creer_compte_pilote`, `modifier_compte_pilote`, `supprimer_compte_pilote`, `rechercher_compte_delegue`, `creer_compte_delegue`, `modifier_compte_delegue`, `supprimer_compte_delegue`, `assigner_droits_delegue`, `rechercher_compte_etudiant`, `creer_compte_etudiant`, `modifier_compte_etudiant`, `supprimer_compte_etudiant`, `consulter_stats_etudiants`, `ajouter_offre_wish_list`, `retirer_offre_wish_list`, `postuler_offre`, `info_sys_avance_candi1`, `info_sys_avance_candi2`, `info_sys_avance_candi3`, `info_sys_avance_candi4`, `info_sys_avance_candi5`) VALUES
+('Bruce.Mongthe', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -122,7 +122,8 @@ CREATE TABLE `offre` (
 --
 
 INSERT INTO `offre` (`id_offre`, `competences`, `entreprise`, `type_promo_concerne`, `duree_stage`, `base_remuneration`, `duree_offre`, `nombre_place`, `date`) VALUES
-(1, 'Developpement web', 'Mediamoov', 'A3', 6, 600, 2, 3, '2021-10-13');
+(1, 'Developpement web', 'Mediamoov', 'A3', 6, 600, 2, 3, '2021-10-13'),
+(2, 'Reseaux', 'Atos', 'A1', 6, 600, 5, 6, '2021-03-24');
 
 -- --------------------------------------------------------
 
@@ -213,7 +214,8 @@ CREATE TABLE `wish_list` (
 --
 
 INSERT INTO `wish_list` (`login`, `id_offre`) VALUES
-('Bruce.Mongthe', 1);
+('Bruce.Mongthe', 1),
+('Bruce.Mongthe', 2);
 
 --
 -- Index pour les tables déchargées
@@ -223,7 +225,7 @@ INSERT INTO `wish_list` (`login`, `id_offre`) VALUES
 -- Index pour la table `droit`
 --
 ALTER TABLE `droit`
-  ADD PRIMARY KEY (`id_droit`);
+  ADD PRIMARY KEY (`login`);
 
 --
 -- Index pour la table `entreprise`
@@ -260,12 +262,6 @@ ALTER TABLE `utilisateur`
 --
 
 --
--- AUTO_INCREMENT pour la table `droit`
---
-ALTER TABLE `droit`
-  MODIFY `id_droit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT pour la table `entreprise`
 --
 ALTER TABLE `entreprise`
@@ -275,7 +271,7 @@ ALTER TABLE `entreprise`
 -- AUTO_INCREMENT pour la table `offre`
 --
 ALTER TABLE `offre`
-  MODIFY `id_offre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_offre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `profil`
