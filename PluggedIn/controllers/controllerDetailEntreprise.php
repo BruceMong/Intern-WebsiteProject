@@ -10,4 +10,4 @@ $t = 'Détail de l\'entreprise';
 $modelEntreprise = new ModelEntreprise($bdd);
 $entreprise = $modelEntreprise->getEntreprise($_POST['id']);
 
-require_once('views/viewDetailOffer.php');
+require_once('views/viewDetailEntreprise.php');
