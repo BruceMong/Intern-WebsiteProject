@@ -18,7 +18,7 @@
 
     <div class="article-container">
         <?php foreach ($entreprises as $entreprise) : ?>
-            <form action="detailOffer" method="post">
+            <form action="detailEntreprise" method="post">
                 <button type="submit" class="button_to_detail" name="id" value=<?= $entreprise->id_entreprise() ?>>
                     <div class="offer" style="height: 200;">
                         <p>Nom:<br><?= $entreprise->nom() ?></p>
