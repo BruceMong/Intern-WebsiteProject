@@ -1,7 +1,7 @@
 <?php
 class Droit
 {
-    private $_id_droit;
+    private $_login;
     private $_authentifier;
     private $_rechercher_entreprise;
     private $_creer_entreprise;
@@ -55,9 +55,9 @@ class Droit
     }
 
     // GETTERS
-    public function id_droit()
+    public function login()
     {
-        return $this->_id_droit;
+        return $this->_login;
     }
 
     public function authentifier()
@@ -233,12 +233,10 @@ class Droit
 
 
     // SETTERS
-    public function setId_droit($id_droit)
+    public function setLogin($login)
     {
-        $id_droit = (int) $id_droit;
-
-        if ($id_droit > 0)
-            $this->_id_droit = $id_droit;
+        if (is_string($login))
+            $this->_login = $login;
     }
 
     public function setAuthentifier($authentifier)
