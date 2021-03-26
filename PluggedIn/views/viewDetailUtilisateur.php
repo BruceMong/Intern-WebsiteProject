@@ -7,13 +7,12 @@
 
         <div class="detail_presentation">
             <img src="" alt="">
-            <h2>Nom : Prénom : </h2>
+            <h2>Nom : <?= $utilisateur->nom() ?> Prénom : <?= $utilisateur->prenom() ?> </h2>
             <br>
-            <p>Login : </p>
-            <p>Promotion : </p>
-            <p>Centre de formation : </p>
-            <p>Role : </p>
-
+            <p>Login : <?= $utilisateur->login() ?> </p>
+            <p>Promotion : <?php $promoUtil = $modelPromotion->getPromotion($utilisateur->id_promotion()); echo $promoUtil->libelle();   ?></p>
+            <p>Centre de formation : <?= $utilisateur->centre() ?> </p>
+            <p>Role :<?php $profilUtil = $modelProfil->getProfil($utilisateur->id_profil()); echo $profilUtil->libelle()  ?> </p>
 
         </div>
         <div class="bouton_crud">
