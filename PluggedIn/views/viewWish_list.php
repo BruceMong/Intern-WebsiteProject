@@ -18,17 +18,15 @@
 
     </header>
 
-    <p> <?= var_dump($wish_list); ?>
-    <p> <?= var_dump($wish_list[0]); ?>
-
     <div class="article-container">
         <?php foreach ($wish_list as $wish) : ?>
+            <?php $offer = $modelOffer->getOffer($wish->id_offre()) ?>
             <form action="detailOffer" method="post">
                 <button type="submit" class="button_to_detail" name="id" value="<?= $offer->id_offre() ?>">
                     <div class="offer" style="height: 200;">
                         <img src="https://yt3.ggpht.com/ytc/AAUvwniJcudFBvjhncQ4O0DaTopCR9eFqPV6hoGGZsVl4A=s900-c-k-c0x00ffffff-no-rj" alt="Error" class="img-offer">
 
-                        <?php $offer = $modelOffer->getOffer($wish->id_offre()) ?>
+                        
 
 
                         <p>Nom de l'entreprise<br><?= $offer->entreprise() ?></p>
