@@ -19,9 +19,6 @@
 
     </div>
 
-
-
-
     <div class="permission_profil">
         <form action="checkbox-form.php" method="post">
             <table>
