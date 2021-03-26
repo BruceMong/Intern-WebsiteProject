@@ -8,7 +8,7 @@
 
 <div class=bloc_page>
 
-    <?= var_dump($_SESSION['droits']); ?>
+    <?= var_dump( $_SESSION['droits'][0]->rechercher_offre() ) ; ?>
 </div>
 
 
