@@ -7,30 +7,28 @@
 
 
         <div class="detail_presentation">
-            <img src="<?= $entreprise->image() ?>" alt="image entreprise" width="100px" height="100px">
-            <h2>Nom de l'entreprise: </h2> <input type="text" class="info_modif" value="<?= $entreprise->nom() ?>">
-            <p>Secteur d'activité : </p> <input type="text" class="info_modif" value="<?= $entreprise->secteur_activite() ?>">
-            <p>Nombres d'étudiants CESI déjà acceptés en stage: </p> <input type="text" class="info_modif" value="<?= $entreprise->nombre_stagiaire_cesi() ?>">
+            <img src="" alt="image entreprise" width="100px" height="100px">
+            <h2>Nom de l'entreprise: <input type="text"> </h2>
+            <p>Secteur d'activité : <input type="text"></p>
+            <p>Localité : <input type="text"></p>
+            <p>Nombre de stagiaires CESI : <input type="text"></p>
+            <p>Confiance pilote : <input type="text"></p>
+            <p>Evaluation entreprise : <input type="text"></p>
+            <p>Contact entreprise : <input type="text"></p>
+                <?php /*
+                $sql = mysqli_query($connection, "SELECT username FROM users");
+                while ($row = $sql->fetch_assoc()) {
+                    echo "<option value=\"owner1\">" . $row['username'] . "</option>";
+                }*/
+                ?>
+            </select>
         </div>
         <div class="bouton_crud">
-            <div class="detail_aside">
-                <form action="" method="post">
-                    <input type="button" value="Ajouter à la wish-list">
-                </form>
-                <form action="" method="post">
-                    <input type="button" value="Postuler à l'offre    ">
-                    < </form>
-            </div>
-
             <div class="detail_modif">
-
                 <form action="" method="post">
-                    <input type="button" value="Modifier">
-                </form>
-                <form action="" method="post">
-                    <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
+                    <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Créer">
                     <div class="popup" id="popup">
-                        <h3>Vous êtes sûr de modifier?</h3>
+                        <h3>Vous êtes sûr de Créer?</h3>
                         <center>
                             <a href="#" onclick="hide('popup')">Annuler</a>
                             <a href="#" onclick="hide('popup')">Confirmer</a>
@@ -54,20 +52,6 @@
             </div>
         </div>
 
-        <div class="detail_stats">
-            <h2>Informations sur l'offre</h2> <br>
-            <p>Durée du stage : </p> <input type="text" class="info_modif" value="<?= $offer->duree_stage() ?>">
-            <p>Nombres de places offertes :  </p><input type="text" class="info_modif" value="<?= $offer->nombre_place() ?>">
-            <p>Base de rémunération : </p><input type="text" class="info_modif" value="<?= $offer->base_remuneration() ?>">
-            <p>Date de l'offre : </p><input type="text" class="info_modif" value="<?php $offer->date() ?>">
-            <p>Typesde promotions concernées : </p><input type="text" class="info_modif" value="<?= $offer->type_promo_concerne() ?>">
-
-        </div>
-        <div class="detail_competence">
-            <h2>Compétences requises : </h2>
-            <input type="text" class="info_modif" value="<?= $offer->competences() ?>">
-            
-        </div>
 
     </div>
 </div>
