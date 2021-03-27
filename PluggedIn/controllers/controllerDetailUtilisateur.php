@@ -15,12 +15,21 @@ $utilisateur = $modelUtilisateur->getUtilisateur($_POST['id']);
 
 $modelProfil = new ModelProfil($bdd);
 $profil = $modelProfil->getProfil($utilisateur->id_profil());
+$profils = $modelProfil->getProfils();
 
 $modelPromotion = new ModelPromotion($bdd);
 $promotion = $modelPromotion->getPromotion($utilisateur->id_promotion());
+$promotions = $modelPromotion->getPromotions();
 
 $modelDroit = new ModelDroit($bdd);
 $droit = $modelDroit->getDroit($utilisateur->login());
+
+
+if(isset($_POST['delete']) )
+{
+    $modelUtilisateur->deleteUtilisateur($utilisateur->login());
+    header('Location:' . URL . 'searchUtilisateur');
+}
 
 if(isset($_POST['nom']) )
 {
@@ -83,6 +92,8 @@ if(isset($_POST['nom']) )
 
         }
 }
+
+
 
 if(isset($_POST['modif']) )
 {

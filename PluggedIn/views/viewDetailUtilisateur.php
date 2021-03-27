@@ -32,12 +32,24 @@
                         <h3>Prénom : <input name="prenom" type="text" value="<?= $utilisateur->prenom() ?>"></h3>
                         <p>Login : <input name="login" type="text" value="<?= $utilisateur->login() ?>"></p>
                         <br>
-                        <p>Promotion : <input name="promo" type="text" value="<?php $promoUtil = $modelPromotion->getPromotion($utilisateur->id_promotion()); echo $promoUtil->libelle();   ?>"></p>
+                        
+                        <p> Role: <select name="role"> 
+                           <?php foreach($profils as $role) : ?>
+                                    <option value="<?= $role->libelle()?>"><?= $role->libelle()?></option>
+                                <?php endforeach; ?>
+                                </select>
                         <br>
+                           </p>
                         <p>Centre de formation : <input name="centre" type="text" value="<?= $utilisateur->centre() ?>"></p>
                         <br>
-                        <p>Role : <input type="text" name="role" value="<?php $profilUtil = $modelProfil->getProfil($utilisateur->id_profil()); echo $profilUtil->libelle()  ?>"></p>
-                        <center style="margin-top: 150px;">
+                        <br>
+                        <p> Promotion: <select name="promo"> Promotion
+                           <?php foreach($promotions as $promoSelect) : ?>
+                                    <option value="<?= $promoSelect->libelle()?>"><?= $promoSelect->libelle()?></option>
+                                <?php endforeach; ?>
+                                </select>
+                           </p>
+                        <center style="margin-top: 100px;">
                             <button class="form-btn" type="submit" name=id value="<?= $utilisateur->login()?>" onclick="hide('popupmodif')">Confirmer</button>
                             <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popupmodif')" >Annuler</button>
                         </center>
@@ -53,8 +65,10 @@
                 <div class="popup" id="popup">
                     <h3>Vous êtes sûr de supprimer?</h3>
                     <center>
-                        <a href="#" onclick="hide('popup')">Annuler</a>
-                        <a href="#" onclick="hide('popup')">Confirmer</a>
+                        <input type="text" name="delete" id="droitmodif" value=true>
+
+                        <button class="form-btn" type="submit" name=id value="<?= $utilisateur->login()?>" onclick="hide('popupmodif')">Confirmer</button>
+                        <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popupmodif')" >Annuler</button>
                     </center>
                 </div>
 

@@ -115,8 +115,8 @@ class ModelUtilisateur
     // FONCTION QUI SUPPRIME UN UTILISATEUR
     public function deleteUtilisateur($id)
     {
-        $req = $this->_bdd->prepare('DELETE FROM utilisateur WHERE id = ?');
-        $req->execute(array($id));
+        $req = $this->_bdd->prepare('DELETE FROM utilisateur WHERE login = ?; DELETE FROM droit WHERE login = ?;DELETE FROM wish_list WHERE login = ?');
+        $req->execute(array($id, $id, $id));
         $req->closeCursor();
     }
 }

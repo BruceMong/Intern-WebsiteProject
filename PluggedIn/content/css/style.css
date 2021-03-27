@@ -833,4 +833,8 @@ td {
 #droitmodif {
   display: none;
 }
+
+.hideElement {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */
