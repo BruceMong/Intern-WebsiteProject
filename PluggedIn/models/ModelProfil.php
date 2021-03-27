@@ -24,6 +24,8 @@ class ModelProfil
         $req->closeCursor();
     }
 
+
+
     // FONCTION QUI RÉCUPÈRE L'ARTICLE PAR RAPPORT À SON ID
     public function getProfil($id)
     {
@@ -37,6 +39,20 @@ class ModelProfil
             throw new Exception("Aucun profil ne correspond à l'identifiant '$id'");
         $req->closeCursor();
     }
+
+    public function getProfilFromName($id)
+    {
+        $req = $this->_bdd->prepare('SELECT * FROM profil  WHERE libelle = ?');
+        $req->execute(array($id));
+
+        if ($req->rowCount() == 1) {
+            $data = $req->fetch(PDO::FETCH_ASSOC);
+            return new Profil($data);
+        } else
+            throw new Exception("Aucun profil ne correspond à l'identifiant '$id'");
+        $req->closeCursor();
+    }
+
 
     // FONCTION QUI AJOUTE UN ARTICLE EN BDD
     public function addProfil($promo)

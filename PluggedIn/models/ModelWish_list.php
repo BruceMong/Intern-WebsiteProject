@@ -39,6 +39,14 @@ class ModelWish_list
         $req->closeCursor();
     }
 
+    /*
+    public function updateLogin(Wish_list $wish_list, $id)
+    {
+        $req = $this->_bdd->prepare('UPDATE wish_list SET login = ?  WHERE login = ?');
+        $req->execute(array( $wish_list->login(), $id ));
+        $req->closeCursor();
+    }
+*/
 
     // FONCTION QUI RÉCUPÈRE TOUS LES ARTICLES ET QUI CRÉE UN OBJET (Article) POUR CHAQUE ARTICLE
     public function getUtilisateurs()
@@ -64,13 +72,6 @@ class ModelWish_list
         $req->closeCursor();
     }
 
-    // FONCTION QUI MET À JOUR LE MOT DE PASSE
-    public function updateMot_de_passe(Utilisateur $utilisateur)
-    {
-        $req = $this->_bdd->prepare('UPDATE utilisateur SET mot_de_passe = ? WHERE id = 1');
-        $req->execute(array($utilisateur->mot_de_passe()));
-        $req->closeCursor();
-    }
 
     // SETTERS
     public function setBdd(PDO $bdd)

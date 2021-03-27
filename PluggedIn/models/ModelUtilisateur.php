@@ -97,10 +97,18 @@ class ModelUtilisateur
     }
 
     // FONCTION QUI MET À JOUR L'UTILISATEUR
-    public function updateUtilisateur(Utilisateur $utilisateur)
+    public function updateUtilisateur(Utilisateur $utilisateur, $id)
     {
-        $req = $this->_bdd->prepare('UPDATE utilisateur SET login, mot_de_passe = ?, nom = ?, prenom= ?, centre = ?, id_promotion = ? WHERE id_users = ?');
-        $req->execute(array($utilisateur->login(), $utilisateur->mot_de_passe(), $utilisateur->nom(), $utilisateur->prenom(), $utilisateur->centre(), $utilisateur->id_promotion(), $utilisateur->id_users()));
+        $req = $this->_bdd->prepare('UPDATE utilisateur SET login = ?, nom = ?, prenom= ?, centre = ?, id_promotion = ?, id_profil = ? WHERE login = ?');
+        $req->execute(array($utilisateur->login(), $utilisateur->nom(), $utilisateur->prenom(), $utilisateur->centre(), $utilisateur->id_promotion(), $utilisateur->id_profil(), $id ));
+        $req->closeCursor();
+    }
+
+
+    public function updateLogin($newId, $id)
+    {
+        $req = $this->_bdd->prepare('UPDATE droit SET login = ?  WHERE login = ?; UPDATE wish_list SET login = ?  WHERE login = ?');
+        $req->execute(array( $newId, $id,$newId, $id));
         $req->closeCursor();
     }
 

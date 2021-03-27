@@ -22,6 +22,19 @@ class ModelPromotion
         $req->closeCursor();
     }
 
+    public function getPromotionFromName($id)
+    {
+        $req = $this->_bdd->prepare('SELECT * FROM promotion  WHERE libelle = ?');
+        $req->execute(array($id));
+
+        if ($req->rowCount() == 1) {
+            $data = $req->fetch(PDO::FETCH_ASSOC);
+            return new Promotion($data);
+        } else
+            throw new Exception("Aucune promo ne correspond à l'identifiant '$id'");
+        $req->closeCursor();
+    }
+
     // FONCTION QUI RÉCUPÈRE L'ARTICLE PAR RAPPORT À SON ID
     public function getPromotion($id)
     {
@@ -39,8 +52,6 @@ class ModelPromotion
     // FONCTION QUI AJOUTE UN ARTICLE EN BDD
     public function addPromotion($promo)
     {
-
-
         $req = $this->_bdd->prepare('INSERT INTO promotion (libelle) VALUES(?) ');
         $req->execute(array($promo->libelle()));
         $req->closeCursor();
@@ -53,6 +64,7 @@ class ModelPromotion
         $req->execute(array($promo->libelle(), $promo->id_promotion()));
         $req->closeCursor();
     }
+
 
     // FONCTION QUI SUPPRIME UN ARTICLE
     public function deletePromotion($promo)
