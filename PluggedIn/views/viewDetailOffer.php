@@ -16,6 +16,12 @@
             <p><?= $entreprise->nombre_stagiaire_cesi() ?></p>
             <p>Contact Entreprise: </p>
             <p><?= $entreprise->mail() ?></p>
+            <p>Localité: </p>
+            <p><?= $entreprise->localite() ?></p>
+            <p>Confiance Pilote: </p>
+            <p><?= $entreprise->confiance_pilote() ?></p>
+            <p>Evaluation Entreprise: </p>
+            <p><?= $entreprise->confiance_pilote() ?></p>
         </div>
         <div class="bouton_crud">
             <div class="detail_aside">

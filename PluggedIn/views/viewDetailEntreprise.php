@@ -5,17 +5,22 @@
     <div class="detail_container">
 
         <div class="detail_presentation">
-            <img src="" alt="">
-            <h2>Nom entreprise : </h2>
-            <br>
+
+            <img src="<?= $entreprise->image() ?>" alt="image entreprise" width="100px" height="100px">
+            <h2>Nom de l'entreprise: </h2>
+            <h3><?= $entreprise->nom() ?></h3>
             <p>Secteur d'activité : </p>
-            <p>Localité : </p>
-            <p>Nombre stagiaires CESI : </p>
-            <p>Confiance pilote : </p>
-            <p>Evaluation entreprise : </p>
-            <p>Coontact entreprise ; </p>
-
-
+            <p><?= $entreprise->secteur_activite() ?></p>
+            <p>Nombres d'étudiants CESI déjà acceptés en stage: </p>
+            <p><?= $entreprise->nombre_stagiaire_cesi() ?></p>
+            <p>Contact Entreprise: </p>
+            <p><?= $entreprise->mail() ?></p>
+            <p>Localité: </p>
+            <p><?= $entreprise->localite() ?></p>
+            <p>Confiance Pilote: </p>
+            <p><?= $entreprise->confiance_pilote() ?></p>
+            <p>Evaluation Entreprise: </p>
+            <p><?= $entreprise->evaluation_entreprise() ?></p>
         </div>
         <div class="bouton_crud">
 
@@ -27,14 +32,15 @@
                         <input type="button" class="buttonmodif" href="#" onclick="show('popupmodif')" value="Modifier">
                     </center>
                     <div class="popupmodif" id="popupmodif">
-                        <h3>Nom entreprise : </h3>
+                        <h3>Nom entreprise : <input name="nom" type="text"  value="<?= $entreprise->nom() ?>"> </h3>
                         <br>
-                        <p>Secteur d'activité : </p>
-                        <p>Localité : </p>
-                        <p>Nombre stagiaires CESI : </p>
-                        <p>Confiance pilote : </p>
-                        <p>Evaluation entreprise : </p>
-                        <p>Contact entreprise : </p>
+                        <p>Secteur d'activité :<input name="activite" type="text"  value="<?= $entreprise->secteur_activite() ?>"> </p>
+                        <p>Localité :<input name="localite" type="text"  value="<?= $entreprise->localite() ?>"> </p>
+                        <p>Nombre stagiaires CESI : <input name="" type="text"  value="<?= $entreprise->nombre_stagiaire_cesi() ?>"> </p>
+                        <p>Evaluation entreprise : <input name="" type="text"  value="<?= $evaluation->evaluation_entreprise() ?>"></p>
+                        <p>Confiance Pilote: <input name="" type="text"  value="<?= $evaluation->confiance_pilote() ?>"></p>
+                        <p>Contact entreprise : <input name="" type="text"  value="<?= $entreprise->mail() ?>"></p>
+                        <p>image :<input name="" type="text"  value="<?= $entreprise->image() ?>"> </p>
 
                         <input type="text" value="">
                         <center style="margin-top: 1px;">
