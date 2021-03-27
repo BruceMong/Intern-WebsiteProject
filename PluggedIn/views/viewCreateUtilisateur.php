@@ -8,14 +8,18 @@
 
         <div class="detail_presentation">
             <img src="" alt="image entreprise" width="100px" height="100px">
-            <h2>Nom de l'entreprise: </h2>
-            <select name="choix entreprise" id="select_entreprise">
-                <?php /*
+            <h2>Nom : <input type="text"> </h2>
+            <h2>Prénom : <input type="text"></h2>
+            <p>Login : <input type="text"></p>
+            <p>Promo : <input type="text"></p>
+            <p>Centre : <input type="text"></p>
+            <p>Role : <input type="text"></p>
+            <?php /*
                 $sql = mysqli_query($connection, "SELECT username FROM users");
                 while ($row = $sql->fetch_assoc()) {
                     echo "<option value=\"owner1\">" . $row['username'] . "</option>";
                 }*/
-                ?>
+            ?>
             </select>
         </div>
         <div class="bouton_crud">
@@ -47,20 +51,6 @@
             </div>
         </div>
 
-        <div class="detail_stats">
-            <h2>Informations sur l'offre</h2> <br>
-            <p>Durée du stage : </p> <input type="text" class="info_modif" value="">
-            <p>Nombres de places offertes : </p><input type="text" class="info_modif" value="">
-            <p>Base de rémunération : </p><input type="text" class="info_modif" value="">
-            <p>Date de l'offre : </p><input type="text" class="info_modif" value="">
-            <p>Typesde promotions concernées : </p><input type="text" class="info_modif" value="">
-
-        </div>
-        <div class="detail_competence">
-            <h2>Compétences requises : </h2>
-            <input type="text" class="info_modif" value="">
-
-        </div>
 
     </div>
 </div>
