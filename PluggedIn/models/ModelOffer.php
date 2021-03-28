@@ -65,10 +65,10 @@ class ModelOffer
     }
 
     // FONCTION QUI AJOUTE UNE OFFRE EN BDD
-    public function addArticle($off)
+    public function addOffer($off)
     {
-        $req = $this->_bdd->prepare('INSERT INTO offre (competences,  entreprise, type_promo_concerne, duree_stage, base_remuneration, duree_offre, nombre_place, date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?');
-        $req->execute(array($off->competences(), $off->entreprise(), $off->type_promo_concerne(), $off->duree_stage(), $off->base_renumeration(), $off->duree_offre(), $off->nombre_place(), $off->date()));
+        $req = $this->_bdd->prepare('INSERT INTO offre (competences,  entreprise, type_promo_concerne, duree_stage, base_remuneration, duree_offre, nombre_place, date) VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
+        $req->execute(array($off->competences(), $off->entreprise(), $off->type_promo_concerne(), $off->duree_stage(), $off->base_remuneration(), $off->duree_offre(), $off->nombre_place(), $off->date()));
         $req->closeCursor();
     }
 

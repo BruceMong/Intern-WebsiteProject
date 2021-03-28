@@ -39,8 +39,7 @@ class ModelEntreprise
     public function getEntreprises()
     {
         $entreprises = [];
-
-        $req = $this->_bdd->query('SELECT *  ORDER BY id_entreprise DESC');
+        $req = $this->_bdd->query('SELECT *  FROM entreprise ORDER BY id_entreprise DESC');
         $req->execute();
         while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
             $entreprises[] = new Entreprise($data);

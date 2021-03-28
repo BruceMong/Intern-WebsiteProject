@@ -5,28 +5,24 @@
     <div class="detail_container">
 
 
+        <form action="createOffer" method="post">
+            <div class="detail_presentation">
+                <h2>Nom de l'entreprise: </h2>
+                <select name="entreprise">
+                    <?php foreach ($entreprises as $entreprise) : ?>
+                        <option value="<?= $entreprise->nom() ?>"><?= $entreprise->nom() ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="bouton_crud">
+                <div class="detail_modif">
 
-        <div class="detail_presentation">
-            <img src="" alt="image entreprise" width="100px" height="100px">
-            <h2>Nom de l'entreprise: </h2>
-            <select name="choix entreprise" id="select_entreprise">
-                <?php /*
-                $sql = mysqli_query($connection, "SELECT username FROM users");
-                while ($row = $sql->fetch_assoc()) {
-                    echo "<option value=\"owner1\">" . $row['username'] . "</option>";
-                }*/
-                ?>
-            </select>
-        </div>
-        <div class="bouton_crud">
-            <div class="detail_modif">
-                <form action="" method="post">
                     <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Créer">
                     <div class="popup" id="popup">
                         <h3>Vous êtes sûr de Créer?</h3>
                         <center>
-                            <a href="#" onclick="hide('popup')">Annuler</a>
-                            <a href="#" onclick="hide('popup')">Confirmer</a>
+                            <button class="form-btn" type="submit" name=create value="" onclick="hide('popupmodif')">Confirmer</button>
+                            <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popupmodif')">Annuler</button>
                         </center>
                     </div>
 
@@ -43,25 +39,31 @@
                         }
                     </script>
 
-                </form>
+
+                </div>
             </div>
-        </div>
 
-        <div class="detail_stats">
-            <h2>Informations sur l'offre</h2> <br>
-            <p>Durée du stage : </p> <input type="text" class="info_modif" value="">
-            <p>Nombres de places offertes : </p><input type="text" class="info_modif" value="">
-            <p>Base de rémunération : </p><input type="text" class="info_modif" value="">
-            <p>Date de l'offre : </p><input type="text" class="info_modif" value="">
-            <p>Typesde promotions concernées : </p><input type="text" class="info_modif" value="">
+            <div class="detail_stats">
+                <h2>Informations sur l'offre</h2> <br>
+                <p>Durée du stage : </p> <input name=duree_stage type="text" class="info_modif" value="">
+                <p>Durée de l'offre : </p> <input name=duree_offre type="text" class="info_modif" value="">
+                <p>Nombres de places offertes : </p><input name=nombre_place type="text" class="info_modif" value="">
+                <p>Base de rémunération : </p><input name=base_remuneration type="text" class="info_modif" value="">
+                <p>Date de l'offre : </p><input name=date type="text" class="info_modif" value="">
+                <p>Types de promotions concernées : </p>
+                <select name="type_promo_concerne">
+                    <?php foreach ($promotions as $promoSelect) : ?>
+                        <option value="<?= $promoSelect->libelle() ?>"><?= $promoSelect->libelle() ?></option>
+                    <?php endforeach; ?>
+                </select>
 
-        </div>
-        <div class="detail_competence">
-            <h2>Compétences requises : </h2>
-            <input type="text" class="info_modif" value="">
+            </div>
+            <div class="detail_competence">
+                <h2>Compétences requises : </h2>
+                <input name="competences" type="text" class="info_modif" value="">
 
-        </div>
-
+            </div>
+        </form>
     </div>
 </div>
 <?php require_once('views/footer.php'); ?>
