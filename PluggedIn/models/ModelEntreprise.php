@@ -11,7 +11,7 @@ class ModelEntreprise
 
     public function countEntreprises()
     {
-        $req = $this->_bdd->prepare('SELECT COUNT(*)AS nb_articles FROM entreprise;');
+        $req = $this->_bdd->prepare('SELECT COUNT(*) AS nb_articles FROM entreprise;');
         $req->execute();
 
         $result = $req->fetch();
@@ -94,10 +94,9 @@ class ModelEntreprise
     // FONCTION QUI AJOUTE UN ARTICLE EN BDD
     public function addEntreprise($ent)
     {
-
-
-        $req = $this->_bdd->prepare('INSERT INTO entreprise (nom, localite, secteur_activite, nombre_stagiaire_cesi, confiance_pilote, evaluation_entreprise, image, localite, mail) VALUES(?, ?, ?, ?, ?, ?, ?');
-        $req->execute(array($ent->nom(), $ent->localite(), $ent->secteur_activite(), $ent->nombre_stagiaire_cesi(), $ent->confiance_pilote(), $ent->evaluation_entreprise(), $ent->image(), $ent->localite(), $ent->mail()));
+        //$req = $this->_bdd->prepare('INSERT INTO entreprise (nom, localite, secteur_activite, nombre_stagiaire_cesi, confiance_pilote, evaluation_entreprise, image, localite, mail) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?');
+        $req = $this->_bdd->prepare('INSERT INTO `entreprise`( `nom`, `secteur_activite`, `nombre_stagiaire_cesi`, `confiance_pilote`, `evaluation_entreprise`, `image`, `localite`, `mail`) VALUES (?,?,?,?,?,?,?,?)');
+        $req->execute(array($ent->nom(), $ent->secteur_activite(),  $ent->nombre_stagiaire_cesi(), $ent->confiance_pilote(), $ent->evaluation_entreprise(), $ent->image(), $ent->localite(), $ent->mail()));
         $req->closeCursor();
     }
 
@@ -110,7 +109,7 @@ class ModelEntreprise
     }
 
     // FONCTION QUI SUPPRIME UN ARTICLE
-    public function deleteArticle($art)
+    public function deleteEntreprise($art)
     {
         $req = $this->_bdd->prepare('DELETE FROM entreprise WHERE id_entreprise = ?');
         $req->execute(array($art));

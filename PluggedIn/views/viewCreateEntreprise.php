@@ -3,35 +3,26 @@
 
 <div class=bloc_page>
     <div class="detail_container">
+        <form action="createEntreprise" method="post">
+            <div class="detail_presentation">
+                <h2>Nom de l'entreprise: <input name="nom" type="text"> </h2>
+                <p>Secteur d'activité : <input name="secteur_activite" type="text"></p>
+                <p>Localité : <input name="localite" type="text"></p>
+                <p>Nombre de stagiaires CESI : <input name="nombre_stagiaire_cesi" type="text"></p>
+                <p>Confiance pilote : <input name="confiance_pilote" type="text"></p>
+                <p>Evaluation entreprise : <input name="evaluation_entreprise" type="text"></p>
+                <p>Contact entreprise : <input name="mail" type="text"></p>
+                <p>Image : <input name="image" type="text"></p>
+            </div>
+            <div class="bouton_crud">
+                <div class="detail_modif">
 
-
-
-        <div class="detail_presentation">
-            <img src="" alt="image entreprise" width="100px" height="100px">
-            <h2>Nom de l'entreprise: <input type="text"> </h2>
-            <p>Secteur d'activité : <input type="text"></p>
-            <p>Localité : <input type="text"></p>
-            <p>Nombre de stagiaires CESI : <input type="text"></p>
-            <p>Confiance pilote : <input type="text"></p>
-            <p>Evaluation entreprise : <input type="text"></p>
-            <p>Contact entreprise : <input type="text"></p>
-                <?php /*
-                $sql = mysqli_query($connection, "SELECT username FROM users");
-                while ($row = $sql->fetch_assoc()) {
-                    echo "<option value=\"owner1\">" . $row['username'] . "</option>";
-                }*/
-                ?>
-            </select>
-        </div>
-        <div class="bouton_crud">
-            <div class="detail_modif">
-                <form action="" method="post">
                     <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Créer">
                     <div class="popup" id="popup">
                         <h3>Vous êtes sûr de Créer?</h3>
                         <center>
-                            <a href="#" onclick="hide('popup')">Annuler</a>
-                            <a href="#" onclick="hide('popup')">Confirmer</a>
+                            <button type="submit" name=create value="" onclick="hide('popup')">Confirmer</button>
+                            <button type="reset" onclick="hide('popup')">Annuler</button>
                         </center>
                     </div>
 
@@ -48,11 +39,11 @@
                         }
                     </script>
 
-                </form>
-            </div>
-        </div>
-
-
+        </form>
     </div>
+</div>
+
+
+</div>
 </div>
 <?php require_once('views/footer.php'); ?>

@@ -14,8 +14,8 @@ class ModelUtilisateur
     public function exists($login, $mot_de_passe)
     {
         $req = $this->_bdd->prepare('SELECT id_users FROM utilisateur WHERE login= ? AND mot_de_passe = ?');
-       // $req->execute(array($login, sha1($mot_de_passe)));
-       $req->execute(array($login, $mot_de_passe));
+        // $req->execute(array($login, sha1($mot_de_passe)));
+        $req->execute(array($login, $mot_de_passe));
         if ($req->rowCount() == 1) {
             return true;
         }
@@ -24,7 +24,7 @@ class ModelUtilisateur
 
     public function countUtilisateur()
     {
-        
+
         $req = $this->_bdd->prepare('SELECT COUNT(*) AS nb_articles FROM utilisateur;');
         $req->execute();
 
@@ -37,7 +37,7 @@ class ModelUtilisateur
         $utilisateurs = [];
 
         $req = $this->_bdd->prepare('SELECT * FROM utilisateur ORDER BY id_users DESC LIMIT :premier, :parpage;');
-        
+
         $req->bindValue(':premier', $premier, PDO::PARAM_INT);
         $req->bindValue(':parpage', $parPage, PDO::PARAM_INT);
         $req->execute();
@@ -91,8 +91,8 @@ class ModelUtilisateur
     // FONCTION QUI AJOUTE UN UTILISATEUR EN BDD
     public function addUtilisateur($utilisateur)
     {
-        $req = $this->_bdd->prepare('INSERT INTO utilisateur (login, mot_de_passe, nom, prenom, centre, id_promotion) VALUES(?, ?, ?, ?, ?, ?)');
-        $req->execute(array(array($utilisateur->login(), $utilisateur->mot_de_passe(), $utilisateur->nom(), $utilisateur->prenom(), $utilisateur->centre(), $utilisateur->id_promotion())));
+        $req = $this->_bdd->prepare('INSERT INTO utilisateur (login, mot_de_passe, nom, prenom, centre, id_promotion, id_profil) VALUES(?, ?, ?, ?, ?, ?, ?)');
+        $req->execute(array($utilisateur->login(), $utilisateur->mot_de_passe(), $utilisateur->nom(), $utilisateur->prenom(), $utilisateur->centre(), $utilisateur->id_promotion(), $utilisateur->id_profil()));
         $req->closeCursor();
     }
 
@@ -100,7 +100,7 @@ class ModelUtilisateur
     public function updateUtilisateur(Utilisateur $utilisateur, $id)
     {
         $req = $this->_bdd->prepare('UPDATE utilisateur SET login = ?, nom = ?, prenom= ?, centre = ?, id_promotion = ?, id_profil = ? WHERE login = ?');
-        $req->execute(array($utilisateur->login(), $utilisateur->nom(), $utilisateur->prenom(), $utilisateur->centre(), $utilisateur->id_promotion(), $utilisateur->id_profil(), $id ));
+        $req->execute(array($utilisateur->login(), $utilisateur->nom(), $utilisateur->prenom(), $utilisateur->centre(), $utilisateur->id_promotion(), $utilisateur->id_profil(), $id));
         $req->closeCursor();
     }
 
@@ -108,7 +108,7 @@ class ModelUtilisateur
     public function updateLogin($newId, $id)
     {
         $req = $this->_bdd->prepare('UPDATE droit SET login = ?  WHERE login = ?; UPDATE wish_list SET login = ?  WHERE login = ?');
-        $req->execute(array( $newId, $id,$newId, $id));
+        $req->execute(array($newId, $id, $newId, $id));
         $req->closeCursor();
     }
 

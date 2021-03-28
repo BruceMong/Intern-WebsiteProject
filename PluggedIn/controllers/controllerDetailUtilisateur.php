@@ -5,8 +5,7 @@ if (empty($_SESSION['utilisateur']))
 
 $t = 'Détail de l\'utilisateur';
 
-if($_SESSION['droits'][0]->consulter_stats_etudiants() != 1 || !isset($_POST['id']))
-{
+if ($_SESSION['droits'][0]->consulter_stats_etudiants() != 1 || !isset($_POST['id'])) {
     header('Location:' . URL . 'error');
 }
 
@@ -25,14 +24,12 @@ $modelDroit = new ModelDroit($bdd);
 $droit = $modelDroit->getDroit($utilisateur->login());
 
 
-if(isset($_POST['delete']) )
-{
+if (isset($_POST['delete'])) {
     $modelUtilisateur->deleteUtilisateur($utilisateur->login());
     header('Location:' . URL . 'searchUtilisateur');
 }
 
-if(isset($_POST['nom']) )
-{
+if (isset($_POST['nom'])) {
 
     $errors = array();
 
@@ -45,58 +42,56 @@ if(isset($_POST['nom']) )
     $centre = strip_tags($centre);
     $role = strip_tags($role);
 
-        if (empty($nom))
-            array_push($errors, 'Entrez un nom');
+    if (empty($nom))
+        array_push($errors, 'Entrez un nom');
 
-        if (empty($prenom))
-            array_push($errors, 'Entrez un prenom');
+    if (empty($prenom))
+        array_push($errors, 'Entrez un prenom');
 
-        if (empty($login))
-            array_push($errors, 'Entrez un login');
+    if (empty($login))
+        array_push($errors, 'Entrez un login');
 
-        if (empty($promo))
-            array_push($errors, 'Entrez une promotion');
+    if (empty($promo))
+        array_push($errors, 'Entrez une promotion');
 
-        if (empty($centre))
-            array_push($errors, 'Entrez un centre');
+    if (empty($centre))
+        array_push($errors, 'Entrez un centre');
 
-        if (empty($role))
-            array_push($errors, 'Entrez un role');
+    if (empty($role))
+        array_push($errors, 'Entrez un role');
 
-        if (count($errors) == 0) {
-            $utilisateur->setNom($nom);
-            $utilisateur->setPrenom($prenom);
-            $utilisateur->setLogin($login);
-            $utilisateur->setCentre($centre);
+    if (count($errors) == 0) {
+        $utilisateur->setNom($nom);
+        $utilisateur->setPrenom($prenom);
+        $utilisateur->setLogin($login);
+        $utilisateur->setCentre($centre);
 
-            $promo = $modelPromotion->getPromotionFromName($promo);
-            $role = $modelProfil->getProfilFromName($role);
+        $promo = $modelPromotion->getPromotionFromName($promo);
+        $role = $modelProfil->getProfilFromName($role);
 
-            $utilisateur->setId_promotion($promo->id_promotion());
-            $utilisateur->setId_profil($role->id_profil());
-
-
-            $modelUtilisateur->updateUtilisateur($utilisateur, $utilisateur->login());
-            if($utilisateur->login() != $_POST['id'] )
-                $modelUtilisateur->updateLogin($utilisateur->login(), $_POST['id'] ); //peux etre aurait fallut mettre des clés étrangeres
+        $utilisateur->setId_promotion($promo->id_promotion());
+        $utilisateur->setId_profil($role->id_profil());
 
 
-            $success = 'Votre article a bien été modifié';
+        $modelUtilisateur->updateUtilisateur($utilisateur, $utilisateur->login());
+        if ($utilisateur->login() != $_POST['id'])
+            $modelUtilisateur->updateLogin($utilisateur->login(), $_POST['id']); //peux etre aurait fallut mettre des clés étrangeres
 
-            unset($nom);
-            unset($prenom);
-            unset($login);
-            unset($centre);
-            unset($promo);
-            unset($role);
 
-        }
+        $success = 'Votre article a bien été modifié';
+
+        unset($nom);
+        unset($prenom);
+        unset($login);
+        unset($centre);
+        unset($promo);
+        unset($role);
+    }
 }
 
 
 
-if(isset($_POST['modif']) )
-{
+if (isset($_POST['modif'])) {
     $errors = array();
 
     extract($_POST);
@@ -169,50 +164,50 @@ if(isset($_POST['modif']) )
     $info_sys_avance_candi5 = strip_tags($info_sys_avance_candi5);
 
 
-        // SI TOUT EST OK, L'ARTICLE EST AJOUTÉ EN BDD
-        if (count($errors) == 0) {
+    // SI TOUT EST OK, L'ARTICLE EST AJOUTÉ EN BDD
+    if (count($errors) == 0) {
 
-            $droit->setAuthentifier($authentifier);
-            $droit->setRechercher_entreprise($rechercher_entreprise);
-            $droit->setCreer_entreprise($creer_entreprise);
-            $droit->setModifier_entreprise($modifier_entreprise);
-            $droit->setEvaluer_entreprise($evaluer_entreprise);
-            $droit->setSupprimer_entreprise($supprimer_entreprise);
-            $droit->setConsulter_stats_entreprises($consulter_stats_entreprises);
-            $droit->setRechercher_offre($rechercher_offre);
-            $droit->setCreer_offre($creer_offre);
-            $droit->setModifier_offre($modifier_offre);
-            $droit->setSupprimer_offre($supprimer_offre);
-            $droit->setConsulter_stats_offres($consulter_stats_offres);
-            $droit->setRechercher_compte_pilote($rechercher_compte_pilote);
-            $droit->setCreer_compte_pilote($creer_compte_pilote);
-            $droit->setModifier_compte_pilote($modifier_compte_pilote);
-            $droit->setSupprimer_compte_pilote($supprimer_compte_pilote);
-            $droit->setRechercher_compte_delegue($rechercher_compte_delegue);
-            $droit->setCreer_compte_delegue($creer_compte_delegue);
-            $droit->setModifier_compte_delegue($modifier_compte_delegue);
-            $droit->setSupprimer_compte_delegue($supprimer_compte_delegue);
-            $droit->setAssigner_droits_delegue($assigner_droits_delegue);
-            $droit->setRechercher_compte_etudiant($rechercher_compte_etudiant);
-            $droit->setCreer_compte_etudiant($creer_compte_etudiant);
-            $droit->setModifier_compte_etudiant($modifier_compte_etudiant);
-            $droit->setSupprimer_compte_etudiant($supprimer_compte_etudiant);
-            $droit->setConsulter_stats_etudiants($consulter_stats_etudiants);
-            $droit->setAjouter_offre_wish_list($ajouter_offre_wish_list);
-            $droit->setRetirer_offre_wish_list($retirer_offre_wish_list);
-            $droit->setPostuler_offre($postuler_offre);
-            $droit->setInfo_sys_avance_candi1($info_sys_avance_candi1);
-            $droit->setInfo_sys_avance_candi2($info_sys_avance_candi2);
-            $droit->setInfo_sys_avance_candi3($info_sys_avance_candi3);
-            $droit->setInfo_sys_avance_candi4($info_sys_avance_candi4);
-            $droit->setInfo_sys_avance_candi5($info_sys_avance_candi5);
+        $droit->setAuthentifier($authentifier);
+        $droit->setRechercher_entreprise($rechercher_entreprise);
+        $droit->setCreer_entreprise($creer_entreprise);
+        $droit->setModifier_entreprise($modifier_entreprise);
+        $droit->setEvaluer_entreprise($evaluer_entreprise);
+        $droit->setSupprimer_entreprise($supprimer_entreprise);
+        $droit->setConsulter_stats_entreprises($consulter_stats_entreprises);
+        $droit->setRechercher_offre($rechercher_offre);
+        $droit->setCreer_offre($creer_offre);
+        $droit->setModifier_offre($modifier_offre);
+        $droit->setSupprimer_offre($supprimer_offre);
+        $droit->setConsulter_stats_offres($consulter_stats_offres);
+        $droit->setRechercher_compte_pilote($rechercher_compte_pilote);
+        $droit->setCreer_compte_pilote($creer_compte_pilote);
+        $droit->setModifier_compte_pilote($modifier_compte_pilote);
+        $droit->setSupprimer_compte_pilote($supprimer_compte_pilote);
+        $droit->setRechercher_compte_delegue($rechercher_compte_delegue);
+        $droit->setCreer_compte_delegue($creer_compte_delegue);
+        $droit->setModifier_compte_delegue($modifier_compte_delegue);
+        $droit->setSupprimer_compte_delegue($supprimer_compte_delegue);
+        $droit->setAssigner_droits_delegue($assigner_droits_delegue);
+        $droit->setRechercher_compte_etudiant($rechercher_compte_etudiant);
+        $droit->setCreer_compte_etudiant($creer_compte_etudiant);
+        $droit->setModifier_compte_etudiant($modifier_compte_etudiant);
+        $droit->setSupprimer_compte_etudiant($supprimer_compte_etudiant);
+        $droit->setConsulter_stats_etudiants($consulter_stats_etudiants);
+        $droit->setAjouter_offre_wish_list($ajouter_offre_wish_list);
+        $droit->setRetirer_offre_wish_list($retirer_offre_wish_list);
+        $droit->setPostuler_offre($postuler_offre);
+        $droit->setInfo_sys_avance_candi1($info_sys_avance_candi1);
+        $droit->setInfo_sys_avance_candi2($info_sys_avance_candi2);
+        $droit->setInfo_sys_avance_candi3($info_sys_avance_candi3);
+        $droit->setInfo_sys_avance_candi4($info_sys_avance_candi4);
+        $droit->setInfo_sys_avance_candi5($info_sys_avance_candi5);
 
-            $modelDroit->updateDroit($droit, $utilisateur->login());
-            $success = 'Votre article a bien été modifié';
+        $modelDroit->updateDroit($droit, $utilisateur->login());
+        $success = 'Votre article a bien été modifié';
 
-            //unset($nom);
-        }
+        //unset($nom);
     }
+}
 
 
-    require_once('views/viewDetailUtilisateur.php');
+require_once('views/viewDetailUtilisateur.php');
