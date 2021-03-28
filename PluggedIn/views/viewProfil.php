@@ -20,208 +20,307 @@
     </div>
 
     <div class="permission_profil">
-        <form action="checkbox-form.php" method="post">
-            <table>
-                <thead>
-                    <th>Permission</th>
-                    <th>Autorisation</th>
-                </thead>
-                <tbody>
-                    <td>
-                        Accès
-                    </td>
-                    <td>
+        <table style="width: 100%;">
+            <thead>
+                <th>Permission</th>
+                <th>Autorisation</th>
+            </thead>
+            <tbody>
+                <td>
+                    Accès
+                </td>
+                <td>
                     <label>
-                        <input type="checkbox" name="authentifier" value=1 />
+                        <input type="checkbox" onclick="return false;" name="authentifier" value=1 <?php
+                                                                                                    if ($droit->authentifier() == 1)
+                                                                                                        echo ' checked ';
+                                                                                                    ?> />
                         Authentification
                     </label>
-                    </td>
-                </tbody>
-                <tbody>
-                    <td>
-                        Gestion entreprises
-                    </td>
-                    <td>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="rechercher_entreprise" value=1 />
-                                Rechercher
-                            </label>
-                            <label>
-                                <input type="checkbox" name="consulter_stats_entreprises" value=1>
-                                Voir stats
-                            </label>
-                            <label>
-                                <input type="checkbox" name="creer_entreprise" value=1>
-                                Créer
-                            </label>
-                            <label>
-                                <input type="checkbox" name="modifier_entreprise" value=1>
-                                Modifier
-                            </label>
-                            <label>
-                                <input type="checkbox" name="evaluer_entreprise" value=1>
-                                Evaluer
-                            </label>
-                            <br>
-                            <label>
-                                <input type="checkbox" name="supprimer_entreprise" value=1>
-                                Supprimer
-                            </label>
-                        </div>
-                    </td>
-                </tbody>
-                <tbody>
-                    <td>
-                        Offres de stages
-                    </td>
-                    <td>
+                </td>
+            </tbody>
+            <tbody>
+                <td>
+                    Gestion entreprises
+                </td>
+                <td>
+                    <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="rechercher_offre" value=1>
+                            <input type="checkbox" onclick="return false;" name="rechercher_entreprise" value=1 <?php
+                                                                                                                if ($droit->rechercher_entreprise() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
                             Rechercher
                         </label>
                         <label>
-                            <input type="checkbox" name="consulter_stats_offres" value=1>
+                            <input type="checkbox" onclick="return false;" name="consulter_stats_entreprises" value=1 <?php
+                                                                                                                        if ($droit->consulter_stats_entreprises() == 1)
+                                                                                                                            echo ' checked ';
+                                                                                                                        ?> />
                             Voir stats
                         </label>
                         <label>
-                            <input type="checkbox" name="creer_offre" value=1>
+                            <input type="checkbox" onclick="return false;" name="creer_entreprise" value=1 <?php
+                                                                                                            if ($droit->creer_entreprise() == 1)
+                                                                                                                echo ' checked ';
+                                                                                                            ?> />
+
                             Créer
                         </label>
                         <label>
-                            <input type="checkbox" name="modifier_offre" value=1>
-                            Modifier
-                        </label>
-                        <br>
-                        <label>
-                            <input type="checkbox" name="supprimer_offre" value=1>
-                            Supprimer
-                        </label>
-                    </td>
-                </tbody>
-                <tbody>
-                    <td>
-                        Gestion Pilotes
-                    </td>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="rechercher_compte_pilote" value=1>
-                            Rechercher
-                        </label>
-                        <label>
-                            <input type="checkbox" name="creer_compte_pilote" value=1>
-                            Créer
-                        </label>
-                        <label>
-                            <input type="checkbox" name="modifier_compte_pilote" value=1>
+                            <input type="checkbox" onclick="return false;" name="modifier_entreprise" value=1 <?php
+                                                                                                                if ($droit->modifier_entreprise() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+
                             Modifier
                         </label>
                         <label>
-                            <input type="checkbox" name="supprimer_compte_pilote" value=1>
+                            <input type="checkbox" onclick="return false;" name="evaluer_entreprise" value=1 <?php
+                                                                                                                if ($droit->evaluer_entreprise() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+
+                            Evaluer
+                        </label>
+                        <br>
+                        <label>
+                            <input type="checkbox" onclick="return false;" name="supprimer_entreprise" value=1 <?php
+                                                                                                                if ($droit->supprimer_entreprise() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+
                             Supprimer
                         </label>
-                    </td>
-                </tbody>
-                <tbody>
-                    <td>
-                        Gestion Délégués
-                    </td>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="rechercher_compte_delegue" value=1>
-                            Rechercher
-                        </label>
-                        <label>
-                            <input type="checkbox" name="creer_compte_delegue" value=1>
-                            Créer
-                        </label>
-                        <label>
-                            <input type="checkbox" name="modifier_compte_delegue" value=1>
-                            Modifier
-                        </label>
-                        <label>
-                            <input type="checkbox" name="supprimer_compte_delegue" value=1>
-                            Supprimer
-                        </label>
-                    </td>
-                </tbody>
-                <tbody>
-                    <td>
-                        Gestion Etudiants
-                    </td>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="rechercher_compte_etudiant" value=1>
-                            Rechercher
-                        </label>
-                        <label>
-                            <input type="checkbox" name="creer_compte_etudiant" value=1>
-                            Créer
-                        </label>
-                        <label>
-                            <input type="checkbox" name="modifier_compte_etudiant" value=1>
-                            Modifier
-                        </label>
-                        <label>
-                            <input type="checkbox" name="supprimer_compte_etudiant" value=1>
-                            Supprimer
-                        </label>
-                        <label>
-                            <input type="checkbox" name="consulter_stats_etudiants" value=1>
-                            Voir stats
-                        </label>
-                    </td>
-                </tbody>
-                <tbody>
-                    <td>
-                        Gestion Candidatures
-                    </td>
-                    <td>
-                        <label>
-                            <input type="checkbox" name="ajouter_offre_wish_list" value=1>
-                            Ajouter à wish-list
-                        </label>
-                        <br>
-                        <label>
-                            <input type="checkbox" name="retirer_offre_wish_list" value=1>
-                            Supprimer à wish-list
-                        </label>
-                        <br>
-                        <label>
-                            <input type="checkbox" name="postuler_offre" value=1>
-                            Postuler à une offre
-                        </label>
-                        <br>
-                        <label>
-                            <input type="checkbox" name="info_sys_avance_candi1" value=1>
-                            Informer le système de l'avancement 1
-                        </label>
-                        <br>
-                        <label>
-                            <input type="checkbox" name="info_sys_avance_candi2" value=1>
-                            Informer le système de l'avancement 2
-                        </label>
-                        <br>
-                        <label>
-                            <input type="checkbox" name="info_sys_avance_candi3" value=1>
-                            Informer le système de l'avancement 3
-                        </label>
-                        <br>
-                        <label>
-                            <input type="checkbox" name="info_sys_avance_candi4" value=1>
-                            Informer le système de l'avancement 4
-                        </label>
-                        <br>
-                        <label>
-                            <input type="checkbox" name="info_sys_avance_candi5" value=1>
-                            Informer le système de l'avancement 5
-                        </label>
-                    </td>
-                </tbody>
-            </table>
-        </form>
+                    </div>
+                </td>
+            </tbody>
+            <tbody>
+                <td>
+                    Offres de stages
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="rechercher_offre" value=1 <?php
+                                                                                                        if ($droit->rechercher_offre() == 1)
+                                                                                                            echo ' checked ';
+                                                                                                        ?> />
+                        Rechercher
+                    </label>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="consulter_stats_offres" value=1 <?php
+                                                                                                                if ($droit->consulter_stats_offres() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Voir stats
+                    </label>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="creer_offre" value=1 <?php
+                                                                                                    if ($droit->creer_offre() == 1)
+                                                                                                        echo ' checked ';
+                                                                                                    ?> />
+                        Créer
+                    </label>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="modifier_offre" value=1 <?php
+                                                                                                        if ($droit->modifier_offre() == 1)
+                                                                                                            echo ' checked ';
+                                                                                                        ?> />
+                        Modifier
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="supprimer_offre" value=1 <?php
+                                                                                                        if ($droit->supprimer_offre() == 1)
+                                                                                                            echo ' checked ';
+                                                                                                        ?> />
+                        Supprimer
+                    </label>
+                </td>
+            </tbody>
+            <tbody>
+                <td>
+                    Gestion Pilotes
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="rechercher_compte_pilote" value=1 <?php
+                                                                                                                if ($droit->rechercher_compte_pilote() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Rechercher
+                    </label>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="creer_compte_pilote" value=1 <?php
+                                                                                                            if ($droit->creer_compte_pilote() == 1)
+                                                                                                                echo ' checked ';
+                                                                                                            ?> />
+                        Créer
+                    </label>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="modifier_compte_pilote" value=1 <?php
+                                                                                                                if ($droit->modifier_compte_pilote() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Modifier
+                    </label>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="supprimer_compte_pilote" value=1 <?php
+                                                                                                                if ($droit->supprimer_compte_pilote() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Supprimer
+                    </label>
+                </td>
+            </tbody>
+            <tbody>
+                <td>
+                    Gestion Délégués
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="rechercher_compte_delegue" value=1 <?php
+                                                                                                                if ($droit->rechercher_compte_delegue() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Rechercher
+                    </label>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="creer_compte_delegue" value=1 <?php
+                                                                                                            if ($droit->creer_compte_delegue() == 1)
+                                                                                                                echo ' checked ';
+                                                                                                            ?> />
+                        Créer
+                    </label>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="modifier_compte_delegue" value=1 <?php
+                                                                                                                if ($droit->modifier_compte_delegue() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Modifier
+                    </label>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="supprimer_compte_delegue" value=1 <?php
+                                                                                                                if ($droit->supprimer_compte_delegue() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Supprimer
+                    </label>
+                </td>
+            </tbody>
+            <tbody>
+                <td>
+                    Gestion Etudiants
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="rechercher_compte_etudiant" value=1 <?php
+                                                                                                                    if ($droit->rechercher_compte_etudiant() == 1)
+                                                                                                                        echo ' checked ';
+                                                                                                                    ?> />
+                        Rechercher
+                    </label>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="creer_compte_etudiant" value=1 <?php
+                                                                                                            if ($droit->creer_compte_etudiant() == 1)
+                                                                                                                echo ' checked ';
+                                                                                                            ?> />
+                        Créer
+                    </label>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="modifier_compte_etudiant" value=1 <?php
+                                                                                                                if ($droit->modifier_compte_etudiant() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Modifier
+                    </label>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="supprimer_compte_etudiant" value=1 <?php
+                                                                                                                if ($droit->supprimer_compte_etudiant() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Supprimer
+                    </label>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="consulter_stats_etudiants" value=1 <?php
+                                                                                                                if ($droit->consulter_stats_etudiants() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Voir stats
+                    </label>
+                </td>
+            </tbody>
+            <tbody>
+                <td>
+                    Gestion Candidatures
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="ajouter_offre_wish_list" value=1 <?php
+                                                                                                                if ($droit->ajouter_offre_wish_list() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Ajouter à wish-list
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="retirer_offre_wish_list" value=1 <?php
+                                                                                                                if ($droit->retirer_offre_wish_list() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Supprimer à wish-list
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="postuler_offre" value=1 <?php
+                                                                                                        if ($droit->postuler_offre() == 1)
+                                                                                                            echo ' checked ';
+                                                                                                        ?> />
+                        Postuler à une offre
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="info_sys_avance_candi1" value=1 <?php
+                                                                                                                if ($droit->info_sys_avance_candi1() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Informer le système de l'avancement 1
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="info_sys_avance_candi2" value=1 <?php
+                                                                                                                if ($droit->info_sys_avance_candi2() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Informer le système de l'avancement 2
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="info_sys_avance_candi3" value=1 <?php
+                                                                                                                if ($droit->info_sys_avance_candi3() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Informer le système de l'avancement 3
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="info_sys_avance_candi4" value=1 <?php
+                                                                                                                if ($droit->info_sys_avance_candi4() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Informer le système de l'avancement 4
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" onclick="return false;" name="info_sys_avance_candi5" value=1 <?php
+                                                                                                                if ($droit->info_sys_avance_candi5() == 1)
+                                                                                                                    echo ' checked ';
+                                                                                                                ?> />
+                        Informer le système de l'avancement 5
+                    </label>
+                </td>
+            </tbody>
+        </table>
     </div>
 </div>
-
-
 <?php require_once('views/footer.php'); ?>
