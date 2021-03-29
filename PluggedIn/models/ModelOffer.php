@@ -73,7 +73,7 @@ class ModelOffer
     }
 
     // FONCTION QUI MET À JOUR L'OFFRE
-    public function updateArticle(Offer $off)
+    public function updateOffer(Offer $off)
     {
         $req = $this->_bdd->prepare('UPDATE offre SET competences = ?, entreprise= ?, type_promo_concerne = ?, duree_stage = ? , base_remuneration = ?, duree_offre = ?, nombre_place = ?, date = ? WHERE id_offre = ?');
         $req->execute(array($off->competences(), $off->entreprise(), $off->type_promo_concerne(), $off->duree_stage(), $off->base_remuneration(), $off->duree_offre(), $off->nombre_place(), $off->date(), $off->id_offre()));
@@ -81,10 +81,10 @@ class ModelOffer
     }
 
     // FONCTION QUI SUPPRIME UNE OFFRE
-    public function deleteArticle($art)
+    public function deleteOffer($art)
     {
-        $req = $this->_bdd->prepare('DELETE FROM offre WHERE id_offre = ?');
-        $req->execute(array($art));
+        $req = $this->_bdd->prepare('DELETE FROM offre WHERE id_offre = ?; DELETE FROM wish_list WHERE id_offre = ?');
+        $req->execute(array($art, $art));
         $req->closeCursor();
     }
 

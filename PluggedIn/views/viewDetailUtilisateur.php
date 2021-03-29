@@ -69,8 +69,8 @@
                     <center>
                         <input type="text" name="delete" id="droitmodif" value=true>
 
-                        <button class="form-btn" type="submit" name=id value="<?= $utilisateur->login() ?>" onclick="hide('popupmodif')">Confirmer</button>
-                        <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popupmodif')">Annuler</button>
+                        <button class="form-btn" type="submit" name=id value="<?= $utilisateur->login() ?>" onclick="hide('popup')">Confirmer</button>
+                        <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popup')">Annuler</button>
                     </center>
                 </div>
 

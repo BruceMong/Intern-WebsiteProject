@@ -108,10 +108,10 @@ class ModelEntreprise
     }
 
     // FONCTION QUI SUPPRIME UN ARTICLE
-    public function deleteEntreprise($art)
+    public function deleteEntreprise($ent, $name)
     {
-        $req = $this->_bdd->prepare('DELETE FROM entreprise WHERE id_entreprise = ?');
-        $req->execute(array($art));
+        $req = $this->_bdd->prepare('DELETE FROM entreprise WHERE id_entreprise = ?; DELETE FROM offre WHERE entreprise = ?');
+        $req->execute(array($ent, $name));
         $req->closeCursor();
     }
 
