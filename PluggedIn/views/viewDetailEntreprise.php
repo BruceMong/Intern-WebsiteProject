@@ -43,17 +43,14 @@
                         <p>image :<input name="image" type="text" value="<?= $entreprise->image() ?>"> </p>
 
                         <input type="text" name=modif class=hideElement value="">
-                        <center style="margin-top: -15px;">
+                        <center style="margin-top: 50px;">
                             <button class="form-btn" type="submit" name=id value="<?= $entreprise->id_entreprise() ?>" onclick="hide('popupmodif')">Confirmer</button>
                             <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popupmodif')">Annuler</button>
                         </center>
                     </div>
-
             </div>
             </form>
-        </div>
-
-        <form action="detailEntreprise" method="post">
+            <form action="detailEntreprise" method="post">
             <center>
                 <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
             </center>
@@ -61,8 +58,8 @@
                 <h3>Vous êtes sûr de supprimer?</h3>
                 <center>
                     <input type="text" name=delete class=hideElement value="">
-                    <button class="form-btn" type="submit" name=id value="<?= $entreprise->id_entreprise() ?>" onclick="hide('popupmodif')">Confirmer</button>
-                    <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popupmodif')">Annuler</button>
+                    <button class="form-btn" type="submit" name=id value="<?= $entreprise->id_entreprise() ?>" onclick="hide('popup')">Confirmer</button>
+                    <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popup')">Annuler</button>
                 </center>
             </div>
 
@@ -78,6 +75,8 @@
                     $(id).style.display = 'none';
                 }
             </script>
+        </div>
+
         </form>
     </div>
 </div>

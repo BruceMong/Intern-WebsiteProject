@@ -703,6 +703,13 @@ input#search-bar {
   font-weight: bolder;
 }
 
+.popupmodif button {
+  width: 100px;
+  border-radius: 20px;
+  background-color: white;
+  padding: 0;
+}
+
 .profil-container h1 {
   text-align: center;
 }

@@ -619,7 +619,13 @@ input#search-bar {
     font-weight: bolder;
 }
 
-//Création Offre
+.popupmodif button {
+    width: 100px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 0;
+}
+
 //Profil
 .profil-container h1 {
     text-align: center;
