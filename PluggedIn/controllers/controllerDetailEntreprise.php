@@ -14,6 +14,11 @@ $modelEntreprise = new ModelEntreprise($bdd);
 $entreprise = $modelEntreprise->getEntreprise($_POST['id']);
 
 
+if (isset($_POST['delete'])) {
+    $modelEntreprise->deleteEntreprise($entreprise->id_entreprise(), $entreprise->nom());
+    header('Location:' . URL . 'searchEntreprise');
+}
+
 //if (!empty($_POST) ) 
 if (isset($_POST['modif'])) {
     extract($_POST);
@@ -69,7 +74,7 @@ if (isset($_POST['modif'])) {
         $modelEntreprise->updateEntreprise($entreprise);
 
         $success = 'Votre article a bien été publié';
-        header('Location:' . URL . 'searchEntreprise');
+        //header('Location:' . URL . 'searchEntreprise');
     }
 }
 

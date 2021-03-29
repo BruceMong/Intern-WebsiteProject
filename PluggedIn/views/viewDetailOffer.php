@@ -39,41 +39,52 @@
 
             <div class="detail_modif">
 
-                <form action="" method="post">
+                <form action="detailOffer" method="post">
                     <center>
                         <input type="button" class="buttonmodif" href="#" onclick="show('popupmodif')" value="Modifier">
                     </center>
                     <div class="popupmodif" id="popupmodif">
-                        <img src="<?= $entreprise->image() ?>" alt="image entreprise" width="50px" height="50px">
-                        <h3>Nom de l'entreprise : <?= $entreprise->nom() ?></h3>
-                        <br>
-                        <h4>Informations sur l'offre</h4> <br>
-                        <p>Durée du stage : <input type="text" value="<?= $offer->duree_stage() ?>"></p>
-                        <p>Nombres de places offertes : <input type="text" value="<?= $offer->nombre_place() ?>"></p>
-                        <p>Base de rémunération : <input type="text" value="<?= $offer->base_remuneration() ?>"></p>
-                        <p>Date de l'offre : <input type="text" value="<?php $offer->date() ?>"></p>
-                        <p>Types de promotions concernées : <input type="text" value="<?= $offer->type_promo_concerne() ?>"></p>
-                        <br>
-                        <h4>Compétences requises : </h4>
-                        <div class="detail_modif_competence"><input type="text" value="<?= $offer->competences() ?>">
+                        <p>Nom de l'entreprise :</p>
+                        <select name="entreprise">
+                            <?php foreach ($entreprises as $entSelect) : ?>
+                                <option value="<?= $entSelect->nom() ?>"><?= $entSelect->nom() ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                        <p>Durée du stage : <input name=duree_stage type="text" value="<?= $offer->duree_stage() ?>"></p>
+                        <p>Durée de l'offre : <input name=duree_offre type="text" value="<?= $offer->duree_offre() ?>"></p>
+                        <p>Nombres de places offertes : <input name=nombre_place type="text" value="<?= $offer->nombre_place() ?>"></p>
+                        <p>Base de rémunération : <input name=base_remuneration type="text" value="<?= $offer->base_remuneration() ?>"></p>
+                        <p>Date de l'offre : <input name=date type="text" value="<?= $offer->date() ?>"></p> <br>
+                        <p>Types de promotions concernées : </p> <select name="type_promo_concerne">
+                            <?php foreach ($promotions as $promoSelect) : ?>
+                                <option value="<?= $promoSelect->libelle() ?>"><?= $promoSelect->libelle() ?></option>
+                            <?php endforeach; ?>
+                        </select>
+
+                        <p>Compétences requises : </p>
+                        <div class=""><input name=competences type="text" value="<?= $offer->competences() ?>">
+
+                            <input type="text" name=modif class=hideElement value="">
                             <center>
-                                <a href="#" onclick="hide('popupmodif')">Annuler</a>
-                                <a href="#" onclick="hide('popupmodif')">Confirmer</a>
+                                <button class="form-btn" type="submit" name=id value="<?= $offer->id_offre() ?>" onclick="hide('popupmodif')">Confirmer</button>
+                                <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popupmodif')">Annuler</button>
                             </center>
                         </div>
 
                     </div>
                 </form>
 
-                <form action="" method="post">
+                <form action="detailOffer" method="post">
                     <center>
                         <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
                     </center>
                     <div class="popup" id="popup">
                         <h3>Vous êtes sûr de supprimer?</h3>
+                        <input type="text" name=delete class=hideElement value="">
                         <center>
-                            <a href="#" onclick="hide('popup')">Annuler</a>
-                            <a href="#" onclick="hide('popup')">Confirmer</a>
+                            <button class="form-btn" type="submit" name=id value="<?= $offer->id_offre() ?>" onclick="hide('popup')">Confirmer</button>
+                            <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popup')">Annuler</button>
+                        </center>
                         </center>
                     </div>
 
@@ -99,7 +110,7 @@
             <p>Durée du stage : </p> <?= $offer->duree_stage() ?>
             <p>Nombres de places offertes : </p><?= $offer->nombre_place() ?>
             <p>Base de rémunération : </p><?= $offer->base_remuneration() ?>
-            <p>Date de l'offre : </p><?php $offer->date() ?>
+            <p>Date de l'offre : </p><?= $offer->date() ?>
             <p>Types de promotions concernées : </p><?= $offer->type_promo_concerne() ?>
 
         </div>
