@@ -2,10 +2,11 @@
 <?php require_once('views/nav.php'); ?>
 
 <div class=bloc_page>
-    <div class="detail_container">
+    <div class="detail_container_creer">
         <form action="createEntreprise" method="post">
             <div class="detail_presentation">
                 <h2>Nom de l'entreprise: <input name="nom" type="text"> </h2>
+                <br>
                 <p>Secteur d'activité : <input name="secteur_activite" type="text"></p>
                 <p>Localité : <input name="localite" type="text"></p>
                 <p>Nombre de stagiaires CESI : <input name="nombre_stagiaire_cesi" type="text"></p>

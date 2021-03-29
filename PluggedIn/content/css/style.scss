@@ -746,3 +746,17 @@ td {
 .hideElement {
     display: none;
 }
+
+//créer page
+.detail_container_creer {
+    padding: 50px;
+    background-color: #56687e;
+    border-radius: 10px;
+    width: 100%;
+    gap: 20px;
+}
+
+.detail_container_creer div {
+    border-radius: 7px;
+    margin: 20px;
+}

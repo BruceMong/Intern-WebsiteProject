@@ -2,7 +2,7 @@
 <?php require_once('views/nav.php'); ?>
 
 <div class=bloc_page>
-    <div class="detail_container">
+    <div class="detail_container_creer">
 
 
         <form action="createOffer" method="post">
@@ -14,6 +14,28 @@
                     <?php endforeach; ?>
                 </select>
             </div>
+
+            <div class="detail_stats">
+                <h2>Informations sur l'offre</h2> <br>
+                <p>Durée du stage : </p> <input name=duree_stage type="text" class="info_modif" value="">
+                <p>Durée de l'offre : </p> <input name=duree_offre type="text" class="info_modif" value="">
+                <p>Nombres de places offertes : </p><input name=nombre_place type="text" class="info_modif" value="">
+                <p>Base de rémunération : </p><input name=base_remuneration type="text" class="info_modif" value="">
+                <p>Date de l'offre : </p><input name=date type="text" class="info_modif" value="">
+                <p>Types de promotions concernées : </p>
+                <select name="type_promo_concerne">
+                    <?php foreach ($promotions as $promoSelect) : ?>
+                        <option value="<?= $promoSelect->libelle() ?>"><?= $promoSelect->libelle() ?></option>
+                    <?php endforeach; ?>
+                </select>
+
+            </div>
+            <div class="detail_competence">
+                <h2>Compétences requises : </h2>
+                <input name="competences" type="text" class="info_modif" value="">
+
+            </div>
+
             <div class="bouton_crud">
                 <div class="detail_modif">
 
@@ -41,27 +63,6 @@
 
 
                 </div>
-            </div>
-
-            <div class="detail_stats">
-                <h2>Informations sur l'offre</h2> <br>
-                <p>Durée du stage : </p> <input name=duree_stage type="text" class="info_modif" value="">
-                <p>Durée de l'offre : </p> <input name=duree_offre type="text" class="info_modif" value="">
-                <p>Nombres de places offertes : </p><input name=nombre_place type="text" class="info_modif" value="">
-                <p>Base de rémunération : </p><input name=base_remuneration type="text" class="info_modif" value="">
-                <p>Date de l'offre : </p><input name=date type="text" class="info_modif" value="">
-                <p>Types de promotions concernées : </p>
-                <select name="type_promo_concerne">
-                    <?php foreach ($promotions as $promoSelect) : ?>
-                        <option value="<?= $promoSelect->libelle() ?>"><?= $promoSelect->libelle() ?></option>
-                    <?php endforeach; ?>
-                </select>
-
-            </div>
-            <div class="detail_competence">
-                <h2>Compétences requises : </h2>
-                <input name="competences" type="text" class="info_modif" value="">
-
             </div>
         </form>
     </div>
