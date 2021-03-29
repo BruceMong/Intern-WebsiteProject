@@ -550,6 +550,15 @@ input#search-bar {
     z-index: -1;
 }
 
+.popup button {
+    width: 100px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 0;
+    margin-left: 11px;
+    margin-right: 11px;
+}
+
 //popup boutton modif
 .popupmodif {
     display: none;
@@ -751,6 +760,8 @@ td {
 
 .hideElement {
     display: none;
+    width: 1px;
+    height: 1px;
 }
 
 //créer page

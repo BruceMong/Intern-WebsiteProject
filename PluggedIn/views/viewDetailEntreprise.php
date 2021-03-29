@@ -51,30 +51,30 @@
             </div>
             </form>
             <form action="detailEntreprise" method="post">
-            <center>
-                <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
-            </center>
-            <div class="popup" id="popup">
-                <h3>Vous êtes sûr de supprimer?</h3>
                 <center>
+                    <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
+                </center>
+                <div class="popup" id="popup">
+                    <h3>Vous êtes sûr de supprimer?</h3>
+
                     <input type="text" name=delete class=hideElement value="">
                     <button class="form-btn" type="submit" name=id value="<?= $entreprise->id_entreprise() ?>" onclick="hide('popup')">Confirmer</button>
                     <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popup')">Annuler</button>
-                </center>
-            </div>
 
-            <script>
-                $ = function(id) {
-                    return document.getElementById(id);
-                }
+                </div>
 
-                var show = function(id) {
-                    $(id).style.display = 'block';
-                }
-                var hide = function(id) {
-                    $(id).style.display = 'none';
-                }
-            </script>
+                <script>
+                    $ = function(id) {
+                        return document.getElementById(id);
+                    }
+
+                    var show = function(id) {
+                        $(id).style.display = 'block';
+                    }
+                    var hide = function(id) {
+                        $(id).style.display = 'none';
+                    }
+                </script>
         </div>
 
         </form>

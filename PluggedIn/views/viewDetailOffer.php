@@ -81,11 +81,10 @@
                     <div class="popup" id="popup">
                         <h3>Vous êtes sûr de supprimer?</h3>
                         <input type="text" name=delete class=hideElement value="">
-                        <center>
+                        
                             <button class="form-btn" type="submit" name=id value="<?= $offer->id_offre() ?>" onclick="hide('popup')">Confirmer</button>
                             <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popup')">Annuler</button>
-                        </center>
-                        </center>
+                        
                     </div>
 
                     <script>
