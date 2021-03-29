@@ -5,7 +5,6 @@
     <div class="detail_container">
 
         <div class="detail_presentation">
-
             <img src="<?= $entreprise->image() ?>" alt="image entreprise" width="100px" height="100px">
             <h2>Nom de l'entreprise: </h2>
             <h3><?= $entreprise->nom() ?></h3>
@@ -27,9 +26,10 @@
 
             <div class="detail_modif">
 
-                <form action="" method="post">
+                <form action="detailEntreprise" method="post">
                     <center>
                         <input type="button" class="buttonmodif" href="#" onclick="show('popupmodif')" value="Modifier">
+
                     </center>
                     <div class="popupmodif" id="popupmodif">
                         <h3>Nom entreprise : <input name="nom" type="text" value="<?= $entreprise->nom() ?>"> </h3>
@@ -60,8 +60,8 @@
             <div class="popup" id="popup">
                 <h3>Vous êtes sûr de supprimer?</h3>
                 <center>
-                    <a href="#" onclick="hide('popup')">Annuler</a>
-                    <a href="#" onclick="hide('popup')">Confirmer</a>
+                    <button class="form-btn" type="submit" name=id value="<?= $entreprise->id_entreprise() ?>" onclick="hide('popupmodif')">Confirmer</button>
+                    <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popupmodif')">Annuler</button>
                 </center>
             </div>
 
