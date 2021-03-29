@@ -874,4 +874,9 @@ td {
   border-radius: 7px;
   margin: 20px;
 }
+
+.detail_container_creer input {
+  border: none;
+  background-color: whitesmoke;
+}
 /*# sourceMappingURL=style.css.map */
