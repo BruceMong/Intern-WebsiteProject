@@ -36,9 +36,9 @@
                         ?>
                     </center>
                 </form>
-                <form action="" method="post">
+                <form action="postuler" method="post">
                     <center>
-                        <input type="button" value="Postuler à l'offre    ">
+                        <button type="submit" value="">Postuler à l'offre</button>
                     </center>
                 </form>
             </div>
@@ -88,10 +88,10 @@
                     <div class="popup" id="popup">
                         <h3>Vous êtes sûr de supprimer?</h3>
                         <input type="text" name=delete class=hideElement value="">
-                        
-                            <button class="form-btn" type="submit" name=id value="<?= $offer->id_offre() ?>" onclick="hide('popup')">Confirmer</button>
-                            <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popup')">Annuler</button>
-                        
+
+                        <button class="form-btn" type="submit" name=id value="<?= $offer->id_offre() ?>" onclick="hide('popup')">Confirmer</button>
+                        <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popup')">Annuler</button>
+
                     </div>
 
                     <script>
