@@ -25,9 +25,15 @@
         </div>
         <div class="bouton_crud">
             <div class="detail_aside">
-                <form action="" method="post">
+                <form action="detailOffer" method="post">
+                    <input type="text" name=id value="<?= $offer->id_offre() ?>" class=hideElement />
                     <center>
-                        <input type="button" value="Ajouter à la wish-list">
+                        <?php
+                        if ($modelWish_list->checkWish_list($_SESSION['utilisateur'], $offer->id_offre()))
+                            echo '<button type="submit" name=wish_listP value=delete >Retirer de la wish-list</button>';
+                        else
+                            echo '<button type="submit" name=wish_listP  value=add >Ajouter a la wish-list</button>';
+                        ?>
                     </center>
                 </form>
                 <form action="" method="post">
@@ -50,11 +56,11 @@
                                 <option value="<?= $entSelect->nom() ?>"><?= $entSelect->nom() ?></option>
                             <?php endforeach; ?>
                         </select>
-                        <p>Durée du stage : <input name=duree_stage type="text" value="<?= $offer->duree_stage() ?>"></p>
-                        <p>Durée de l'offre : <input name=duree_offre type="text" value="<?= $offer->duree_offre() ?>"></p>
+                        <p>Durée du stage (nb semaine): <input name=duree_stage type="text" value="<?= $offer->duree_stage() ?>"></p>
+                        <p>Durée de l'offre (nb semaine): <input name=duree_offre type="text" value="<?= $offer->duree_offre() ?>"></p>
                         <p>Nombres de places offertes : <input name=nombre_place type="text" value="<?= $offer->nombre_place() ?>"></p>
                         <p>Base de rémunération : <input name=base_remuneration type="text" value="<?= $offer->base_remuneration() ?>"></p>
-                        <p>Date de l'offre : <input name=date type="text" value="<?= $offer->date() ?>"></p> <br>
+                        <p>Date de l'offre (YYYY-MM-DD) : <input name=date type="text" value="<?= $offer->date() ?>"></p> <br>
                         <p>Types de promotions concernées : </p> <select name="type_promo_concerne">
                             <?php foreach ($promotions as $promoSelect) : ?>
                                 <option value="<?= $promoSelect->libelle() ?>"><?= $promoSelect->libelle() ?></option>
@@ -64,9 +70,10 @@
                         <p>Compétences requises : </p>
                         <div class=""><input name=competences type="text" value="<?= $offer->competences() ?>">
 
+
                             <input type="text" name=modif class=hideElement value="">
                             <center>
-                                <button class="form-btn" type="submit" name=id value="<?= $offer->id_offre() ?>" onclick="hide('popupmodif')">Confirmer</button>
+                                <button class="form-btn" type="submit" onclick="hide('popupmodif')">Confirmer</button>
                                 <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popupmodif')">Annuler</button>
                             </center>
                         </div>

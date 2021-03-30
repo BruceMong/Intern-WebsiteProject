@@ -16,13 +16,23 @@ $offer = $modelOffer->getOffer($_POST['id']);
 $modelPromotion = new ModelPromotion($bdd);
 $promotions = $modelPromotion->getPromotions();
 
-$entreprise = $modelEntreprise->getEntrepriseByName($offer->entreprise());
+$modelWish_list = new ModelWish_list($bdd);
+
+
 $entreprises = $modelEntreprise->getEntreprises();
+
+
+if (isset($_POST['wish_listP'])) {
+    if ($_POST['wish_listP'] == "delete");
+    $modelWish_list->deleteWish_list($_SESSION['utilisateur'], $offer->id_offre());
+    if ($_POST['wish_listP'] == "add");
+    $modelWish_list->addWish_list($_SESSION['utilisateur'], $offer->id_offre());
+}
 
 
 if (isset($_POST['delete'])) {
     $modelOffer->deleteOffer($offer->id_offre());
-    //header('Location:' . URL . 'searchOffer');
+    header('Location:' . URL . 'searchOffer');
 }
 
 //if (!empty($_POST) ) 
@@ -60,9 +70,10 @@ if (isset($_POST['modif'])) {
         $modelOffer->updateOffer($offer);
 
         $success = 'Votre article a bien été publié';
-        header('Location:' . URL . 'searchEntreprise');
+        //header('Location:' . URL . 'searchOffer');
     }
 }
 
+$entreprise = $modelEntreprise->getEntrepriseByName($offer->entreprise());
 
 require_once('views/viewDetailOffer.php');
