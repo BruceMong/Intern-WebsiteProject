@@ -28,7 +28,6 @@
             stage en rapport avec son profil. L’application fournit différentes interfaces à destination des différents profils
             d’utilisateur. Plusieurs catégories de fonctionnalités sont déployées sur la plateforme.
         </p>
-        <center> <img src="https://arras.cesi.fr/wp-content/uploads/sites/9/2019/05/Cesi_Logo_INGENIEUR_RVB-HD-500x296.jpg" alt=""> <img src="https://edito.regionsjob.com/xjob/wp-content/uploads/sites/3/2018/10/cesi-ecole-dinge-2_opt.jpg" alt=""></center>
     </div>
 
 </div>
