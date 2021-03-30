@@ -79,11 +79,28 @@ class ModelWish_list
         $this->_bdd = $bdd;
     }
 
-    // FONCTION QUI AJOUTE UN UTILISATEUR EN BDD
-    public function addUtilisateur($utilisateur)
+    public function checkWish_list($utilisateur, $offre)
     {
-        $req = $this->_bdd->prepare('INSERT INTO utilisateur (login, mot_de_passe, nom, prenom, centre, id_promotion) VALUES(?, ?, ?, ?, ?, ?)');
-        $req->execute(array(array($utilisateur->login(), $utilisateur->mot_de_passe(), $utilisateur->nom(), $utilisateur->prenom(), $utilisateur->centre(), $utilisateur->id_promotion())));
+        $req = $this->_bdd->prepare('SELECT * FROM wish_list WHERE login= ? AND id_offre = ?');
+        $req->execute(array($utilisateur, $offre));
+        if ($req->rowCount() == 1)
+            return (true);
+        return false;
+        $req->closeCursor();
+    }
+
+    // FONCTION QUI AJOUTE UN UTILISATEUR EN BDD
+    public function addWish_list($utilisateur, $offre)
+    {
+        $req = $this->_bdd->prepare('INSERT INTO wish_list (login, id_offre) VALUES(?, ?)');
+        $req->execute(array($utilisateur, $offre));
+        $req->closeCursor();
+    }
+
+    public function deleteWish_list($utilisateur, $offre)
+    {
+        $req = $this->_bdd->prepare('DELETE FROM wish_list  WHERE login= ? AND id_offre = ?');
+        $req->execute(array($utilisateur, $offre));
         $req->closeCursor();
     }
 

@@ -21,7 +21,7 @@
                 <p>Durée de l'offre : </p> <input name=duree_offre type="text" class="info_modif" value="">
                 <p>Nombres de places offertes : </p><input name=nombre_place type="text" class="info_modif" value="">
                 <p>Base de rémunération : </p><input name=base_remuneration type="text" class="info_modif" value="">
-                <p>Date de l'offre : </p><input name=date type="text" class="info_modif" value="">
+                <p>Date de l'offre (YYYY-MM-DD): </p><input name=date type="text" class="info_modif" value="">
                 <p>Types de promotions concernées : </p>
                 <select name="type_promo_concerne">
                     <?php foreach ($promotions as $promoSelect) : ?>
