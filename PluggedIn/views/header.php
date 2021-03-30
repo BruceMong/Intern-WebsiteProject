@@ -61,14 +61,14 @@
                         echo '</a>';
                     } else {
                         echo '<a class="nav_compte" href="wish_list">';
-                        echo '<img src="content/images/wish-icon.png">';
+                        echo '<img src="content/images/wish-icon.png" alt="logo_wish_list">';
                         echo '<p>Wish-List</p>';
                         echo '</a>';
                         echo '</li>';
 
                         echo '<li>';
                         echo '<a class="nav_compte" href="profil">';
-                        echo '<img src="content/images/account-icon.png">';
+                        echo '<img src="content/images/account-icon.png" alt="logo_account">';
                         echo '<p>Compte</p>';
                         echo '</a>';
                     }
