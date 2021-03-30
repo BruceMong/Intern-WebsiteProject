@@ -408,7 +408,7 @@ input#search-bar {
   margin: 20px;
   padding: 0px;
   background-color: lightgray;
-  width: 98%;
+  width: auto;
 }
 
 .img-offer {
@@ -636,6 +636,15 @@ input#search-bar {
   z-index: -1;
 }
 
+.popup button {
+  width: 100px;
+  border-radius: 20px;
+  background-color: white;
+  padding: 0;
+  margin-left: 11px;
+  margin-right: 11px;
+}
+
 .popupmodif {
   display: none;
   position: fixed;
@@ -701,6 +710,13 @@ input#search-bar {
 .popupmodif a:hover {
   color: #fd0808;
   font-weight: bolder;
+}
+
+.popupmodif button {
+  width: 100px;
+  border-radius: 20px;
+  background-color: white;
+  padding: 0;
 }
 
 .profil-container h1 {
@@ -842,6 +858,8 @@ td {
 
 .hideElement {
   display: none;
+  width: 1px;
+  height: 1px;
 }
 
 .detail_container_creer {
@@ -855,5 +873,10 @@ td {
 .detail_container_creer div {
   border-radius: 7px;
   margin: 20px;
+}
+
+.detail_container_creer input {
+  border: none;
+  background-color: whitesmoke;
 }
 /*# sourceMappingURL=style.css.map */

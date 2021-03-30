@@ -66,12 +66,11 @@
                 </center>
                 <div class="popup" id="popup">
                     <h3>Vous êtes sûr de supprimer?</h3>
-                    <center>
-                        <input type="text" name="delete" id="droitmodif" value=true>
 
+                    <input type="text" name="delete" id="droitmodif" value=true>
                         <button class="form-btn" type="submit" name=id value="<?= $utilisateur->login() ?>" onclick="hide('popup')">Confirmer</button>
                         <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popup')">Annuler</button>
-                    </center>
+                    
                 </div>
 
                 <script>

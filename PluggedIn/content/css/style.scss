@@ -354,7 +354,7 @@ input#search-bar {
     margin: 20px;
     padding: 0px;
     background-color: lightgray;
-    width: 98%;
+    width: auto;
 }
 
 .img-offer {
@@ -550,6 +550,15 @@ input#search-bar {
     z-index: -1;
 }
 
+.popup button {
+    width: 100px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 0;
+    margin-left: 11px;
+    margin-right: 11px;
+}
+
 //popup boutton modif
 .popupmodif {
     display: none;
@@ -619,7 +628,13 @@ input#search-bar {
     font-weight: bolder;
 }
 
-//Création Offre
+.popupmodif button {
+    width: 100px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 0;
+}
+
 //Profil
 .profil-container h1 {
     text-align: center;
@@ -745,6 +760,8 @@ td {
 
 .hideElement {
     display: none;
+    width: 1px;
+    height: 1px;
 }
 
 //créer page
@@ -759,4 +776,9 @@ td {
 .detail_container_creer div {
     border-radius: 7px;
     margin: 20px;
+}
+
+.detail_container_creer input {
+    border: none;
+    background-color: whitesmoke;
 }
