@@ -408,7 +408,7 @@ input#search-bar {
   margin: 20px;
   padding: 0px;
   background-color: lightgray;
-  width: 98%;
+  width: auto;
 }
 
 .img-offer {
