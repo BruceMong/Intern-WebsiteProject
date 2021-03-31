@@ -51,14 +51,9 @@
                 <?php endfor ?>
                 <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
                 <li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
-                    <button type="submit" class="page-link" name="page" value="<?= $currentPage + 1 ?>"> Suivante </button>
+                    <button type="submit" class="page-link" name="page" value="<?= $currentPage + 1 ?>"> Suivant </button>
                 </li>
             </form>
-
-            <?php foreach ($entreprises as $entSelect) : ?>
-                <option value="<?= $entSelect->nom() ?>"><?= $entSelect->nom() ?></option>
-            <?php endforeach; ?>
-
         </ul>
     </nav>
 
