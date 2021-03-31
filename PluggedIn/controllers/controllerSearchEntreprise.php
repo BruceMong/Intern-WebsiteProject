@@ -7,10 +7,11 @@ $t = 'Recherche d\'entreprise';
 
 
 
-if($_SESSION['droits'][0]->rechercher_entreprise() != 1)
-{
+if ($_SESSION['droits'][0]->rechercher_entreprise() != 1) {
     header('Location:' . URL . 'error');
 }
+
+
 
 
 
