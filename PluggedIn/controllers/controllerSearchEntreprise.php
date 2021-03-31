@@ -29,10 +29,12 @@ $pages = ceil($nbArticle / $parPage);
 
 $premier = ($currentPage * $parPage) - $parPage;
 
+$trierPar = strip_tags($_POST['trierPar']);
 
-if (isset($_POST['trierPar']))
-    $entreprises = $modelEntreprise->getEntreprisesPaginationOrderBy($_POST['trierPar'], $premier, $parPage);
-else
+if (isset($trierPar)) {
+    $trierPar = strip_tags($_POST['trierPar']);
+    $entreprises = $modelEntreprise->getEntreprisesPaginationOrderBy($trierPar, $premier, $parPage);
+} else
     $entreprises = $modelEntreprise->getEntreprisesPagination($premier, $parPage);
 
 

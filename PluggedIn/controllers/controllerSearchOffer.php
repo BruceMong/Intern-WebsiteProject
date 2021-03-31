@@ -27,11 +27,12 @@ $pages = ceil($nbArticle / $parPage);
 $premier = ($currentPage * $parPage) - $parPage;
 
 
+$trierPar = strip_tags($_POST['trierPar']);
 
-
-if (isset($_POST['trierPar']))
-    $offers = $modelOffer->getOffersPagination($_POST['trierPar'], $premier, $parPage);
-else
+if (isset($trierPar)) {
+    $trierPar = strip_tags($_POST['trierPar']);
+    $offers = $modelOffer->getOffersPagination($trierPar, $premier, $parPage);
+} else
     $offers = $modelOffer->getOffersPagination($premier, $parPage);
 
 

@@ -23,9 +23,14 @@ $pages = ceil($nbArticle / $parPage);
 
 $premier = ($currentPage * $parPage) - $parPage;
 
-if (isset($_POST['trierPar']))
-    $utilisateurs = $modelUtilisateur->getUtilisateurPaginationOrderBy($_POST['trierPar'], $premier, $parPage);
-else
+
+
+
+
+if (isset($trierPar)) {
+    $trierPar = strip_tags($_POST['trierPar']);
+    $utilisateurs = $modelUtilisateur->getUtilisateurPaginationOrderBy($trierPar, $premier, $parPage);
+} else
     $utilisateurs = $modelUtilisateur->getUtilisateurPagination($premier, $parPage);
 
 
