@@ -14,7 +14,7 @@
             <input type="button" value="Creer un utilisateur">
         </a>
 
-        <p> trier par :
+        <p> trier par : <?= $_POST['trierPar'] ?>
         <form action="searchUtilisateur" method="post">
             <select name="trierPar">
                 <option value="nom">Nom</option>
