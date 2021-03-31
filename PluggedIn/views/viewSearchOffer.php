@@ -10,11 +10,11 @@
             <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
         </form>
 
-        <?php if ($_SESSION['droits'][0]->creer_entreprise() == 1) : ?>
+        <?php // if ($_SESSION['droits'][0]->creer_offre() == 1) : ?>
             <a class="login" href="createOffer">
                 <input type="button" value="Créer une Offre">
             </a>
-            <?php endif; ?>
+            <?php //endif; ?>
 
         <p> trier par :
         <form action="searchOffer" method="post">
