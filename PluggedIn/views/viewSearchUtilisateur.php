@@ -15,16 +15,19 @@
         </a>
 
         <p> trier par :
+        <form action="searchUtilisateur" method="post">
             <select name="trierPar">
                 <option value="nom">Nom</option>
                 <option value="prenom">Prenom</option>
                 <option value="login">Login</option>
                 <option value="mot_de_passe">Centre</option>
-                <option value="id_promotion">Promotin</option>
+                <option value="id_promotion">Promotion</option>
                 <option value="id_profil">Role</option>
-
             </select>
-        </p>
+            </p>
+            <button type="submit" class="button_to_detail"> Valider </button>
+
+        </form>
 
 
     </header>

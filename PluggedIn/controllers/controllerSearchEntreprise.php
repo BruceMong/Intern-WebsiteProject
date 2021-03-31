@@ -29,7 +29,11 @@ $pages = ceil($nbArticle / $parPage);
 
 $premier = ($currentPage * $parPage) - $parPage;
 
-$entreprises = $modelEntreprise->getEntreprisesPagination($premier, $parPage);
+
+if (isset($_POST['trierPar']))
+    $entreprises = $modelEntreprise->getEntreprisesPaginationOrderBy($_POST['trierPar'], $premier, $parPage);
+else
+    $entreprises = $modelEntreprise->getEntreprisesPagination($premier, $parPage);
 
 
 require_once('views/viewSearchEntreprise.php');

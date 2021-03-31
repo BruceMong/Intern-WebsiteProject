@@ -35,6 +35,23 @@ class ModelEntreprise
         $req->closeCursor();
     }
 
+    public function getEntreprisesPaginationOrderBy($order_tag, $premier, $parPage)
+    {
+        $entreprises = [];
+
+        $req = $this->_bdd->prepare('SELECT * FROM entreprise ORDER BY :order_tag DESC LIMIT :premier, :parpage');
+        $req->bindValue(':order_tag', $order_tag, PDO::PARAM_STR);
+        $req->bindValue(':premier', $premier, PDO::PARAM_INT);
+        $req->bindValue(':parpage', $parPage, PDO::PARAM_INT);
+        $req->execute();
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
+            $entreprises[] = new Entreprise($data);
+        }
+        return $entreprises;
+        $req->closeCursor();
+    }
+
     // FONCTION QUI RÉCUPÈRE TOUS LES ARTICLES ET QUI CRÉE UN OBJET (Article) POUR CHAQUE ARTICLE
     public function getEntreprises()
     {

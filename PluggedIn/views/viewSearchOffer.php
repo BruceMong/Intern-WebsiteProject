@@ -14,6 +14,23 @@
             <input type="button" value="Créer une Offre">
         </a>
 
+        <p> trier par :
+        <form action="searchOffer" method="post">
+            <select name="trierPar">
+                <option value="competences">Compétences</option>
+                <option value="type_promo_concerne">Entreprise</option>
+                <option value="login">Promo concernées</option>
+                <option value="duree_stage">Durée du stage</option>
+                <option value="duree_offre">Durée de l'offre</option>
+                <option value="base_remuneration">Base rémunération</option>
+                <option value="nombre_place">Nombre place</option>
+                <option value="date">Date</option>
+            </select>
+            </p>
+            <button type="submit" class="button_to_detail"> Valider </button>
+
+        </form>
+
     </header>
 
 
@@ -40,21 +57,21 @@
 
     <nav class="nav_pagination">
         <ul class="pagination">
-        <form action="searchOffer" method="post" class = "form_pagination">
-            <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
-            <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
-                <button type="submit" class="page-link" name="page" value="<?= $currentPage - 1 ?>"> Précédente </button>
-            </li>
-            <?php for ($page = 1; $page <= $pages; $page++) : ?>
-                <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
-                <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
-                <button type="submit" class="page-link" name="page" value="<?= $page ?>"> <?= $page ?> </button>
+            <form action="searchOffer" method="post" class="form_pagination">
+                <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
+                <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
+                    <button type="submit" class="page-link" name="page" value="<?= $currentPage - 1 ?>"> Précédente </button>
                 </li>
-            <?php endfor ?>
-            <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
-            <li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
-                <button type="submit" class="page-link" name="page" value="<?= $currentPage + 1 ?>"> Suivant </button>
-            </li>
+                <?php for ($page = 1; $page <= $pages; $page++) : ?>
+                    <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
+                    <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
+                        <button type="submit" class="page-link" name="page" value="<?= $page ?>"> <?= $page ?> </button>
+                    </li>
+                <?php endfor ?>
+                <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
+                <li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
+                    <button type="submit" class="page-link" name="page" value="<?= $currentPage + 1 ?>"> Suivant </button>
+                </li>
             </form>
         </ul>
     </nav>

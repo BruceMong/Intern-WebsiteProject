@@ -12,8 +12,7 @@ if (isset($_POST['page']) && !empty($_POST['page'])) {
     $currentPage = 1;
 }
 
-if($_SESSION['droits'][0]->rechercher_compte_etudiant() != 1)
-{
+if ($_SESSION['droits'][0]->rechercher_compte_etudiant() != 1) {
     header('Location:' . URL . 'error');
 }
 
@@ -24,9 +23,11 @@ $pages = ceil($nbArticle / $parPage);
 
 $premier = ($currentPage * $parPage) - $parPage;
 
+if (isset($_POST['trierPar']))
+    $utilisateurs = $modelUtilisateur->getUtilisateurPaginationOrderBy($_POST['trierPar'], $premier, $parPage);
+else
+    $utilisateurs = $modelUtilisateur->getUtilisateurPagination($premier, $parPage);
 
-//$utilisateurs = $modelUtilisateur->getUtilisateurs();
-$utilisateurs = $modelUtilisateur->getUtilisateurPagination($premier, $parPage);
 
 $modelProfil = new ModelProfil($bdd);
 $modelPromotion = new ModelPromotion($bdd);

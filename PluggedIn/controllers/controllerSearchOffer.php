@@ -6,8 +6,7 @@ if (empty($_SESSION['utilisateur']))
 $t = 'Recherche d\'offre';
 
 
-if($_SESSION['droits'][0]->rechercher_offre() != 1)
-{
+if ($_SESSION['droits'][0]->rechercher_offre() != 1) {
     header('Location:' . URL . 'error');
 }
 
@@ -28,6 +27,12 @@ $pages = ceil($nbArticle / $parPage);
 $premier = ($currentPage * $parPage) - $parPage;
 
 
-$offers = $modelOffer->getOffersPagination($premier, $parPage);
+
+
+if (isset($_POST['trierPar']))
+    $offers = $modelOffer->getOffersPagination($_POST['trierPar'], $premier, $parPage);
+else
+    $offers = $modelOffer->getOffersPagination($premier, $parPage);
+
 
 require_once('views/viewSearchOffer.php');
