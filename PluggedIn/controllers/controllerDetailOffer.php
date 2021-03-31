@@ -23,10 +23,10 @@ $entreprises = $modelEntreprise->getEntreprises();
 
 
 if (isset($_POST['wish_listP'])) {
-    if ($_POST['wish_listP'] == "delete");
-    $modelWish_list->deleteWish_list($_SESSION['utilisateur'], $offer->id_offre());
-    if ($_POST['wish_listP'] == "add");
-    $modelWish_list->addWish_list($_SESSION['utilisateur'], $offer->id_offre());
+    if ($_POST['wish_listP'] == "delete")
+        $modelWish_list->deleteWish_list($_SESSION['utilisateur'], $offer->id_offre());
+    if ($_POST['wish_listP'] == "add")
+        $modelWish_list->addWish_list($_SESSION['utilisateur'], $offer->id_offre());
 }
 
 
