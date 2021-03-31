@@ -17,6 +17,22 @@
         <?php };?>
         
 
+        <form action="searchEntreprise" method="post">
+            <select name="trierPar">
+                <option value="nom">nom</option>
+                <option value="secteur_activite">secteur_activite</option>
+                <option value="nombre_stagiaire_cesi">nombre_stagiaire_cesi</option>
+                <option value="confiance_pilote">confiance_pilote</option>
+                <option value="evaluation_entreprise">evaluation_entreprise</option>
+                <option value="image">image</option>
+                <option value="localite">localite</option>
+                <option value="mail">mail</option>
+            </select>
+            </p>
+            <button type="submit" class="button_to_detail"> Valider </button>
+
+        </form>
+
     </header>
 
     <div class="article-container">

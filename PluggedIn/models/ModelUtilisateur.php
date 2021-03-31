@@ -49,6 +49,23 @@ class ModelUtilisateur
         $req->closeCursor();
     }
 
+    public function getUtilisateurPaginationOrderBy($order_tag, $premier, $parPage)
+    {
+        $utilisateurs = [];
+
+        $req = $this->_bdd->prepare('SELECT * FROM utilisateur ORDER BY :order_tag DESC LIMIT :premier, :parpage;');
+
+        $req->bindValue(':order_tag', $order_tag, PDO::PARAM_STR);
+        $req->bindValue(':premier', $premier, PDO::PARAM_INT);
+        $req->bindValue(':parpage', $parPage, PDO::PARAM_INT);
+        $req->execute();
+
+        while ($data = $req->fetch(PDO::FETCH_ASSOC)) {
+            $utilisateurs[] = new Utilisateur($data);
+        }
+        return $utilisateurs;
+        $req->closeCursor();
+    }
 
     // FONCTION QUI RÉCUPÈRE TOUS LES ARTICLES ET QUI CRÉE UN OBJET (Article) POUR CHAQUE ARTICLE
     public function getUtilisateurs()

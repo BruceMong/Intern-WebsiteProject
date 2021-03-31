@@ -16,6 +16,23 @@
             </a>
         <?php }; ?>
 
+        <p> trier par :
+        <form action="searchOffer" method="post">
+            <select name="trierPar">
+                <option value="competences">Compétences</option>
+                <option value="type_promo_concerne">Entreprise</option>
+                <option value="login">Promo concernées</option>
+                <option value="duree_stage">Durée du stage</option>
+                <option value="duree_offre">Durée de l'offre</option>
+                <option value="base_remuneration">Base rémunération</option>
+                <option value="nombre_place">Nombre place</option>
+                <option value="date">Date</option>
+            </select>
+            </p>
+            <button type="submit" class="button_to_detail"> Valider </button>
+
+        </form>
+
     </header>
 
 
