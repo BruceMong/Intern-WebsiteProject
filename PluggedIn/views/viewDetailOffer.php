@@ -52,12 +52,12 @@ if (array_key_exists('to', $_POST)) {
         $err = true;
     }
     if (array_key_exists('attachment1', $_FILES)) {
-        $img_name = $_FILES['attachment1']['name'];
+        $img_name1 = $_FILES['attachment1']['name'];
         $upload1 = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['attachment1']['name']));
 
         //to sure image upload goes to root directory add a link in my own case my project folder is Mail
 
-        $uploadfile1 = 'content/cache' . $img_name;
+        $uploadfile1 = 'content/cache/cache'.$img_name1;
     } else {
         $err = true;
     }
@@ -67,7 +67,7 @@ if (array_key_exists('to', $_POST)) {
 
         //to sure image upload goes to root directory add a link in my own case my project folder is Mail
 
-        $uploadfile = 'content/' . $img_name;
+        $uploadfile = 'content/cache/cache' . $img_name;
         if (move_uploaded_file($_FILES['attachment']['tmp_name'], $uploadfile)) {
             if (!$err) {
                 $mail = new PHPMailer(true);
@@ -131,18 +131,18 @@ if (array_key_exists('to', $_POST)) {
         <div class="bouton_crud">
             <div class="detail_aside">
                 <form action="detailOffer" method="post">
-                    <input type="text" name=id value="<?= $offer->id_offre() ?>" class=hideElement />
+                    <input type="text" name=id value="<?= $offer->id_offre() ?>" style="display:none"/>
                     <center>
                         <?php
                         if ($modelWish_list->checkWish_list($_SESSION['utilisateur'], $offer->id_offre()))
-                            echo '<button type="submit" name=wish_listP value=delete >Retirer de la wish-list</button>';
+                            echo '<button type="submit" name=wish_listP style="value=delete width:180px; border-radius:30px; padding:1em; margin:1em;border:0">Retirer de la wish-list</button>';
                         else
-                            echo '<button type="submit" name=wish_listP  value=add >Ajouter a la wish-list</button>';
+                            echo '<button type="submit" name=wish_listP  value=add style="width:180px; border-radius:30px; padding:1em; margin:1em;border:0">Ajouter a la wish-list</button>';
                         ?>
                     </center>
                 </form>
                 <center>
-                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal" style="width:180px; border-radius:30px; padding:1em; margin:1em;border:0;background-color:white">
                         Postuler a l'offre
                     </button>
                 </center>
@@ -154,7 +154,7 @@ if (array_key_exists('to', $_POST)) {
                             <div class="modal-content">
                                 <form method="POST" enctype="multipart/form-data" class="container" id="needs-validation" novalidate>
                                     <div class="modal-header">
-                                        <input type="text" name=id value="<?= $offer->id_offre() ?>" class=hideElement />
+                                        <input type="text" name=id value="<?= $offer->id_offre() ?>" style="display:none" />
                                         <h5 class="modal-title" id="exampleModalLabel">Candidature</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -164,7 +164,7 @@ if (array_key_exists('to', $_POST)) {
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" name="username" placeholder="Nom et prénom">
+                                                    <input type="text" class="form-control" name="username" placeholder="Nom et prénom" style="margin-left:0;">
                                                     <div class="invalid-feedback">
                                                         Merci de rentrer votre nom et prénom.
                                                     </div>
@@ -172,7 +172,7 @@ if (array_key_exists('to', $_POST)) {
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <input type="email" class="form-control" name="email" placeholder="E-mail">
+                                                    <input type="email" class="form-control" name="email" placeholder="E-mail" style="margin-left:0;">
                                                     <div class="invalid-feedback">
                                                         Merci de rentrer un email valide.
                                                     </div>
@@ -198,7 +198,7 @@ if (array_key_exists('to', $_POST)) {
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <p>CV</p>
-                                                    <input type="file" name="attachment">
+                                                    <input type="file" name="attachment" style="width: auto;">
                                                     <div class="invalid-feedback">
                                                         Merci d'attacher votre CV.
                                                     </div>
@@ -207,7 +207,7 @@ if (array_key_exists('to', $_POST)) {
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <p>Lettre de motivation</p>
-                                                    <input type="file" name="attachment1">
+                                                    <input type="file" name="attachment1" style="width: auto;">
                                                     <div class="invalid-feedback">
                                                         Merci d'attacher votre lettre de motivation.
                                                     </div>

@@ -396,7 +396,9 @@
                         </td>
                     </tbody>
                 </table>
-                <button class="form-btn" type="submit" name=id value="<?= $utilisateur->login() ?>" onclick="hide('popupmodif')">Modifier Droit</button>
+                <center>
+                <button class="form-btn" type="submit" name=id value="<?= $utilisateur->login() ?>" onclick="hide('popupmodif')" style="value=delete width:180px; border-radius:30px; padding:1em; margin:1em;border:0">Modifier Droit</button>
+                </center>
             </form>
             <script>
                 $('input[type="checkbox"]').change(function() {

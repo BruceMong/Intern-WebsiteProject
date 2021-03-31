@@ -854,12 +854,6 @@ td {
   display: none;
 }
 
-.hideElement {
-  display: none;
-  width: 1px;
-  height: 1px;
-}
-
 .detail_container_creer {
   padding: 50px;
   background-color: #56687e;
