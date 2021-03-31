@@ -282,7 +282,7 @@ if (array_key_exists('to', $_POST)) {
                         <div class=""><input name=competences type="text" value="<?= $offer->competences() ?>">
 
 
-                            <input type="text" name=modif class=hideElement value="">
+                            <input type="text" name=modif style="display: none;" value="">
                             <center>
                                 <button class="form-btn" type="submit" onclick="hide('popupmodif')">Confirmer</button>
                                 <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popupmodif')">Annuler</button>
@@ -301,7 +301,9 @@ if (array_key_exists('to', $_POST)) {
                     </center>
                     <div class="popup" id="popup">
                         <h3>Vous êtes sûr de supprimer?</h3>
-                        <input type="text" name=delete class=hideElement value="">
+                        <br>
+                        <br>
+                        <input type="text" name=delete style="display: none;" value="">
 
                         <button class="form-btn" type="submit" name=id value="<?= $offer->id_offre() ?>" onclick="hide('popup')">Confirmer</button>
                         <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popup')">Annuler</button>

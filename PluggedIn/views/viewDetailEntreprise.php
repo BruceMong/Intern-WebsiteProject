@@ -41,8 +41,10 @@
                         <p>Confiance Pilote: <input name="confiance_pilote" type="text" value="<?= $entreprise->confiance_pilote() ?>"></p>
                         <p>Contact entreprise : <input name="mail" type="text" value="<?= $entreprise->mail() ?>"></p>
                         <p>image :<input name="image" type="text" value="<?= $entreprise->image() ?>"> </p>
+                        <br>
+                        <br>
 
-                        <input type="text" name=modif class=hideElement value="">
+                        <input type="text" name=modif style="display: none;" value="">
                         <center style="margin-top: 50px;">
                             <button class="form-btn" type="submit" name=id value="<?= $entreprise->id_entreprise() ?>" onclick="hide('popupmodif')">Confirmer</button>
                             <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popupmodif')">Annuler</button>
@@ -56,8 +58,9 @@
                 </center>
                 <div class="popup" id="popup">
                     <h3>Vous êtes sûr de supprimer?</h3>
-
-                    <input type="text" name=delete class=hideElement value="">
+                    <br>
+                    <br>
+                    <input type="text" name=delete style="display: none;" value="">
                     <button class="form-btn" type="submit" name=id value="<?= $entreprise->id_entreprise() ?>" onclick="hide('popup')">Confirmer</button>
                     <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popup')">Annuler</button>
 
