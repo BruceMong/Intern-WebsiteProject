@@ -29,7 +29,6 @@ $pages = ceil($nbArticle / $parPage);
 
 $premier = ($currentPage * $parPage) - $parPage;
 
-$trierPar = strip_tags($_POST['trierPar']);
 
 if (isset($trierPar)) {
     $trierPar = strip_tags($_POST['trierPar']);
