@@ -27,7 +27,10 @@
 
                 <form action="detailUtilisateur" method="post">
                     <center>
+                    <!--Permission Modifier-->
+                    <?php if ($_SESSION['droits'][0]->modifier_compte_pilote() == 1 || $_SESSION['droits'][0]->modifier_compte_etudiant() == 1 || $_SESSION['droits'][0]->modifier_compte_delegue() == 1 ) :?>
                         <input type="button" class="buttonmodif" href="#" onclick="show('popupmodif')" value="Modifier">
+                        <?php endif; ?>
                     </center>
                     <div class="popupmodif" id="popupmodif">
                         <h3>Nom : <input name="nom" type="text" value="<?= $utilisateur->nom() ?>"></h3>
