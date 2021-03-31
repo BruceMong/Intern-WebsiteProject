@@ -14,6 +14,19 @@
             <input type="button" value="Creer un utilisateur">
         </a>
 
+        <p> trier par :
+            <select name="trierPar">
+                <option value="nom">Nom</option>
+                <option value="prenom">Prenom</option>
+                <option value="login">Login</option>
+                <option value="mot_de_passe">Centre</option>
+                <option value="id_promotion">Promotin</option>
+                <option value="id_profil">Role</option>
+
+            </select>
+        </p>
+
+
     </header>
 
     <div class="article-container">
