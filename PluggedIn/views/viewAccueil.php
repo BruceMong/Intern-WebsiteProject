@@ -29,6 +29,7 @@
             d’utilisateur. Plusieurs catégories de fonctionnalités sont déployées sur la plateforme.
         </p>
     </div>
+    <?php var_dump($_SESSION['droits'][0])?>
 
 </div>
 

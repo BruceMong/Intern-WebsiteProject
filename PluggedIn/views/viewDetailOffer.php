@@ -255,10 +255,9 @@ if (array_key_exists('to', $_POST)) {
 
                 <form action="detailOffer" method="post">
                     <center>
-                    <!--Permission Modifier-->
-                    <?php if ($_SESSION['droits'][0]->modifier_offre() == 1) : ?>
-                        <input type="button" class="buttonmodif" href="#" onclick="show('popupmodif')" value="Modifier">
-                        <?php var_dump($_SESSION['droits'][0]->modifier_offre())?>
+                        <!--Permission Modifier-->
+                        <?php if ($_SESSION['droits'][0]->modifier_offre() == 1) : ?>
+                            <input type="button" class="buttonmodif" href="#" onclick="show('popupmodif')" value="Modifier">
                         <?php endif; ?>
                     </center>
                     <div class="popupmodif" id="popupmodif">
@@ -295,9 +294,9 @@ if (array_key_exists('to', $_POST)) {
 
                 <form action="detailOffer" method="post">
                     <center>
-                    <!--Permission Supprimer-->
-                    <?php if ($_SESSION['droits'][0]->supprimer_entreprise() == 1) : ?>
-                        <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
+                        <!--Permission Supprimer-->
+                        <?php if ($_SESSION['droits'][0]->supprimer_entreprise() == 1) : ?>
+                            <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
                         <?php endif; ?>
                     </center>
                     <div class="popup" id="popup">
