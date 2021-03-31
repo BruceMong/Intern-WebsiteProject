@@ -10,9 +10,12 @@
             <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
         </form>
 
-        <a class="login" href="createEntreprise">
+        <?php if($_SESSION['droits'][0]->creer_entreprise() == 1){?>
+            <a class="login" href="createEntreprise">
             <input type="button" value="Créer une Entreprise">
         </a>
+        <?php };?>
+        
 
     </header>
 

@@ -4,9 +4,9 @@ if (empty($_SESSION['utilisateur']))
     header('Location:' . URL . 'login');
 
 
-//if ($_SESSION['droits'][0]->creer_() != 1) {
-//   header('Location:' . URL . 'error');
-//}
+if ($_SESSION['droits'][0]->creer_entreprise() != 1) {
+    header('Location:' . URL . 'error');
+}
 
 
 $modelEntreprise = new ModelEntreprise($bdd);

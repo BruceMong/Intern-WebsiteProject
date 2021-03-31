@@ -10,9 +10,11 @@
             <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
         </form>
 
-        <a class="login" href="createOffer">
-            <input type="button" value="Créer une Offre">
-        </a>
+        <?php if ($_SESSION['droits'][0]->creer_offre() == 1) { ?>
+            <a class="login" href="createOffer">
+                <input type="button" value="Créer une Offre">
+            </a>
+        <?php }; ?>
 
     </header>
 
@@ -40,21 +42,21 @@
 
     <nav class="nav_pagination">
         <ul class="pagination">
-        <form action="searchOffer" method="post" class = "form_pagination">
-            <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
-            <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
-                <button type="submit" class="page-link" name="page" value="<?= $currentPage - 1 ?>"> Précédente </button>
-            </li>
-            <?php for ($page = 1; $page <= $pages; $page++) : ?>
-                <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
-                <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
-                <button type="submit" class="page-link" name="page" value="<?= $page ?>"> <?= $page ?> </button>
+            <form action="searchOffer" method="post" class="form_pagination">
+                <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
+                <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
+                    <button type="submit" class="page-link" name="page" value="<?= $currentPage - 1 ?>"> Précédente </button>
                 </li>
-            <?php endfor ?>
-            <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
-            <li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
-                <button type="submit" class="page-link" name="page" value="<?= $currentPage + 1 ?>"> Suivant </button>
-            </li>
+                <?php for ($page = 1; $page <= $pages; $page++) : ?>
+                    <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
+                    <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
+                        <button type="submit" class="page-link" name="page" value="<?= $page ?>"> <?= $page ?> </button>
+                    </li>
+                <?php endfor ?>
+                <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->
+                <li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
+                    <button type="submit" class="page-link" name="page" value="<?= $currentPage + 1 ?>"> Suivant </button>
+                </li>
             </form>
         </ul>
     </nav>

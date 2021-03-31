@@ -12,6 +12,10 @@ $entreprises = $modelEntreprise->getEntreprises();
 
 $promotions = $modelPromotion->getPromotions();
 
+if ($_SESSION['droits'][0]->creer_offre() != 1) {
+    header('Location:' . URL . 'error');
+}
+
 if (!empty($_POST)) {
     extract($_POST);
     $errors = array();

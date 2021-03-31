@@ -10,9 +10,13 @@
             <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
         </form>
 
-        <a class="login" href="createUtilisateur">
-            <input type="button" value="Creer un utilisateur">
-        </a>
+        <?php if ($_SESSION['droits'][0]->creer_compte_etudiant() == 1) { 
+            echo'
+            <a class="login" href="createUtilisateur">
+                <input type="button" value="Creer un utilisateur">
+            </a>
+            '
+        ; ?>
 
         <p> trier par :
             <select name="trierPar">
