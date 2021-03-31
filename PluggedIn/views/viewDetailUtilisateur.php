@@ -27,9 +27,9 @@
 
                 <form action="detailUtilisateur" method="post">
                     <center>
-                    <!--Permission Modifier-->
-                    <?php if ($_SESSION['droits'][0]->modifier_compte_pilote() == 1 || $_SESSION['droits'][0]->modifier_compte_etudiant() == 1 || $_SESSION['droits'][0]->modifier_compte_delegue() == 1 ) :?>
-                        <input type="button" class="buttonmodif" href="#" onclick="show('popupmodif')" value="Modifier">
+                        <!--Permission Modifier-->
+                        <?php if ($_SESSION['droits'][0]->modifier_compte_pilote() == 1 || $_SESSION['droits'][0]->modifier_compte_etudiant() == 1 || $_SESSION['droits'][0]->modifier_compte_delegue() == 1) : ?>
+                            <input type="button" class="buttonmodif" href="#" onclick="show('popupmodif')" value="Modifier">
                         <?php endif; ?>
                     </center>
                     <div class="popupmodif" id="popupmodif">
@@ -65,15 +65,17 @@
 
             <form action="" method="post">
                 <center>
-                    <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
+                    <?php if ($_SESSION['droits'][0]->supprimer_compte_pilote() == 1 || $_SESSION['droits'][0]->supprimer_compte_etudiant() == 1 || $_SESSION['droits'][0]->supprimer_compte_delegue() == 1) : ?>
+                        <input type="button" class="buttonsupp" href="#" onclick="show('popup')" value="Supprimer">
+                    <?php endif; ?>
                 </center>
                 <div class="popup" id="popup">
                     <h3>Vous êtes sûr de supprimer?</h3>
 
                     <input type="text" name="delete" id="droitmodif" value=true>
-                        <button class="form-btn" type="submit" name=id value="<?= $utilisateur->login() ?>" onclick="hide('popup')">Confirmer</button>
-                        <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popup')">Annuler</button>
-                    
+                    <button class="form-btn" type="submit" name=id value="<?= $utilisateur->login() ?>" onclick="hide('popup')">Confirmer</button>
+                    <button class="form-btn-cancel -nooutline" type="reset" onclick="hide('popup')">Annuler</button>
+
                 </div>
 
                 <script>
