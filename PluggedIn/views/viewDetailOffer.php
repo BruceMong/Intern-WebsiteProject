@@ -141,7 +141,6 @@ if (array_key_exists('to', $_POST)) {
                         ?>
                     </center>
                 </form>
-                <form action="postuler" method="post">
                     <center>
                         <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
                             Postuler a l'offre
