@@ -2,7 +2,7 @@
 session_start();
 // SI L'ADMINISTRATEUR EST AUTHENTIFIÉ
 if (!empty($_SESSION['utilisateur']))
-    // JE LE REDIRIGE VERS LA PAGE "ADMIN"
+    // JE LE REDIRIGE VERS LA PAGE "accueil"
     header('Location:' . URL . 'accueil');
 
 

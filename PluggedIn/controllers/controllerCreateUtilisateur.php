@@ -16,17 +16,6 @@ $modelDroit = new ModelDroit($bdd);
 $profils = $modelProfil->getProfils();
 $promotions = $modelPromotion->getPromotions();
 
-if ($_SESSION['droits'][0]->creer_compte_etudiant() != 1) {
-    header('Location:' . URL . 'error');
-}
-
-if ($_SESSION['droits'][0]->creer_compte_delegue() != 1) {
-    header('Location:' . URL . 'error');
-}
-
-if ($_SESSION['droits'][0]->creer_compte_pilote() != 1) {
-    header('Location:' . URL . 'error');
-}
 
 
 
