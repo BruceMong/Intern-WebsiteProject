@@ -21,7 +21,7 @@
                 <p>Centre : <input name=centre type="text"></p>
                 <p> Role: <select name="role">
                         <option value="Etudiant">Etudiant</option>
-                        <option value="Pilote">Pilote</option>
+                        <option value="Pilote">Pilote</option>                     
                     </select>
                 <p>Mot de passe : <input name=mot_de_passe type="text"></p>
         </div>
