@@ -11,10 +11,10 @@ if (isset($_POST['page']) && !empty($_POST['page'])) {
 } else {
     $currentPage = 1;
 }
-
+/*
 if ($_SESSION['droits'][0]->rechercher_compte_etudiant() != 1) {
     header('Location:' . URL . 'error');
-}
+}*/
 
 $modelUtilisateur = new ModelUtilisateur($bdd);
 $nbArticle = $modelUtilisateur->countUtilisateur();
