@@ -14,7 +14,8 @@
       <li><a href="searchEntreprise">Entreprise</a></li>
       <li><a href="searchOffer">Offre</a></li>
       <li><a class="nav_admin" href="searchUtilisateur">Utilisateur</a></li>';
-    
+
+
     </ul>
   </div>
 </nav>
