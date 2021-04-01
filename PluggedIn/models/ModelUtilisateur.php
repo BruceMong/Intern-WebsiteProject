@@ -53,9 +53,8 @@ class ModelUtilisateur
     {
         $utilisateurs = [];
 
-        $req = $this->_bdd->prepare('SELECT * FROM utilisateur ORDER BY :order_tag  LIMIT :premier, :parpage;');
+        $req = $this->_bdd->prepare('SELECT * FROM utilisateur LIMIT :premier, :parpage ORDER BY nom ;');
 
-        $req->bindValue(':order_tag', $order_tag, PDO::PARAM_STR);
         $req->bindValue(':premier', $premier, PDO::PARAM_INT);
         $req->bindValue(':parpage', $parPage, PDO::PARAM_INT);
         $req->execute();
