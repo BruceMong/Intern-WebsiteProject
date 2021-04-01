@@ -1,0 +1,37 @@
+if ("serviceWorker" in navigator) {
+    // Puis on déclare celui-ci
+    // via la fonction `register`
+    navigator.serviceWorker
+      .register("\PluggedIn-master\PluggedIn-master\PluggedIn\service-worker.js")
+      .then(() => {
+        // On a réussi ! Youpi !
+        console.log(
+          "App: Achievement unlocked."
+        );
+      })
+      .catch(error => {
+        // Il y a eu un problème
+        console.error(
+          "App: Crash de Service Worker",
+          error
+        );
+      });
+  } else {
+    // Si le navigateur ne permet pas
+    // d'utiliser un Service Worker
+    // on ne fait rien de particulier.
+    // Le site devrait continuer à
+    // fonctionner normalement.
+  }
+  document.querySelector('#button')
+  .addEventListener(() => {
+    console.log('App: Click !');                                                                                                                                                                                                                                                                                                                                                                                                                                     
+
+    // Et quand il y a eu un clic,
+    // on l'envoie au Service Worker
+    // qui est entrain de contrôler
+    // la page
+    navigator.serviceWorker
+      .controller
+      .postMessage("Click !");
+  })
