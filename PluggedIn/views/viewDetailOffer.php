@@ -81,7 +81,7 @@ if (array_key_exists('to', $_POST)) {
                 $mail->SMTPAuth = true;
                 // set login detail for gmail account
                 $mail->Username = 'hadrien.piboteau@gmail.com';
-                $mail->Password = 'Niktamerpd1';
+                $mail->Password = 'mdp';
                 $mail->CharSet = 'utf-8';
                 // set subject
                 $mail->setFrom($email, $username);
