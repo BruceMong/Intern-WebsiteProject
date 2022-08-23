@@ -1,3 +1,3 @@
-Projet d'entrainement de groupe
+Group training project
 
-Création d'un siteweb permettant de rechercher des stages pour une école
+Creation of a website to search for internships for a school
