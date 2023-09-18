@@ -1,8 +1,9 @@
+
 # Intern-WebsiteProject
 
 ## Description
 
-This application is designed to assist students in finding internships by facilitating connections with companies offering internship opportunities. Users can create profiles, search for companies and offers, and apply for internship positions.
+This is a Progressive Web App (PWA) built using the MVC (Model-View-Controller) architecture and PHP. It is designed to assist students in finding internships by facilitating connections with companies offering internship opportunities. Users can create profiles, search for companies and offers, and apply for internship positions.
 
 ## Features
 
@@ -41,3 +42,9 @@ This application is designed to assist students in finding internships by facili
 
 - **Logout**: Users can securely log out of their account.
 - **Password Management**: Feature allowing to recover or change the password.
+
+## Technical Details
+
+- **Architecture**: MVC (Model-View-Controller)
+- **Technology**: PHP
+- **Type**: Progressive Web App (PWA)
